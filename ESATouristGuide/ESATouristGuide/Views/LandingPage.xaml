@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ESATouristGuide.Views.LandingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:ESATouristGuide.ViewModels"
+    xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.Effects;assembly=Xamarin.CommunityToolkit"
+    x:DataType="vm:LandingPageViewModel">
+
+    <ContentPage.BindingContext>
+        <vm:LandingPageViewModel />
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <Grid
+            BackgroundColor="{StaticResource Primary}"
+            ColumnDefinitions="0.075*,0.85*,0.075*"
+            HorizontalOptions="Fill"
+            RowDefinitions="3*,4*,2*,2*"
+            VerticalOptions="Fill">
+
+            <StackLayout
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                Orientation="Vertical"
+                Spacing="12"
+                VerticalOptions="Center">
+                <Label
+                    FontSize="32"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Ψηφιακός Οδηγός"
+                    TextColor="{StaticResource Accent}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Αλεξανδρούπολης"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+
+            <Frame
+                Grid.Row="1"
+                Grid.Column="1"
+                Padding="0"
+                BackgroundColor="{StaticResource Secondary}"
+                BorderColor="{StaticResource Secondary}"
+                CornerRadius="12"
+                HasShadow="True"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill">
+                <Image
+                    Aspect="AspectFill"
+                    HorizontalOptions="Fill"
+                    Source="i1.jpg" />
+            </Frame>
+
+            <StackLayout
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                Orientation="Vertical"
+                Spacing="12"
+                VerticalOptions="Center">
+                <Label
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Ανακαλύψτε την  Αλεξανδρούπολη μέσα από την Επαυξημένη Πραγματικότητα"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalOptions="Fill"
+                Orientation="Vertical"
+                Spacing="12"
+                VerticalOptions="Center">
+                <Button
+                    xct:CornerRadiusEffect.CornerRadius="16"
+                    BackgroundColor="{StaticResource Background}"
+                    Command="{Binding StartAppCommand}"
+                    FontSize="16"
+                    HorizontalOptions="Fill"
+                    Text="Εκκίνηση"
+                    TextColor="{StaticResource Primary}"
+                    VerticalOptions="Center" />
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
