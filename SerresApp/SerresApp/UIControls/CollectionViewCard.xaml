@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SerresApp.UIControls.CollectionViewCard"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:helpers="clr-namespace:SerresApp.Helpers"
+    xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:uicontrols="clr-namespace:SerresApp.UIControls"
+    xmlns:vm="clr-namespace:SerresApp.ViewModels"
+    xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.Effects;assembly=Xamarin.CommunityToolkit"
+    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource Background}}"
+    Shell.NavBarIsVisible="False"
+    x:DataType="uicontrols:CollectionViewCard">
+    <ContentView.Content>
+
+        <!--<pv:PancakeView.Shadow>
+                <pv:DropShadow
+                    BlurRadius="10"
+                    Opacity="0.3"
+                    Offset="10,10"
+                    Color="#000000" />
+            </pv:PancakeView.Shadow>-->
+
+        <Grid
+            HeightRequest="360"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Image
+                x:Name="POIImageUri"
+                Grid.RowSpan="3"
+                Aspect="AspectFill"
+                Source="{Binding POIImage, TargetNullValue='gradient.png'}"/>
+
+            <pv:PancakeView
+                Grid.Row="2"
+                BackgroundGradientEndPoint="1,0"
+                BackgroundGradientStartPoint="1,1"
+                CornerRadius="1"
+                HorizontalOptions="FillAndExpand"
+                Padding="2,0,2,0"
+                TranslationY="0"
+                VerticalOptions="Fill">
+                <pv:PancakeView.BackgroundGradientStops>
+                    <pv:GradientStopCollection>
+                        <pv:GradientStop Offset="0" Color="#cc0f0f0f" />
+                        <pv:GradientStop Offset="1" Color="#600f0f0f" />
+                    </pv:GradientStopCollection>
+                </pv:PancakeView.BackgroundGradientStops>
+
+                <Grid
+                    Grid.Row="1"
+                    ColumnDefinitions="*,Auto"
+                    Padding="12,16"
+                    RowDefinitions="24,30"
+                    RowSpacing="6">
+
+                    <StackLayout
+                        Grid.Column="1"
+                        Margin="0"
+                        Orientation="Horizontal"
+                        Spacing="4"
+                        VerticalOptions="Start">
+
+                        <Label
+                            x:Name="POIDistanceFromUserLabel"
+                            FontFamily="Roboto"
+                            FontSize="12"
+                            HorizontalOptions="StartAndExpand"
+                            Padding="0"
+                            IsVisible="{Binding POIShowDistance}"
+                            Text="{Binding POIDistance}"
+                            TextColor="WhiteSmoke"
+                            VerticalOptions="Center" />
+                        <Label
+                            x:Name="POIDistanceIndicatorLabel"
+                            FontFamily="Roboto"
+                            FontSize="12"
+                            HorizontalOptions="StartAndExpand"
+                            IsVisible="{Binding POIShowDistance}"
+                            Padding="0"
+                            Text="{helpers:Translate KilometersShort}"
+                            TextColor="WhiteSmoke"
+                            VerticalOptions="Center" />
+                    </StackLayout>
+
+                    <Label
+                        x:Name="POIRegionLabel"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontFamily="Roboto"
+                        FontSize="Small"
+                        Text="{Binding POIRegion}"
+                        TextColor="WhiteSmoke"
+                        VerticalOptions="Start" />
+
+                    <Label
+                        x:Name="POINameLabel"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        FontFamily="RobotoBold"
+                        FontSize="Subtitle"
+                        LineBreakMode="TailTruncation"
+                        Text="{Binding POIName}"
+                        TextColor="WhiteSmoke"
+                        VerticalOptions="Start" />
+                </Grid>
+
+
+            </pv:PancakeView>
+        </Grid>
+
+
+    </ContentView.Content>
+</ContentView>
