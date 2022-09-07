@@ -22,6 +22,8 @@ using System.Windows.Input;
 
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Essentials;
+using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace SerresApp.ViewModels
 {
@@ -66,8 +68,17 @@ namespace SerresApp.ViewModels
         private POI _selectedPOI = new POI();
 
         public POI SelectedPOI { get => _selectedPOI; set { SetAndRaise(ref _selectedPOI , value); } }
-
         private Temperatures temperatures;
+
+        public Thickness Thickness
+        {
+            get
+            {
+                return SelectedPOI.HasImage ? new Thickness(16 , 396 , 16 , 16) : new Thickness(16 , 50 , 16 , 16);
+
+            }
+        }
+        
 
         public Temperatures Temperatures
         {
@@ -105,11 +116,25 @@ namespace SerresApp.ViewModels
             var time = timer.Elapsed;
         }
 
+        private async Task Navigate()
+        {
+            if (CityPosition is null)
+            {
+                return;
+            }
+            // ανοίγω directions
+            await Xamarin.Essentials.Map.OpenAsync(CityPosition , new MapLaunchOptions
+            {
+                Name = SelectedPOI.Title ,
+                NavigationMode = NavigationMode.Driving
+            }).ConfigureAwait(true);
+        }
         private void PropertiesInit()
         {
             //UserLocationService = new UserLocationService();
             timer.Start();
             Database = new POIRepository();
+            NavigateCommand = new AsyncCommand(Navigate);
             WeatherService = new WeatherService();
             DistancesService = new DistancesService();
             AddToFavouritesCommand = new AsyncCommand(AddToFavourites);
@@ -151,6 +176,7 @@ namespace SerresApp.ViewModels
             get => _showInfoPanel;
             set => SetAndRaise(ref _showInfoPanel , value);
         }
+        public AsyncCommand NavigateCommand { get; set; }
 
         public override void Load() { LoaderNotifier.Load(_ => InitializationTask()); }
 

@@ -181,35 +181,35 @@ namespace SerresApp.ViewModels
         }
 
 
-        private ObservableRangeCollection<POISlim> _useful;
-        public ObservableRangeCollection<POISlim> Useful
+        private ObservableRangeCollection<POISlim> _intangible;
+        public ObservableRangeCollection<POISlim> Intangible
         {
-            get => _useful;
+            get => _intangible;
             set
             {
-                SetAndRaise(ref _useful , value);
+                SetAndRaise(ref _intangible , value);
                 //RaisePropertyChanged(nameof(IsEmptyList));
             }
         }
 
-        private ObservableRangeCollection<POISlim> _highlights;
-        public ObservableRangeCollection<POISlim> Highlights
+        private ObservableRangeCollection<POISlim> _tangible;
+        public ObservableRangeCollection<POISlim> Tangible
         {
-            get => _highlights;
+            get => _tangible;
             set
             {
-                SetAndRaise(ref _highlights , value);
+                SetAndRaise(ref _tangible , value);
                 //RaisePropertyChanged(nameof(IsEmptyList));
             }
         }
 
-        private ObservableRangeCollection<POISlim> _experiences;
-        public ObservableRangeCollection<POISlim> Experiences
+        private ObservableRangeCollection<POISlim> _nature;
+        public ObservableRangeCollection<POISlim> Nature
         {
-            get => _experiences;
+            get => _nature;
             set
             {
-                SetAndRaise(ref _experiences , value);
+                SetAndRaise(ref _nature , value);
                 //RaisePropertyChanged(nameof(IsEmptyList));
             }
         }
@@ -221,6 +221,13 @@ namespace SerresApp.ViewModels
             set
             {
                 SetAndRaise(ref _pois , value);
+                if (POIS.Count > 0)
+                {
+                    Nature = POIS.Where(x => x.CategoryId == 0).ToObservableCollection();
+                    Tangible = POIS.Where(x => x.CategoryId == 1).ToObservableCollection();
+                    Intangible = POIS.Where(x => x.CategoryId == 2).ToObservableCollection();                 
+                }
+
             }
         }
 
@@ -252,6 +259,8 @@ namespace SerresApp.ViewModels
             if (IsLoaded)
             {
                 POIS = await _greekCitiesService.GetGreekCities();
+
+
                 return;
             }
 
@@ -260,102 +269,16 @@ namespace SerresApp.ViewModels
                 await _userLocationService.GetUserLocationAsync(_ct).ConfigureAwait(true);
             }
 
-            Categories = new List<Category>(Models.Categories.CategoriesList);
+            var categories = new Categories();
+            Categories = new List<Category>(categories.CategoriesList);
 
             POIS = await _greekCitiesService.GetGreekCities();
 
-            await Task.Delay(2000);
+            //await Task.Delay(2000);
 
             IsLoaded = true;
         }
-
-        //public void ExecuteLoadMoreExperiencesCommand()
-        //{
-
-        //    if (ExperiencesPage <= MaxPageExperience)
-        //    {
-        //        CanLoadMoreExperiences = true;
-        //    }
-        //    else
-        //    {
-        //        CanLoadMoreExperiences = false;
-        //    }
-
-        //    if (CanLoadMoreExperiences)
-        //    {
-        //        var data = _contentService.GetPagedListItem(1 , page: ExperiencesPage , category: experiencesArray);
-
-        //        MaxPageExperience = data.TotalPages;
-
-        //        foreach (var item in data.Data)
-        //        {
-        //            Experiences.Add(item);
-        //        }
-
-        //        ExperiencesPage++;
-        //    }
-
-        //    MainThread.BeginInvokeOnMainThread(() => IsRefreshingExperiences = false);
-        //}
-
-        //public void ExecuteLoadMoreHighlightsCommand()
-        //{
-
-        //    if (HighlightsPage <= MaxPageHighlights)
-        //    {
-        //        CanLoadMoreHighlights = true;
-        //    }
-        //    else
-        //    {
-        //        CanLoadMoreHighlights = false;
-        //    }
-
-        //    if (CanLoadMoreHighlights)
-        //    {
-        //        var data = _contentService.GetPagedListItem(1 , page: HighlightsPage , category: highlightsArray);
-
-        //        MaxPageHighlights = data.TotalPages;
-
-        //        foreach (var item in data.Data)
-        //        {
-        //            Highlights.Add(item);
-        //        }
-
-        //        HighlightsPage++;
-        //    }
-
-        //    MainThread.BeginInvokeOnMainThread(() => IsRefreshingHighlights = false);
-        //}
-
-        //public void ExecuteLoadMoreUsefulCommand()
-        //{
-
-        //    if (UsefulPage <= MaxPageUseful)
-        //    {
-        //        CanLoadMoreUseful = true;
-        //    }
-        //    else
-        //    {
-        //        CanLoadMoreUseful = false;
-        //    }
-
-        //    if (CanLoadMoreUseful)
-        //    {
-        //        var data = _contentService.GetPagedListItem(1 , page: UsefulPage , category: usefulArray);
-
-        //        MaxPageUseful = data.TotalPages;
-
-        //        foreach (var item in data.Data)
-        //        {
-        //            Useful.Add(item);
-        //        }
-
-        //        UsefulPage++;
-        //    }
-
-        //    MainThread.BeginInvokeOnMainThread(() => IsRefreshingUseful = false);
-        //}
-
+             
         private async Task NavigateToDetails(POISlim poi)
         {
             await poi.NavigateToDetailsAsync();
@@ -373,17 +296,12 @@ namespace SerresApp.ViewModels
 
             _greekCitiesService = new GreekCitiesService();
             NavToDetailsCommand = new AsyncCommand<POISlim>(NavigateToDetails);
-            //LoadMoreExperiencesCommand = new Xamarin.Forms.Command(ExecuteLoadMoreExperiencesCommand);
-
-            //LoadMoreUsefulCommand = new Xamarin.Forms.Command(ExecuteLoadMoreUsefulCommand);
-
-            //LoadMoreHighlightsCommand = new Xamarin.Forms.Command(ExecuteLoadMoreHighlightsCommand);
-
+        
             POIS = new ObservableRangeCollection<POISlim>();
 
-            //Experiences = new ObservableRangeCollection<POISlim>();
-            //Useful = new ObservableRangeCollection<POISlim>();
-            //Highlights = new ObservableRangeCollection<POISlim>();
+            Nature = new ObservableRangeCollection<POISlim>();
+            Intangible = new ObservableRangeCollection<POISlim>();
+            Tangible = new ObservableRangeCollection<POISlim>();
             SelectedCategories = new List<int>();
         }
 

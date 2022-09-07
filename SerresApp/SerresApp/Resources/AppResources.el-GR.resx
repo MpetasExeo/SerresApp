@@ -117,13 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddToFavourites" xml:space="preserve">
-    <value>Προσθήκη στα
-αγαπημένα</value>
-  </data>
-  <data name="AgionOros" xml:space="preserve">
-    <value>Άγιον Όρος</value>
-  </data>
   <data name="Apply" xml:space="preserve">
     <value>Εφαρμογή</value>
   </data>
@@ -136,18 +129,12 @@
   <data name="Close" xml:space="preserve">
     <value>Κλείσιμο</value>
   </data>
-  <data name="Culture" xml:space="preserve">
-    <value>Πολιτισμός</value>
-  </data>
   <data name="Dark" xml:space="preserve">
     <value>Σκοτεινή
 </value>
   </data>
   <data name="Days" xml:space="preserve">
     <value>μ</value>
-  </data>
-  <data name="Deutsch" xml:space="preserve">
-    <value>Γερμανικά</value>
   </data>
   <data name="DeviceLocationNA" xml:space="preserve">
     <value>Για πλήρη πρόσβαση στις  δυνατότητες της εφαρμογής, ενεργοποιήστε την τοποθεσία της συσκευής.</value>
@@ -157,9 +144,6 @@
   </data>
   <data name="Done" xml:space="preserve">
     <value>Εφαρμογή</value>
-  </data>
-  <data name="DoSomething" xml:space="preserve">
-    <value>Do something</value>
   </data>
   <data name="English" xml:space="preserve">
     <value>Αγγλικά</value>
@@ -176,17 +160,8 @@
   <data name="Filters" xml:space="preserve">
     <value>Φίλτρα</value>
   </data>
-  <data name="Gastronomy" xml:space="preserve">
-    <value>Γαστρονομία</value>
-  </data>
-  <data name="Great" xml:space="preserve">
-    <value>GREAT</value>
-  </data>
   <data name="Greek" xml:space="preserve">
     <value>Ελληνικά</value>
-  </data>
-  <data name="Halkidiki" xml:space="preserve">
-    <value>Χαλκιδική</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Αρχική</value>
@@ -194,17 +169,8 @@
   <data name="Hours" xml:space="preserve">
     <value>ω</value>
   </data>
-  <data name="Imathia" xml:space="preserve">
-    <value>Ημαθία</value>
-  </data>
-  <data name="Inspiration" xml:space="preserve">
-    <value>Εμπνεύσου</value>
-  </data>
   <data name="IntangibleCulturalHeritage" xml:space="preserve">
     <value>Πολιτιστική Κληρονομιά</value>
-  </data>
-  <data name="Kilkis" xml:space="preserve">
-    <value>Κιλκίς</value>
   </data>
   <data name="Kilometers" xml:space="preserve">
     <value>Χιλιόμετρα</value>
@@ -242,23 +208,14 @@
   <data name="Nearby" xml:space="preserve">
     <value>Κοντά</value>
   </data>
+  <data name="NoFavourites" xml:space="preserve">
+    <value>Δεν έχετε προσθέσει κανένα στοιχείο στα αγαπημένα σας.</value>
+  </data>
   <data name="NoInternetConnectionFound" xml:space="preserve">
     <value>Ελέγξτε τη σύνδεσή σας στο διαδίκτυο. Δεν βρέθηκε σύνδεση.</value>
   </data>
   <data name="Outdoor" xml:space="preserve">
     <value>Δραστηριότητες</value>
-  </data>
-  <data name="Pella" xml:space="preserve">
-    <value>Πέλλα</value>
-  </data>
-  <data name="Pieria" xml:space="preserve">
-    <value>Πιερία</value>
-  </data>
-  <data name="PlacesToGo" xml:space="preserve">
-    <value>Που να πάτε</value>
-  </data>
-  <data name="Regions" xml:space="preserve">
-    <value>Π. Ενότητες</value>
   </data>
   <data name="RemoveFromFavourites" xml:space="preserve">
     <value>Διαγραφή από
@@ -266,9 +223,6 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Αποθήκευση</value>
-  </data>
-  <data name="SeaAndSun" xml:space="preserve">
-    <value>Ήλιος &amp; Θάλασσα</value>
   </data>
   <data name="SeeAll" xml:space="preserve">
     <value>Όλα</value>
@@ -281,9 +235,6 @@
   </data>
   <data name="SelectTheme" xml:space="preserve">
     <value>Επιλέξτε θέμα</value>
-  </data>
-  <data name="Serres" xml:space="preserve">
-    <value>Σέρρες</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Ρυθμίσεις</value>
@@ -298,9 +249,6 @@
   <data name="Theme" xml:space="preserve">
     <value>Λειτουργία</value>
   </data>
-  <data name="Thessaloniki" xml:space="preserve">
-    <value>Θεσσαλονίκη</value>
-  </data>
   <data name="TimeSpanError" xml:space="preserve">
     <value>Μ/Δ</value>
   </data>
@@ -309,8 +257,5 @@
   </data>
   <data name="Useful" xml:space="preserve">
     <value>Χρήσιμα</value>
-  </data>
-  <data name="WhatToDo" xml:space="preserve">
-    <value>Τι να κάνετε</value>
   </data>
 </root>

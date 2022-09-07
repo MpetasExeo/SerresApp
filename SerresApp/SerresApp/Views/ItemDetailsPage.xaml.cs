@@ -19,6 +19,13 @@ namespace SerresApp.Views
             base.OnAppearing();
             ItemDetailsViewModel vm = this.BindingContext as ItemDetailsViewModel;
             vm.Load();
+
+            detailContainer.FadeTo(1 , 200 , Easing.CubicInOut);
+            detailContainer.TranslateTo(0 , 0 , 200 , Easing.CubicInOut);
+
+            descriptionContainer.FadeTo(1 , 350 , Easing.CubicInOut);
+            descriptionContainer.TranslateTo(0 , 0 , 350 , Easing.CubicInOut);
+
         }
     }
 }

@@ -3,17 +3,20 @@
     x:Class="SerresApp.LazyTabsViews.HomeView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UIElements="clr-namespace:SerresApp.UIControls"
     xmlns:customViews="clr-namespace:Sharpnado.TaskLoaderView;assembly=Sharpnado.TaskLoaderView"
     xmlns:dxcv="clr-namespace:DevExpress.XamarinForms.CollectionView;assembly=DevExpress.XamarinForms.CollectionView"
     xmlns:dxe="clr-namespace:DevExpress.XamarinForms.Editors;assembly=DevExpress.XamarinForms.Editors"
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:helpers="clr-namespace:SerresApp.Helpers"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:models="clr-namespace:SerresApp.Models"
-    xmlns:UIElements="clr-namespace:SerresApp.UIControls"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:vm="clr-namespace:SerresApp.ViewModels"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource Background}}"
-    x:DataType="vm:HomeViewViewModel">
+    x:DataType="vm:HomeViewViewModel"
+    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
+                                      Light={StaticResource Background}}">
 
     <ContentView.Resources>
         <Style
@@ -104,87 +107,39 @@
                         BitmapOptimizations="True"
                         CacheDuration="1"
                         DownsampleToViewSize="True"
-                        Source="alexpoli.png" />
-
-                    <!--#region FirstSlider-->
-                    <Grid
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        ColumnDefinitions="40,.4*,3*"
-                        Padding="12,6,0,12"
-                        RowDefinitions="30,70">
+                        Source="img018.jpg" />
 
 
-                        <Label
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="3"
-                            FontAttributes="Bold"
-                            FontFamily="Dela"
-                            FontSize="18"
-                            Text="Τι να κάνετε"
-                            TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}"
-                            VerticalOptions="Start" />
-                        <!--<Label
-                            Grid.Row="1"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="2"
-                            FontFamily="Inter"
-                            FontSize="16"
-                            Text="Όλα"
-                            TextColor="{AppThemeBinding Dark={StaticResource DarkInfo}, Light={StaticResource Info}}"
-                            VerticalOptions="Center" />
-
-                        <dxe:ChoiceChipGroup
-                            x:Name="vertasdsadicasdsaalchoiceChipGroup"
-                            Grid.Row="1"
-                            Grid.Column="2"
-                            ChipCheckIconColor="Transparent"
-                            ChipPressedCheckIconColor="Transparent"
-                            ChipUseRippleEffect="True"
-                            DisplayMember="Text"
-                            HorizontalOptions="End"
-                            HorizontalSpacing="8"
-                            IconMember="Image"
-                            IsMultiline="False"
-                            Padding="0"
-                            Style="{StaticResource ChipStyle}"
-                            VerticalOptions="Center">
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Προτεινόμενα"
-                                VerticalOptions="Center" />
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Δημοφιλή"
-                                VerticalOptions="Center" />
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Πλησιέστερα"
-                                VerticalOptions="Center" />
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Top 10"
+                    <Grid Grid.Row="1" Margin="{OnPlatform Android='10,15,10,0', iOS='0,20,20,0'}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                            <Label
+                                Margin="0"
+                                FontFamily="Montserrat"
+                                FontSize="20"
+                                HorizontalOptions="Start"
+                                Text="{helpers:Translate NatureAndWildlife}"
+                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                            Light={StaticResource Primary}}"
                                 VerticalOptions="Center" />
 
-                        </dxe:ChoiceChipGroup>-->
+                        </StackLayout>
 
                     </Grid>
 
                     <dxcv:DXCollectionView
                         Grid.Row="2"
                         Grid.Column="0"
-                        IsRefreshing="{Binding IsRefreshingExperiences,Mode=TwoWay}"
-                        IsLoadMoreEnabled="{Binding CanLoadMoreExperiences}"
-                        LoadMoreCommand="{Binding LoadMoreExperiencesCommand}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
                                                           Light={StaticResource Background}}"
-                        ItemSize="240"           
+                        IsLoadMoreEnabled="{Binding CanLoadMoreExperiences}"
+                        IsRefreshing="{Binding IsRefreshingExperiences, Mode=TwoWay}"
+                        ItemSize="240"
                         ItemSpacing="0"
+                        ItemsSource="{Binding Nature}"
+                        LoadMoreCommand="{Binding LoadMoreExperiencesCommand}"
                         Orientation="Horizontal"
                         ReduceSizeToContent="True"
-                        VerticalOptions="Center"                        
-                        ItemsSource="{Binding POIS}">
+                        VerticalOptions="Center">
 
                         <dxcv:DXCollectionView.ItemTemplate>
                             <DataTemplate x:DataType="models:POISlim">
@@ -209,107 +164,49 @@
                                         xct:TouchEffect.PressedOpacity="{AppThemeBinding Dark=0.925,
                                                                                          Light=0.85}"
                                         POIDistance="{Binding DistanceFromUser}"
-                                        POIShowDistance="{Binding ShowDistance}"
                                         POIImage="{Binding ImageUrl}"
                                         POIName="{Binding Title}"
-                                        POIRegion="{Binding Category}" />
+                                        POIRegion="{Binding Category}"
+                                        POIShowDistance="{Binding ShowDistance}" />
                                 </Frame>
                             </DataTemplate>
                         </dxcv:DXCollectionView.ItemTemplate>
-
                         <!--  Sort items.  -->
-                        <!--<dxcv:DXCollectionView.SortDescriptions>
+                        <dxcv:DXCollectionView.SortDescriptions>
                             <dxcv:SortDescription FieldName="Distance" SortOrder="Ascending" />
-                        </dxcv:DXCollectionView.SortDescriptions>-->
+                        </dxcv:DXCollectionView.SortDescriptions>
                     </dxcv:DXCollectionView>
 
-
-                    <!--<Grid
-                        Grid.Row="3"
-                        Grid.Column="0"
-                        ColumnDefinitions="40,.4*,3*"
-                        Padding="12,6,0,12"
-                        RowDefinitions="30,70">
-
-
-                        <Label
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="3"
-                            FontAttributes="Bold"
-                            FontFamily="Dela"
-                            FontSize="18"
-                            Text="Τι να δείτε"
-                            TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}"
-                            VerticalOptions="Start" />
-                        --><!--<Label
-                            Grid.Row="1"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="2"
-                            FontFamily="Inter"
-                            FontSize="16"
-                            Text="Όλα"
-                            TextColor="{AppThemeBinding Dark={StaticResource DarkInfo}, Light={StaticResource Info}}"
-                            VerticalOptions="Center" />
-
-                        <dxe:ChoiceChipGroup
-                            x:Name="vertasdsadicalchoiceChipGroup"
-                            Grid.Row="1"
-                            Grid.Column="2"
-                            ChipCheckIconColor="Transparent"
-                            ChipPressedCheckIconColor="Transparent"
-                            ChipUseRippleEffect="True"
-                            DisplayMember="Text"
-                            HorizontalOptions="End"
-                            HorizontalSpacing="8"
-                            IconMember="Image"
-                            IsMultiline="False"
-                            Padding="0"
-                            Style="{StaticResource ChipStyle}"
-                            VerticalOptions="Center">
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Προτεινόμενα"
-                                VerticalOptions="Center" />
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Δημοφιλή"
-                                VerticalOptions="Center" />
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Πλησιέστερα"
-                                VerticalOptions="Center" />
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Top 10"
+                    <Grid Grid.Row="3" Margin="{OnPlatform Android='10,15,10,0', iOS='0,20,20,0'}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                            <Label
+                                Margin="0"
+                                FontFamily="Montserrat"
+                                FontSize="20"
+                                HorizontalOptions="Start"
+                                Text="{helpers:Translate TangibleCulturalHeritage}"
+                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                            Light={StaticResource Primary}}"
                                 VerticalOptions="Center" />
 
-                            -->
-                        <!--
-                            IsSelected="{Binding BasicCategoriesEnabled}"
-                            TapCommand="{Binding BasicCategoriesSelectedCommand}"
-                            IsVisible="{Binding SecondaryOptionsEnabled}"
-                            TapCommand="{Binding SecondaryCategoriesSelectedCommand}"
-                        -->
-                        <!--
+                        </StackLayout>
 
-                        </dxe:ChoiceChipGroup>--><!--
                     </Grid>
 
                     <dxcv:DXCollectionView
                         Grid.Row="4"
                         Grid.Column="0"
-                        IsRefreshing="{Binding IsRefreshingHighlights,Mode=TwoWay}"
-                        IsLoadMoreEnabled="{Binding CanLoadMoreHighlights}"
-                        LoadMoreCommand="{Binding LoadMoreHighlightsCommand}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
                                                           Light={StaticResource Background}}"
-                        ItemSize="240"           
+                        IsLoadMoreEnabled="{Binding CanLoadMoreExperiences}"
+                        IsRefreshing="{Binding IsRefreshingExperiences, Mode=TwoWay}"
+                        ItemSize="240"
                         ItemSpacing="0"
+                        ItemsSource="{Binding Tangible}"
+                        LoadMoreCommand="{Binding LoadMoreExperiencesCommand}"
                         Orientation="Horizontal"
                         ReduceSizeToContent="True"
-                        VerticalOptions="Center"                        
-                        ItemsSource="{Binding Highlights}">
+                        VerticalOptions="Center">
 
                         <dxcv:DXCollectionView.ItemTemplate>
                             <DataTemplate x:DataType="models:POISlim">
@@ -335,111 +232,48 @@
                                                                                          Light=0.85}"
                                         POIDistance="{Binding DistanceFromUser}"
                                         POIImage="{Binding ImageUrl}"
-                                        POIShowDistance="{Binding ShowDistance}"
                                         POIName="{Binding Title}"
-                                        POIRegion="{Binding Category}" />
+                                        POIRegion="{Binding Category}"
+                                        POIShowDistance="{Binding ShowDistance}" />
                                 </Frame>
                             </DataTemplate>
                         </dxcv:DXCollectionView.ItemTemplate>
-
-                        --><!--  Sort items.  -->
-                        <!--<dxcv:DXCollectionView.SortDescriptions>
+                        <!--  Sort items.  -->
+                        <dxcv:DXCollectionView.SortDescriptions>
                             <dxcv:SortDescription FieldName="Distance" SortOrder="Ascending" />
-                        </dxcv:DXCollectionView.SortDescriptions>--><!--
+                        </dxcv:DXCollectionView.SortDescriptions>
                     </dxcv:DXCollectionView>
 
-
-                    <Grid
-                        Grid.Row="5"
-                        Grid.Column="0"
-                        ColumnDefinitions="40,.4*,3*"
-                        Padding="12,6,0,12"
-                        RowDefinitions="30,70">
-
-
-                        <Label
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="3"
-                            FontAttributes="Bold"
-                            FontFamily="Dela"
-                            FontSize="18"
-                            Text="Χρήσιμα"
-                            TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}"
-                            VerticalOptions="Start" />
-                        --><!--<Label
-                            Grid.Row="1"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="2"
-                            FontFamily="Inter"
-                            FontSize="16"
-                            Text="Όλα"
-                            TextColor="{AppThemeBinding Dark={StaticResource DarkInfo}, Light={StaticResource Info}}"
-                            VerticalOptions="Center" />
-
-                        <dxe:ChoiceChipGroup
-                            x:Name="lchoiceChipGroup"
-                            Grid.Row="1"
-                            Grid.Column="2"
-                            ChipCheckIconColor="Transparent"
-                            ChipPressedCheckIconColor="Transparent"
-                            ChipUseRippleEffect="True"
-                            DisplayMember="Text"
-                            HorizontalOptions="End"
-                            HorizontalSpacing="8"
-                            IconMember="Image"
-                            IsMultiline="False"
-                            Padding="0"
-                            Style="{StaticResource ChipStyle}"
-                            VerticalOptions="Center">
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Προτεινόμενα"
-                                VerticalOptions="Center" />
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Δημοφιλή"
-                                VerticalOptions="Center" />
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Πλησιέστερα"
-                                VerticalOptions="Center" />
-                            <dxe:Chip
-                                TapCommandParameter="{Binding .}"
-                                Text="Top 10"
+                    <Grid Grid.Row="5" Margin="{OnPlatform Android='10,15,10,0', iOS='0,20,20,0'}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                            <Label
+                                Margin="0"
+                                FontFamily="Montserrat"
+                                FontSize="20"
+                                HorizontalOptions="Start"
+                                Text="{helpers:Translate IntangibleCulturalHeritage}"
+                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                            Light={StaticResource Primary}}"
                                 VerticalOptions="Center" />
 
-                            --><!--
-                            IsSelected="{Binding BasicCategoriesEnabled}"
-                            TapCommand="{Binding BasicCategoriesSelectedCommand}"
-                            IsVisible="{Binding SecondaryOptionsEnabled}"
-                            TapCommand="{Binding SecondaryCategoriesSelectedCommand}"
-                        --><!--
-
-                        </dxe:ChoiceChipGroup>--><!--
-
-
-
-
-
-
+                        </StackLayout>
 
                     </Grid>
 
                     <dxcv:DXCollectionView
                         Grid.Row="6"
                         Grid.Column="0"
-                        IsRefreshing="{Binding IsRefreshingUseful,Mode=TwoWay}"
-                        IsLoadMoreEnabled="{Binding CanLoadMoreUseful}"
-                        LoadMoreCommand="{Binding LoadMoreUsefulCommand}"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
                                                           Light={StaticResource Background}}"
-                        ItemSize="240"           
+                        IsLoadMoreEnabled="{Binding CanLoadMoreExperiences}"
+                        IsRefreshing="{Binding IsRefreshingExperiences, Mode=TwoWay}"
+                        ItemSize="240"
                         ItemSpacing="0"
+                        ItemsSource="{Binding Intangible}"
+                        LoadMoreCommand="{Binding LoadMoreExperiencesCommand}"
                         Orientation="Horizontal"
                         ReduceSizeToContent="True"
-                        VerticalOptions="Center"                        
-                        ItemsSource="{Binding Useful}">
+                        VerticalOptions="Center">
 
                         <dxcv:DXCollectionView.ItemTemplate>
                             <DataTemplate x:DataType="models:POISlim">
@@ -465,19 +299,17 @@
                                                                                          Light=0.85}"
                                         POIDistance="{Binding DistanceFromUser}"
                                         POIImage="{Binding ImageUrl}"
-                                        POIShowDistance="{Binding ShowDistance}"
                                         POIName="{Binding Title}"
-                                        POIRegion="{Binding Category}" />
+                                        POIRegion="{Binding Category}"
+                                        POIShowDistance="{Binding ShowDistance}" />
                                 </Frame>
                             </DataTemplate>
                         </dxcv:DXCollectionView.ItemTemplate>
-
-                        --><!--  Sort items.  -->
-                        <!--<dxcv:DXCollectionView.SortDescriptions>
+                        <!--  Sort items.  -->
+                        <dxcv:DXCollectionView.SortDescriptions>
                             <dxcv:SortDescription FieldName="Distance" SortOrder="Ascending" />
-                        </dxcv:DXCollectionView.SortDescriptions>--><!--
-                    </dxcv:DXCollectionView>-->
-
+                        </dxcv:DXCollectionView.SortDescriptions>
+                    </dxcv:DXCollectionView>
 
                 </Grid>
             </ScrollView>
@@ -485,3 +317,78 @@
         </customViews:TaskLoaderView>
     </ContentView.Content>
 </ContentView>
+
+
+
+
+<!--<pancake:PancakeView
+                            Padding="15"
+                            BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
+                                                              Light={StaticResource PrimaryOpacity}}"
+                            CornerRadius="10"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start">
+                            <pancake:PancakeView.Border>
+                                <pancake:Border Thickness="2" Color="{AppThemeBinding Dark={StaticResource DarkAccent}, Light={StaticResource DarkAccent}}" />
+                            </pancake:PancakeView.Border>
+                            <Grid RowDefinitions="auto, auto, auto">
+                                <Label
+                                    Grid.Row="0"
+                                    FontSize="Small"
+                                    Text="{helpers:Translate NatureAndWildlife}"
+                                    TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                Light={StaticResource Primary}}" />
+                                <Label
+                                    Grid.Row="1"
+                                    Margin="0,0,0,2"
+                                    VerticalTextAlignment="Center">-->
+<!--<Label.FormattedText>
+                                        <FormattedString>
+                                            <Span
+                                                FontFamily="Montserrat"
+                                                FontSize="{OnPlatform Android='14',
+                                                                      iOS='18'}"
+                                                Text="{helpers:Translate Apply}"
+                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                            Light={StaticResource Primary}}" />
+                                            <Span
+                                                FontFamily="Montserrat"
+                                                FontSize="{OnPlatform Android='18',
+                                                                      iOS='24'}"
+                                                Text=" 70% "
+                                                TextColor="#554f20" />
+                                            <Span
+                                                FontFamily="Montserrat"
+                                                FontSize="{OnPlatform Android='14',
+                                                                      iOS='18'}"
+                                                Text="Off"
+                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                            Light={StaticResource Primary}}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>-->
+<!--
+                                </Label>
+                                <pancake:PancakeView
+                                    Grid.Row="2"
+                                    Padding="15,5"
+                                    BackgroundColor="#cffee2"
+                                    CornerRadius="4"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center">
+                                    <Label
+                                        FontSize="8"
+                                        HorizontalOptions="Center"
+                                        Text="SHOP NOW"
+                                        VerticalOptions="Center" />
+                                </pancake:PancakeView>
+                            </Grid>
+                        </pancake:PancakeView>
+                        <Image
+                            Margin="{OnPlatform Android='0,-45,-5,0',
+                                                iOS='0,-90,-60,0'}"
+                            HeightRequest="{OnPlatform Android='120',
+                                                       iOS='235'}"
+                            HorizontalOptions="End"
+                            Source="tree4.png"
+                            WidthRequest="{OnPlatform Android='160',
+                                                      iOS='290'}" />-->

@@ -237,7 +237,8 @@ namespace SerresApp.ViewModels
         {
             GreekCitiesService = new GreekCitiesService();
             WeatherService = new WeatherService();
-            Categories = Models.Categories.CategoriesList;
+            var categories = new Categories();
+            Categories = new List<Category>(categories.CategoriesList);
         }
 
         private async Task MapInitialization()
@@ -342,14 +343,20 @@ namespace SerresApp.ViewModels
                 var lat = poi.Latitude;
                 var lng = poi.Longitude;
 
-                Pin pin = new Pin() {
-                    Position = new Position((double)lat, (double)lng),
-                    Label = poi.Title,
-                    Type = PinType.Place,
-                    Icon = BitmapDescriptorFactory.FromBundle( $"c{ poi.CategoryId.ToString()}.png")
-                };
+                if (lat != null & lng != null)
+                {
 
-                Pins.Add(pin);
+
+                    Pin pin = new Pin()
+                    {
+                        Position = new Position((double)lat , (double)lng) ,
+                        Label = poi.Title ,
+                        Type = PinType.Place ,
+                        Icon = BitmapDescriptorFactory.FromBundle("c0.png")
+                    };
+                    Pins.Add(pin);
+
+                }
             }
 
             ThreadPool.QueueUserWorkItem(o => AddPinsToMap());

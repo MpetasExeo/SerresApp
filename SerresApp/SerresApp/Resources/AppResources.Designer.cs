@@ -61,43 +61,6 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Added to What to do Favourites.
-        /// </summary>
-        internal static string AddedToWhatToDoFavourites {
-            get {
-                return ResourceManager.GetString("AddedToWhatToDoFavourites", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you have added some?.
-        /// </summary>
-        internal static string AddSomeFavourites {
-            get {
-                return ResourceManager.GetString("AddSomeFavourites", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Add to
-        ///favourites.
-        /// </summary>
-        internal static string AddToFavourites {
-            get {
-                return ResourceManager.GetString("AddToFavourites", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Agion Oros.
-        /// </summary>
-        internal static string AgionOros {
-            get {
-                return ResourceManager.GetString("AgionOros", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Internet connection is required in order to continue.
         /// </summary>
         internal static string ApplicationCannotStart {
@@ -112,33 +75,6 @@ namespace SerresApp.Resources {
         internal static string Apply {
             get {
                 return ResourceManager.GetString("Apply", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Find out about nearby destinations using augmented reality technology..
-        /// </summary>
-        internal static string ARContent {
-            get {
-                return ResourceManager.GetString("ARContent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Augmented Reality.
-        /// </summary>
-        internal static string ARTitle {
-            get {
-                return ResourceManager.GetString("ARTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Art &amp; Life.
-        /// </summary>
-        internal static string ArtLife {
-            get {
-                return ResourceManager.GetString("ArtLife", resourceCulture);
             }
         }
         
@@ -179,15 +115,6 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protocols for arrivals in Greece.
-        /// </summary>
-        internal static string CovidProtocols {
-            get {
-                return ResourceManager.GetString("CovidProtocols", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Dark.
         /// </summary>
         internal static string Dark {
@@ -215,29 +142,11 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deutsch.
-        /// </summary>
-        internal static string Deutsch {
-            get {
-                return ResourceManager.GetString("Deutsch", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to For full access to the features of the application, activate the location of the device..
         /// </summary>
         internal static string DeviceLocationNA {
             get {
                 return ResourceManager.GetString("DeviceLocationNA", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Discover.
-        /// </summary>
-        internal static string Discover {
-            get {
-                return ResourceManager.GetString("Discover", resourceCulture);
             }
         }
         
@@ -256,15 +165,6 @@ namespace SerresApp.Resources {
         internal static string Done {
             get {
                 return ResourceManager.GetString("Done", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Do something.
-        /// </summary>
-        internal static string DoSomething {
-            get {
-                return ResourceManager.GetString("DoSomething", resourceCulture);
             }
         }
         
@@ -323,38 +223,11 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gastronomy.
-        /// </summary>
-        internal static string Gastronomy {
-            get {
-                return ResourceManager.GetString("Gastronomy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to GREAT.
-        /// </summary>
-        internal static string Great {
-            get {
-                return ResourceManager.GetString("Great", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Greek.
         /// </summary>
         internal static string Greek {
             get {
                 return ResourceManager.GetString("Greek", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Halkidiki.
-        /// </summary>
-        internal static string Halkidiki {
-            get {
-                return ResourceManager.GetString("Halkidiki", resourceCulture);
             }
         }
         
@@ -377,47 +250,11 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Imathia.
-        /// </summary>
-        internal static string Imathia {
-            get {
-                return ResourceManager.GetString("Imathia", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Inangible Cultural Heritage.
         /// </summary>
-        internal static string InangibleCulturalHeritage {
+        internal static string IntangibleCulturalHeritage {
             get {
-                return ResourceManager.GetString("InangibleCulturalHeritage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Inspiration.
-        /// </summary>
-        internal static string Inspiration {
-            get {
-                return ResourceManager.GetString("Inspiration", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to experiences.
-        /// </summary>
-        internal static string Items {
-            get {
-                return ResourceManager.GetString("Items", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kilkis.
-        /// </summary>
-        internal static string Kilkis {
-            get {
-                return ResourceManager.GetString("Kilkis", resourceCulture);
+                return ResourceManager.GetString("IntangibleCulturalHeritage", resourceCulture);
             }
         }
         
@@ -485,24 +322,6 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to List.
-        /// </summary>
-        internal static string List {
-            get {
-                return ResourceManager.GetString("List", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing so [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Lorem {
-            get {
-                return ResourceManager.GetString("Lorem", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Map.
         /// </summary>
         internal static string Map {
@@ -553,6 +372,15 @@ namespace SerresApp.Resources {
         internal static string Nearby {
             get {
                 return ResourceManager.GetString("Nearby", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have not added anything to your favourites yet..
+        /// </summary>
+        internal static string NoFavourites {
+            get {
+                return ResourceManager.GetString("NoFavourites", resourceCulture);
             }
         }
         
@@ -665,51 +493,6 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pella.
-        /// </summary>
-        internal static string Pella {
-            get {
-                return ResourceManager.GetString("Pella", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pieria.
-        /// </summary>
-        internal static string Pieria {
-            get {
-                return ResourceManager.GetString("Pieria", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Places to go.
-        /// </summary>
-        internal static string PlacesToGo {
-            get {
-                return ResourceManager.GetString("PlacesToGo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Culture.
-        /// </summary>
-        internal static string Politismos {
-            get {
-                return ResourceManager.GetString("Politismos", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Regions.
-        /// </summary>
-        internal static string Regions {
-            get {
-                return ResourceManager.GetString("Regions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Removed from favourites.
         /// </summary>
         internal static string RemovedFromFavourites {
@@ -719,30 +502,11 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove from
-        ///favourites.
-        /// </summary>
-        internal static string RemoveFromFavourites {
-            get {
-                return ResourceManager.GetString("RemoveFromFavourites", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         internal static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sea and sun.
-        /// </summary>
-        internal static string SeaAndSun {
-            get {
-                return ResourceManager.GetString("SeaAndSun", resourceCulture);
             }
         }
         
@@ -780,15 +544,6 @@ namespace SerresApp.Resources {
         internal static string SelectTheme {
             get {
                 return ResourceManager.GetString("SelectTheme", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Serres.
-        /// </summary>
-        internal static string Serres {
-            get {
-                return ResourceManager.GetString("Serres", resourceCulture);
             }
         }
         
@@ -843,15 +598,6 @@ namespace SerresApp.Resources {
         internal static string TimeSpanError {
             get {
                 return ResourceManager.GetString("TimeSpanError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tourist Guide.
-        /// </summary>
-        internal static string TouristGuide {
-            get {
-                return ResourceManager.GetString("TouristGuide", resourceCulture);
             }
         }
         

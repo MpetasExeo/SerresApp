@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using System.Linq;
+using SerresApp.Resources;
+using System.IO;
 
 namespace SerresApp.Models
 {
@@ -23,8 +25,24 @@ namespace SerresApp.Models
         [JsonProperty("Title")]
         public string Title { get; set; }
 
+        [JsonProperty("ContactInfo")]
+        public ContactInfo ContactInfo { get; set; }
 
-        public string ImageUrl { get { return $"img{CategoryId}{Id}.jpg"; } }
+        public bool HasImage
+        {
+            get
+            {
+                return DependencyService.Get<IImageChecker>().DoesImageExist($"img{CategoryId}_{Id}.jpg");
+            }
+        }
+
+        public string ImageUrl
+        {
+            get
+            {
+                return HasImage ? $"img{CategoryId}_{Id}.jpg" : "gradientimg.png";
+            }
+        }
 
         [JsonProperty(propertyName: "Content")]
         public string Content { get; set; }
@@ -41,7 +59,17 @@ namespace SerresApp.Models
         {
             get
             {
-                return Models.Categories.CategoriesList.Where(c => c.Id == CategoryId).Select(c => c.Text).FirstOrDefault();
+                switch (CategoryId)
+                {
+                    case 0:
+                        return AppResources.NatureAndWildlife;
+                    case 1:
+                        return AppResources.TangibleCulturalHeritage;
+                    case 2:
+                        return AppResources.IntangibleCulturalHeritage;
+                    default:
+                        return string.Empty;
+                };
             }
         }
         public bool ShowDistance
@@ -58,6 +86,38 @@ namespace SerresApp.Models
         public string DistanceFromUser
         {
             get => Distance > 1500 ? "∞" : Distance.ToString();
+        }
+
+        public bool ShowContactInfo
+        {
+            get
+            {
+                return HasTelephone|| HasEmail || HasAddress ;
+            }
+        }
+
+        public bool HasEmail
+        {
+            get
+            {
+                return ContactInfo.Email != string.Empty ;
+            }
+        }
+
+        public bool HasAddress
+        {
+            get
+            {
+                return ContactInfo.Address != string.Empty;
+            }
+        }
+
+        public bool HasTelephone
+        {
+            get
+            {
+                return ContactInfo.Tel != string.Empty;
+            }
         }
 
         public double CalculateDistanceFromUser()
@@ -87,6 +147,10 @@ namespace SerresApp.Models
             var pois = await contentService.GetGreekCities();
 
             var poi = pois.Where(x => x.Id == this.Id).FirstOrDefault().Clone<POISlim , POI>();
+            if (ContactInfo != null)
+            {
+                poi.ContactInfo = this.ContactInfo;
+            }
 
             ItemDetailsViewModel itemDetailsViewModel = new ItemDetailsViewModel(poi);
             detailsPage.BindingContext = itemDetailsViewModel;

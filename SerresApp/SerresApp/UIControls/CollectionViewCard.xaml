@@ -11,9 +11,10 @@
     xmlns:uicontrols="clr-namespace:SerresApp.UIControls"
     xmlns:vm="clr-namespace:SerresApp.ViewModels"
     xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.Effects;assembly=Xamarin.CommunityToolkit"
-    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource Background}}"
-    Shell.NavBarIsVisible="False"
-    x:DataType="uicontrols:CollectionViewCard">
+    x:DataType="uicontrols:CollectionViewCard"
+    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
+                                      Light={StaticResource Background}}"
+    Shell.NavBarIsVisible="False">
     <ContentView.Content>
 
         <!--<pv:PancakeView.Shadow>
@@ -39,15 +40,15 @@
                 x:Name="POIImageUri"
                 Grid.RowSpan="3"
                 Aspect="AspectFill"
-                Source="{Binding POIImage, TargetNullValue='gradient.png'}"/>
+                Source="{Binding POIImage, TargetNullValue='c0.png'}" />
 
             <pv:PancakeView
                 Grid.Row="2"
+                Padding="2,0,2,0"
                 BackgroundGradientEndPoint="1,0"
                 BackgroundGradientStartPoint="1,1"
                 CornerRadius="1"
                 HorizontalOptions="FillAndExpand"
-                Padding="2,0,2,0"
                 TranslationY="0"
                 VerticalOptions="Fill">
                 <pv:PancakeView.BackgroundGradientStops>
@@ -59,8 +60,8 @@
 
                 <Grid
                     Grid.Row="1"
-                    ColumnDefinitions="*,Auto"
                     Padding="12,16"
+                    ColumnDefinitions="*,Auto"
                     RowDefinitions="24,30"
                     RowSpacing="6">
 
@@ -73,21 +74,21 @@
 
                         <Label
                             x:Name="POIDistanceFromUserLabel"
+                            Padding="0"
                             FontFamily="Roboto"
                             FontSize="12"
                             HorizontalOptions="StartAndExpand"
-                            Padding="0"
                             IsVisible="{Binding POIShowDistance}"
                             Text="{Binding POIDistance}"
                             TextColor="WhiteSmoke"
                             VerticalOptions="Center" />
                         <Label
                             x:Name="POIDistanceIndicatorLabel"
+                            Padding="0"
                             FontFamily="Roboto"
                             FontSize="12"
                             HorizontalOptions="StartAndExpand"
                             IsVisible="{Binding POIShowDistance}"
-                            Padding="0"
                             Text="{helpers:Translate KilometersShort}"
                             TextColor="WhiteSmoke"
                             VerticalOptions="Center" />
@@ -99,6 +100,8 @@
                         Grid.Column="0"
                         FontFamily="Roboto"
                         FontSize="Small"
+                        HorizontalOptions="FillAndExpand"
+                        LineBreakMode="TailTruncation"
                         Text="{Binding POIRegion}"
                         TextColor="WhiteSmoke"
                         VerticalOptions="Start" />

@@ -38,22 +38,23 @@
 
         <Style x:Key="FavoriteLabel" TargetType="Label">
 
-            <Setter Property="Text" Value="{x:Static fontAwesome:FontAwesomeIcons.Star}"/>
+            <Setter Property="Text" Value="{x:Static fontAwesome:FontAwesomeIcons.Star}" />
 
             <Style.Triggers>
-                <DataTrigger TargetType="Label"
-                                         Binding="{Binding IsFavorite}"
-                                         Value="True">
-                    <Setter Property="FontSize" Value="24"></Setter>
-                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkWarning},Light={StaticResource Warning}}"/>
+                <DataTrigger
+                    Binding="{Binding IsFavorite}"
+                    TargetType="Label"
+                    Value="True">
+                    <Setter Property="FontSize" Value="24" />
+                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkWarning}, Light={StaticResource Warning}}" />
                 </DataTrigger>
-                <DataTrigger TargetType="Label"
-                             
-                                         Binding="{Binding IsFavorite}"
-                                         Value="False">
+                <DataTrigger
+                    Binding="{Binding IsFavorite}"
+                    TargetType="Label"
+                    Value="False">
 
-                    <Setter Property="FontSize" Value="18"></Setter>
-                    <Setter Property="TextColor" Value="#8cE2E2E2"/>
+                    <Setter Property="FontSize" Value="18" />
+                    <Setter Property="TextColor" Value="#8cE2E2E2" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -130,7 +131,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.RowSpan="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="360" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <!--  HEADER BACKGROUND  -->
@@ -142,53 +143,16 @@
             <!--  HEADER CAROUSEL  -->
 
             <Grid
-                Margin="0,-42,0,0"
+                Margin="0,0,0,0"
                 Padding="0"
-                RowDefinitions="*,Auto">
-
-
-                <!--<CarouselView
-                    x:Name="Carousel"
-                    Grid.Row="0"
-                    HorizontalOptions="FillAndExpand"
-                    IndicatorView="indicatorView"
-                    ItemsSource="{Binding Images}"
-                    Position="{Binding CurrentImage, Mode=TwoWay}"
-                    TranslationY="{Binding RelativeScrollY, Source={x:Reference Scroll}, Converter={StaticResource ScrollValueConverter}, ConverterParameter='-5;0;200;false;0'}">
-                    <CarouselView.Behaviors>
-                        <anim:AnimateProgressDouble
-                            Maximum="180"
-                            Minimum="0"
-                            Progress="{Binding ScrollY, Source={x:Reference Scroll}}"
-                            TargetProperty="VisualElement.Opacity"
-                            From="1"
-                            To="0" />
-                    </CarouselView.Behaviors>
-                    <CarouselView.ItemsLayout>
-                        <LinearItemsLayout
-                            Orientation="Horizontal"
-                            SnapPointsAlignment="Start"
-                            SnapPointsType="Mandatory" />
-                    </CarouselView.ItemsLayout>
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate x:DataType="models:CustomImage">
-                            <Image
-                                Aspect="AspectFill"
-                                HorizontalOptions="FillAndExpand"
-                                Source="{Binding ImageUrl}"
-                                VerticalOptions="FillAndExpand"
-                                WidthRequest="420" />
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>-->
-
+                IsVisible="{Binding SelectedPOI.HasImage}"
+                RowDefinitions="Auto,Auto,Auto">
 
                 <Frame
                     x:Name="Carousel"
                     Grid.Row="0"
                     Padding="0"
-                    HorizontalOptions="FillAndExpand"
-                    TranslationY="{Binding RelativeScrollY, Source={x:Reference Scroll}, Converter={StaticResource ScrollValueConverter}, ConverterParameter='-5;0;200;false;0'}">
+                    HorizontalOptions="FillAndExpand">
                     <Frame.Behaviors>
                         <anim:AnimateProgressDouble
                             Maximum="180"
@@ -199,78 +163,71 @@
                             To="0" />
                     </Frame.Behaviors>
                     <Image
-                                Aspect="AspectFill"
-                                HorizontalOptions="FillAndExpand"
-                                Source="{Binding SelectedPOI.ImageUrl}"
-                                HeightRequest="420" />
+                        Aspect="AspectFill"
+                        HeightRequest="420"
+                        HorizontalOptions="FillAndExpand"
+                        Source="{Binding SelectedPOI.ImageUrl}" />
                 </Frame>
 
-
-                <pv:PancakeView
-                    Grid.Row="1"
-                    Margin="0,-46,0,0"
-                    BackgroundGradientEndPoint="0,1"
-                    BackgroundGradientStartPoint="0,0"
-                    CornerRadius="4,4,0,0"
-                    HorizontalOptions="FillAndExpand"
-                    TranslationY="{Binding RelativeScrollY, Source={x:Reference Scroll}, Converter={StaticResource ScrollValueConverter}, ConverterParameter='-5;0;200;false;0'}"
-                    VerticalOptions="FillAndExpand">
-                    <pv:PancakeView.Behaviors>
-                        <anim:AnimateProgressDouble
-                            Maximum="180"
-                            Minimum="0"
-                            Progress="{Binding ScrollY, Source={x:Reference Scroll}}"
-                            TargetProperty="VisualElement.Opacity"
-                            From="1"
-                            To="0" />
-                    </pv:PancakeView.Behaviors>
-                    <pv:PancakeView.BackgroundGradientStops>
-                        <pv:GradientStopCollection>
-                            <pv:GradientStop Offset="0.0" Color="#0f000000" />
-                            <pv:GradientStop Offset=".22" Color="#22000000" />
-                            <pv:GradientStop Offset="1.0" Color="#00000000" />
-                        </pv:GradientStopCollection>
-                    </pv:PancakeView.BackgroundGradientStops>
-                    <IndicatorView
-                        x:Name="indicatorView"
-                        Margin="0,8,0,8"
-                        HideSingle="True"
-                        HorizontalOptions="Center"
-                        IndicatorColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
-                                                         Light={StaticResource TransparentBackground}}"
-                        SelectedIndicatorColor="{AppThemeBinding Dark={StaticResource DarkAccent},
-                                                                 Light={StaticResource Accent}}"
-                        VerticalOptions="Start" />
-                </pv:PancakeView>
 
             </Grid>
 
             <RefreshView
                 Grid.RowSpan="2"
                 IsEnabled="False"
-                IsRefreshing="False"
-                >
+                IsRefreshing="False">
                 <ScrollView>
                     <ScrollView.Behaviors>
                         <anim:ScrollViewScrollBehavior x:Name="Scroll" />
                     </ScrollView.Behaviors>
-                    <StackLayout Margin="15,333,15,15" Spacing="20">
+
+
+
+                    <StackLayout Margin="{Binding Thickness}" Spacing="20">
+                        <StackLayout Margin="0" Padding="0,0,0,-14">
+                            <Frame
+                                Padding="8"
+                                xct:TouchEffect.Command="{Binding NavigateCommand}"
+                                xct:TouchEffect.NativeAnimation="True"
+                                xct:TouchEffect.PressedAnimationDuration="340"
+                                xct:TouchEffect.PressedAnimationEasing="SinInOut"
+                                xct:TouchEffect.PressedOpacity="0.85"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource DarkSecondary},
+                                                                  Light={StaticResource Accent}}"
+                                CornerRadius="12"
+                                HasShadow="False"
+                                HorizontalOptions="End"
+                                TranslationX="-2"
+                                VerticalOptions="Center">
+
+                                <Label
+                                    Margin="0"
+                                    Padding="0"
+                                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkSecondary},
+                                                                      Light={StaticResource Accent}}"
+                                    FontFamily="FASolid"
+                                    FontSize="22"
+                                    HorizontalOptions="End"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{x:Static fontAwesome:FontAwesomeIcons.Directions}"
+                                    TextColor="{AppThemeBinding Dark={StaticResource DarkAccent},
+                                                                Light={StaticResource Secondary}}"
+                                    VerticalOptions="Center"
+                                    VerticalTextAlignment="Center" />
+                            </Frame>
+                        </StackLayout>
 
                         <!--  THIRD SECTION  -->
-                        <Frame  IsVisible="{Binding ShowInfoPanel}" 
+                        <Frame
+                            x:Name="detailContainer"
                             Padding="0"
-                            HasShadow="True"
-                            xct:ShadowEffect.Color="{AppThemeBinding Dark={StaticResource Background},
-                                                                     Light=#000000}"
-                            xct:ShadowEffect.OffsetX="0"
-                            xct:ShadowEffect.OffsetY="0"
-                            xct:ShadowEffect.Opacity="0.8"
-                            xct:ShadowEffect.Radius="1"
                             BackgroundColor="{AppThemeBinding Dark={StaticResource DarkSecondary},
                                                               Light={StaticResource Secondary}}"
-                            CornerRadius="8"
+                            CornerRadius="4"
+                            HasShadow="False"
+                            IsVisible="{Binding ShowInfoPanel}"
                             Visual="Material">
-                            <Frame.Behaviors>
+                            <!--<Frame.Behaviors>
                                 <anim:AnimateProgressDouble
                                     Maximum="400"
                                     Minimum="320"
@@ -292,10 +249,15 @@
                                     TargetProperty="VisualElement.Opacity"
                                     From="0.9"
                                     To="0" />
-                            </Frame.Behaviors>
+                            </Frame.Behaviors>-->
 
 
-                            <Grid IsVisible="{Binding ShowInfoPanel}" xct:StateLayout.AnimateStateChanges="True" xct:StateLayout.CurrentState="{Binding MainState}">
+                            <Grid
+                                xct:StateLayout.AnimateStateChanges="True"
+                                xct:StateLayout.CurrentState="{Binding MainState}"
+                                IsVisible="{Binding ShowInfoPanel}"
+                                RowDefinitions="Auto">
+
                                 <xct:StateLayout.StateViews>
                                     <xct:StateView StateKey="Loading">
                                         <StackLayout x:Name="CurrentTemp">
@@ -330,6 +292,7 @@
                                     </xct:StateView>
                                 </xct:StateLayout.StateViews>
                                 <FlexLayout
+                                    Grid.Row="0"
                                     Margin="2"
                                     Padding="2"
                                     HorizontalOptions="FillAndExpand"
@@ -402,12 +365,20 @@
                                     </StackLayout>
 
                                 </FlexLayout>
+
                             </Grid>
                         </Frame>
 
+
+
+
+
+
                         <!--  SECOND SECTION  -->
                         <Frame
-                            Padding="8"
+                            x:Name="descriptionContainer"
+                            Margin="0,0,0,4"
+                            Padding="8,0,8,0"
                             d:IsVisible="false"
                             xct:ShadowEffect.Color="{AppThemeBinding Dark={StaticResource Background},
                                                                      Light=#000000}"
@@ -419,394 +390,142 @@
                                                               Light={StaticResource Secondary}}"
                             Visual="Material">
 
-                            <StackLayout>
-                                <!--<xct:StateLayout.StateViews>
-                                    <xct:StateView StateKey="Loading">
-                                        <StackLayout x:Name="DetailsLoader">
-                                            <StackLayout.Resources>
-                                                <anim:StoryBoard x:Key="LoadingDetails" Target="{x:Reference DetailsLoader}">
-                                                    <anim:FadeToAnimation Opacity="0.5" Duration="500" />
-                                                    <anim:FadeToAnimation Opacity="1" Duration="500" />
-                                                    <anim:FadeToAnimation Opacity="0.5" Duration="500" />
-                                                    <anim:FadeToAnimation Opacity="1" Duration="500" />
-                                                    <anim:FadeToAnimation Opacity="0.5" Duration="500" />
-                                                    <anim:FadeToAnimation Opacity="1" Duration="500" />
-                                                </anim:StoryBoard>
-                                            </StackLayout.Resources>
-                                            <StackLayout.Triggers>
-                                                <DataTrigger
-                                                    Binding="{Binding IsBusy}"
-                                                    TargetType="StackLayout"
-                                                    Value="true">
-                                                    <DataTrigger.EnterActions>
-                                                        <anim:BeginAnimation Animation="{StaticResource LoadingDetails}" />
-                                                    </DataTrigger.EnterActions>
+                            <StackLayout Padding="0,4">
+                                <StackLayout
+                                    Margin="0,4"
+                                    HorizontalOptions="FillAndExpand"
+                                    Orientation="Horizontal"
+                                    VerticalOptions="Center">
+                                    <Label
+                                        Margin="0,0,0,0"
+                                        FontAttributes="Bold"
+                                        FontFamily="RobotoBold"
+                                        FontSize="16"
+                                        HorizontalOptions="FillAndExpand"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding SelectedPOI.Title}"
+                                        TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                    Light={StaticResource Primary}}"
+                                        VerticalOptions="Center" />
 
-                                                </DataTrigger>
-                                            </StackLayout.Triggers>
-                                            <BoxView
-                                                BackgroundColor="{AppThemeBinding Dark=#15181f,
-                                                                                  Light={StaticResource LoadingGreyDark}}"
-                                                HeightRequest="24"
-                                                VerticalOptions="Center" />
-                                            <BoxView
-                                                Margin="1,-2"
-                                                BackgroundColor="{AppThemeBinding Dark={StaticResource Primary},
-                                                                                  Light={StaticResource DarkPrimary}}"
-                                                HeightRequest="1"
-                                                VerticalOptions="Center" />
-                                            <BoxView
-                                                BackgroundColor="{AppThemeBinding Dark=#15181f,
-                                                                                  Light={StaticResource LoadingGreyDark}}"
-                                                HeightRequest="48"
-                                                VerticalOptions="Center" />
-                                        </StackLayout>
-
-                                    </xct:StateView>
-                                </xct:StateLayout.StateViews>-->
+                                </StackLayout>
+                                <BoxView
+                                    Margin="-12,0"
+                                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkAccent},
+                                                                      Light={StaticResource Accent}}"
+                                    HeightRequest="0.75" />
                                 <Label
-                                    FontAttributes="Bold"
-                                    FontSize="16"
-                                    FontFamily="RobotoBold"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding SelectedPOI.Title}"
-                                    TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
-                                                                Light={StaticResource Primary}}" />
-                                <BoxView BackgroundColor="{AppThemeBinding Dark={StaticResource DarkAccent}, Light={StaticResource Accent}}" HeightRequest="1" />
-                                <Label
-                                    FontSize="16"
-                                    LineHeight="1.2"
                                     FontFamily="Merri"
+                                    FontSize="16"
+                                    HorizontalOptions="FillAndExpand"
+                                    HorizontalTextAlignment="Start"
+                                    LineHeight="1.2"
                                     Text="{Binding SelectedPOI.Content}"
                                     TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
                                                                 Light={StaticResource Primary}}" />
-                                <BoxView BackgroundColor="{AppThemeBinding Dark={StaticResource DarkAccent}, Light={StaticResource Accent}}" HeightRequest="1" />
+                                <BoxView
+                                    Margin="-12,4,-12,0"
+                                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkAccent},
+                                                                      Light={StaticResource Accent}}"
+                                    HeightRequest="0.75" />
 
                             </StackLayout>
                         </Frame>
 
-                        <!--  FUTURE  -->
-                        <!--#region Future-->
-                        <!--  FOURTH SECTION  -->
-                        <!--<Frame
+
+                        <Frame
+                            Margin="0,4,0,16"
+                            Padding="8"
                             d:IsVisible="false"
-                            BackgroundColor="{AppThemeBinding Dark={StaticResource LoadingGreyDark},
-                                                              Light={StaticResource LoadingGrey}}"
+                            xct:ShadowEffect.Color="{AppThemeBinding Dark={StaticResource Background},
+                                                                     Light=#000000}"
+                            xct:ShadowEffect.OffsetX="0"
+                            xct:ShadowEffect.OffsetY="0"
+                            xct:ShadowEffect.Opacity="0.8"
+                            xct:ShadowEffect.Radius="1"
+                            BackgroundColor="{AppThemeBinding Dark={StaticResource DarkSecondary},
+                                                              Light={StaticResource Secondary}}"
+                            HorizontalOptions="Fill"
+                            IsVisible="{Binding SelectedPOI.ShowContactInfo}"
                             Visual="Material">
 
-                            <StackLayout Spacing="15">
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontSize="18"
-                                    Text="Details" />
-                                <Label>
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="This item is sold " />
-                                            <Span FontAttributes="Bold" Text="As-Described. " />
-                                            <Span Text="It cannot be returned unless it arrives in a condition different from how it was described or photographed." />
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <BoxView BackgroundColor="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource DarkPrimary}}" HeightRequest="1" />
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="100" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
+                            <StackLayout Padding="4,4,4,4" HorizontalOptions="Fill">
+                                <StackLayout
+                                    HorizontalOptions="Fill"
+                                    IsVisible="{Binding SelectedPOI.HasAddress}"
+                                    Orientation="Horizontal"
+                                    Spacing="16">
                                     <Label
-                                        Grid.Column="0"
-                                        LineHeight="1.5"
-                                        Text="Make&#x0a;Model&#x0a;Condition"
-                                        TextColor="#666666" />
-                                    <Label
-                                        Grid.Column="1"
-                                        LineHeight="1.5"
-                                        TextColor="#1d1d1d">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="Cole Clark&#x0a;" TextColor="#FF9900" />
-                                                <Span Text="AN2EC-RDBL&#x0a;Mint" />
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                </Grid>
-                                <BoxView BackgroundColor="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource DarkPrimary}}" HeightRequest="1" />
-                                <Label Text="Listed 5 days ago" />
-                                <FlexLayout Wrap="Wrap">
-                                    <StackLayout
-                                        Margin="0,0,0,15"
-                                        FlexLayout.Basis="50%"
-                                        Orientation="Horizontal">
-                                        <Label
-                                            FontFamily="FontAwesome"
-                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Star}"
-                                            VerticalOptions="Center" />
-                                        <Label Text=" 0 Watchers" VerticalOptions="Center" />
-                                    </StackLayout>
-                                    <StackLayout
-                                        Margin="0,0,0,15"
-                                        FlexLayout.Basis="50%"
-                                        Orientation="Horizontal">
-                                        <Label
-                                            FontFamily="FontAwesome"
-                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Eye}"
-                                            VerticalOptions="Center" />
-                                        <Label Text=" 41 Views" VerticalOptions="Center" />
-                                    </StackLayout>
-                                    <StackLayout
-                                        Margin="0,0,0,15"
-                                        FlexLayout.Basis="50%"
-                                        Orientation="Horizontal">
-                                        <Label
-                                            FontFamily="FontAwesome"
-                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Acorn}"
-                                            VerticalOptions="Center" />
-                                        <Label Text=" 0 Offers" VerticalOptions="Center" />
-                                    </StackLayout>
-                                </FlexLayout>
-                                <BoxView BackgroundColor="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource DarkPrimary}}" HeightRequest="1" />
-                                <Label
-                                    HorizontalTextAlignment="Center"
-                                    Text="Accepted Payment Methods"
-                                    TextColor="#999999" />
-                                <FlexLayout JustifyContent="SpaceBetween">
-                                    <StackLayout>
-                                        <Label
-                                            FontFamily="FontAwesome"
-                                            FontSize="40"
-                                            HorizontalTextAlignment="Center"
-                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Acorn}" />
-                                        <Label
-                                            FontSize="10"
-                                            HorizontalTextAlignment="Center"
-                                            Text="&#x0a;Credit Card"
-                                            TextColor="#666666" />
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Label
-                                            FontFamily="FontAwesome"
-                                            FontSize="40"
-                                            HorizontalTextAlignment="Center"
-                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Acorn}" />
-                                        <Label
-                                            FontSize="10"
-                                            HorizontalTextAlignment="Center"
-                                            Text="&#x0a;Gift Card"
-                                            TextColor="#666666" />
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Label
-                                            FontFamily="FontAwesome"
-                                            FontSize="40"
-                                            HorizontalTextAlignment="Center"
-                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Acorn}" />
-                                        <Label
-                                            FontSize="10"
-                                            HorizontalTextAlignment="Center"
-                                            Text="&#x0a;PayPal"
-                                            TextColor="#666666" />
-                                    </StackLayout>
-                                    <StackLayout>
-                                        <Label
-                                            FontFamily="FontAwesome"
-                                            FontSize="40"
-                                            HorizontalTextAlignment="Center"
-                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Acorn}" />
-                                        <Label
-                                            FontSize="10"
-                                            HorizontalTextAlignment="Center"
-                                            Text="&#x0a;Affirm"
-                                            TextColor="#666666" />
-                                    </StackLayout>
-                                </FlexLayout>
-                            </StackLayout>
-                        </Frame>
-                        -->
-                        <!--  FIFTH SECTION  -->
-                        <!--
-                        <Frame d:IsVisible="false" Visual="Material">
-
-                            <StackLayout>
-                                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                                    <Label
-                                        FontSize="24"
-                                        Text="Music Works&#x0a;"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        Margin="24,0,0,24"
-                                        FontFamily="FontAwesome"
-                                        FontSize="24"
-                                        Text="{x:Static fontAwesome:FontAwesomeIcons.MapMarker}"
-                                        VerticalOptions="Center" />
-                                </StackLayout>
-                                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                                    <Label
-                                        FontFamily="FontAwesome"
-                                        Text="{x:Static fontAwesome:FontAwesomeIcons.MapMarker}"
-                                        TextColor="#999999"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        FontSize="10"
-                                        Text=" Saint George, UT, United States&#x0a;"
-                                        TextColor="#999999"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        FontFamily="FontAwesome"
-                                        FontSize="10"
-                                        Text="&#xf005;&#xf005;&#xf005;&#xf005;&#xf005;"
-                                        TextColor="Gold"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        FontSize="12"
-                                        Text=" (60)"
-                                        TextColor="#999999"
-                                        VerticalOptions="Center" />
-                                </StackLayout>
-                                <BoxView BackgroundColor="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource DarkPrimary}}" HeightRequest="1" />
-                                <StackLayout HorizontalOptions="Center">
-                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="Roboto"
+                                        FontSize="16"
                                         HorizontalTextAlignment="Center"
-                                        Text="SELLER ACHIEVEMENTS&#x0a;"
-                                        TextColor="#999999" />
-                                    <StackLayout
-                                        Margin="0,0,0,12"
-                                        HorizontalOptions="Center"
-                                        Orientation="Horizontal"
-                                        VerticalOptions="Start">
-                                        <Label
-                                            FontFamily="FontAwesome"
-                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Headphones}"
-                                            TextColor="Blue" />
-                                        <Label
-                                            FontFamily="FontAwesome"
-                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Microphone}"
-                                            TextColor="Blue" />
-                                        <Label
-                                            FontFamily="FontAwesome"
-                                            Text="{x:Static fontAwesome:FontAwesomeIcons.SpaceShuttle}"
-                                            TextColor="Blue" />
-                                    </StackLayout>
+                                        Text="Address :"
+                                        TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                    Light={StaticResource Primary}}" />
+
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="RobotoBold"
+                                        FontSize="16"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding SelectedPOI.ContactInfo.Address}"
+                                        TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                    Light={StaticResource Primary}}" />
                                 </StackLayout>
-                                <Button
-                                    BackgroundColor="#f1f1f1"
-                                    Text="Message Seller"
-                                    TextColor="#1d1d1d"
-                                    Visual="Default" />
-                                <Button
-                                    BackgroundColor="#f1f1f1"
-                                    Text="Shop Policies"
-                                    TextColor="#1d1d1d"
-                                    Visual="Default" />
+
+
+                                <StackLayout
+                                    HorizontalOptions="Start"
+                                    IsVisible="{Binding SelectedPOI.HasTelephone}"
+                                    Orientation="Horizontal"
+                                    Spacing="16">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="Roboto"
+                                        FontSize="16"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Telephone:"
+                                        TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                    Light={StaticResource Primary}}" />
+
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="RobotoBold"
+                                        FontSize="16"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding SelectedPOI.ContactInfo.Tel}"
+                                        TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                    Light={StaticResource Primary}}" />
+                                </StackLayout>
+
+
+                                <StackLayout
+                                    HorizontalOptions="Start"
+                                    IsVisible="{Binding SelectedPOI.HasEmail}"
+                                    Orientation="Horizontal"
+                                    Spacing="16">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="Roboto"
+                                        FontSize="16"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Email:"
+                                        TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                    Light={StaticResource Primary}}" />
+
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="RobotoBold"
+                                        FontSize="16"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding SelectedPOI.ContactInfo.Email}"
+                                        TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                    Light={StaticResource Primary}}" />
+                                </StackLayout>
+
                             </StackLayout>
                         </Frame>
-                        <Label
-                            FontAttributes="Bold"
-                            FontSize="Large"
-                            Text="Similar Products" />
-                        <CollectionView
-                            Margin="0,-15,0,0"
-                            HeightRequest="300"
-                            ItemsLayout="HorizontalList">
-                            <CollectionView.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>Map</x:String>
-                                    <x:String>Conversational</x:String>
-                                    <x:String>Login</x:String>
-                                    <x:String>To Do List</x:String>
-                                    <x:String>Map</x:String>
-                                    <x:String>Conversational</x:String>
-                                    <x:String>Login</x:String>
-                                    <x:String>To Do List</x:String>
-                                </x:Array>
-                            </CollectionView.ItemsSource>
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <ContentView WidthRequest="180">
-                                        <Frame
-                                            Margin="15"
-                                            Padding="0"
-                                            Visual="Material">
-                                            <StackLayout BackgroundColor="White" Orientation="Vertical">
-                                                <Image
-                                                    Aspect="AspectFill"
-                                                    HeightRequest="180"
-                                                    Source="guitar2.jpg"
-                                                    WidthRequest="180" />
-                                                <Label
-                                                    Margin="15"
-                                                    FontSize="12"
-                                                    LineHeight="1.2">
-                                                    <Label.FormattedText>
-                                                        <FormattedString>
-                                                            <Span Text="Cole Clark Angel 2 Series 2018&#x0a;" />
-                                                            <Span Text="$2,069.99" TextColor="#FF9900" />
-                                                        </FormattedString>
-                                                    </Label.FormattedText>
-                                                </Label>
-                                            </StackLayout>
-                                        </Frame>
-                                    </ContentView>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
-                        <Label
-                            FontAttributes="Bold"
-                            FontSize="Large"
-                            Text="Treat Yourself" />
-                        <CollectionView
-                            Margin="0,-15,0,0"
-                            HeightRequest="300"
-                            ItemsLayout="HorizontalList">
-                            <CollectionView.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>Map</x:String>
-                                    <x:String>Conversational</x:String>
-                                    <x:String>Login</x:String>
-                                    <x:String>To Do List</x:String>
-                                    <x:String>Map</x:String>
-                                    <x:String>Conversational</x:String>
-                                    <x:String>Login</x:String>
-                                    <x:String>To Do List</x:String>
-                                </x:Array>
-                            </CollectionView.ItemsSource>
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <ContentView WidthRequest="180">
-                                        <Frame
-                                            Margin="15"
-                                            Padding="0"
-                                            Visual="Material">
-                                            <StackLayout BackgroundColor="White" Orientation="Vertical">
-                                                <Image
-                                                    Aspect="AspectFill"
-                                                    HeightRequest="180"
-                                                    Source="guitar3.jpg"
-                                                    WidthRequest="180" />
-                                                <Label
-                                                    Margin="15"
-                                                    FontSize="12"
-                                                    LineHeight="1.2">
-                                                    <Label.FormattedText>
-                                                        <FormattedString>
-                                                            <Span Text="Cole Clark Angel 2 Series 2018&#x0a;" />
-                                                            <Span
-                                                                FontAttributes="Bold"
-                                                                FontSize="12"
-                                                                Text="$2,069.99"
-                                                                TextColor="#1d1d1d" />
-                                                        </FormattedString>
-                                                    </Label.FormattedText>
-                                                </Label>
-                                            </StackLayout>
-                                        </Frame>
-                                    </ContentView>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>-->
-
-                        <!--#endregion-->
-
 
                     </StackLayout>
                 </ScrollView>
@@ -815,69 +534,59 @@
 
         <FlexLayout Padding="10" Direction="Row">
             <Frame
-                            Padding="0"
-                            xct:TouchEffect.Command="{Binding BackCommand}"
-                            xct:TouchEffect.NativeAnimation="True"
-                            xct:TouchEffect.PressedAnimationDuration="340"
-                            xct:TouchEffect.PressedAnimationEasing="SinInOut"
-                            xct:TouchEffect.PressedOpacity="0.85"
-                            BackgroundColor="{AppThemeBinding Dark=#a815181F,
-                                                              Light={StaticResource TransparentBackground}}"
-                             CornerRadius="18"
-                            FlexLayout.AlignSelf="Center"
-                            FlexLayout.Shrink="0"
-                            HeightRequest="36"
-                            WidthRequest="36">
+                Padding="0"
+                xct:TouchEffect.Command="{Binding BackCommand}"
+                xct:TouchEffect.NativeAnimation="True"
+                xct:TouchEffect.PressedAnimationDuration="340"
+                xct:TouchEffect.PressedAnimationEasing="SinInOut"
+                xct:TouchEffect.PressedOpacity="0.85"
+                BackgroundColor="{AppThemeBinding Dark=#a815181F,
+                                                  Light={StaticResource TransparentBackground}}"
+                CornerRadius="18"
+                FlexLayout.AlignSelf="Center"
+                FlexLayout.Shrink="0"
+                HeightRequest="36"
+                WidthRequest="36">
                 <Label
-                                Padding="0"
-                                BackgroundColor="Transparent"
-                                FontFamily="FASolid"
-                                FontSize="20"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"
-                                Text="{x:Static fontAwesome:FontAwesomeIcons.ArrowLeft}"
-                                TextColor="#E2E2E2"
-                                VerticalOptions="Center"
-                                VerticalTextAlignment="Center" />
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    FontFamily="FASolid"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="{x:Static fontAwesome:FontAwesomeIcons.ArrowLeft}"
+                    TextColor="#E2E2E2"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
             </Frame>
             <BoxView FlexLayout.Grow="1" />
 
             <Frame
-                            Padding="0"
-                            xct:TouchEffect.Command="{Binding AddToFavouritesCommand}"
-                            xct:TouchEffect.NativeAnimation="True"
-                            xct:TouchEffect.PressedAnimationDuration="340"
-                            xct:TouchEffect.PressedAnimationEasing="SinInOut"
-                            xct:TouchEffect.PressedOpacity="0.85"
-                            BackgroundColor="{AppThemeBinding Dark=#a815181F,
-                                                              Light={StaticResource TransparentBackground}}"
-                            CornerRadius="18"
-                            FlexLayout.AlignSelf="Center"
-                            FlexLayout.Shrink="0"
-                            HeightRequest="36"
-                            WidthRequest="36">
+                Padding="0"
+                xct:TouchEffect.Command="{Binding AddToFavouritesCommand}"
+                xct:TouchEffect.NativeAnimation="True"
+                xct:TouchEffect.PressedAnimationDuration="340"
+                xct:TouchEffect.PressedAnimationEasing="SinInOut"
+                xct:TouchEffect.PressedOpacity="0.85"
+                BackgroundColor="{AppThemeBinding Dark=#a815181F,
+                                                  Light={StaticResource TransparentBackground}}"
+                CornerRadius="18"
+                FlexLayout.AlignSelf="Center"
+                FlexLayout.Shrink="0"
+                HeightRequest="36"
+                WidthRequest="36">
                 <Label
-                                Padding="0"
-                                BackgroundColor="Transparent"
-                                FontFamily="FASolid"
-                                FontSize="20"
+                    Padding="0"
+                    xct:TouchEffect.Command="{Binding AddToFavouritesCommand}"
+                    BackgroundColor="Transparent"
+                    FontFamily="FASolid"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
                     Style="{StaticResource FavoriteLabel}"
-                                xct:TouchEffect.Command="{Binding AddToFavouritesCommand}"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"
-                                
-                                VerticalOptions="Center"
-                                VerticalTextAlignment="Center" ></Label>
-                <!--<Label.Triggers>
-                        <DataTrigger TargetType="Label"
-                Binding="{Binding Source={x:Reference entry},
-                                       Path=Text}"
-                Value="İstanbul">
-                            <Setter Property="IsEnabled" Value="True" />
-                            <Setter Property="BackgroundColor" Value="Green" />
-                        </DataTrigger>
-                    </Label.Triggers>
-                </Label>-->
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+
             </Frame>
 
         </FlexLayout>
@@ -906,25 +615,37 @@
             <Frame
                 Padding="0"
                 xct:TouchEffect.Command="{Binding BackCommand}"
-                BackgroundColor="Transparent"
-                CornerRadius="14"
+                xct:TouchEffect.NativeAnimation="True"
+                xct:TouchEffect.PressedAnimationDuration="340"
+                xct:TouchEffect.PressedAnimationEasing="SinInOut"
+                xct:TouchEffect.PressedOpacity="0.85"
+                BackgroundColor="{AppThemeBinding Dark=#a815181F,
+                                                  Light={StaticResource TransparentBackground}}"
+                CornerRadius="18"
+                FlexLayout.AlignSelf="Center"
                 FlexLayout.Shrink="0"
-                HeightRequest="28"
-                WidthRequest="28">
+                HeightRequest="36"
+                WidthRequest="36">
                 <Label
+                    Padding="0"
+                    xct:TouchEffect.Command="{Binding BackCommand}"
                     BackgroundColor="Transparent"
                     FontFamily="FASolid"
                     FontSize="20"
                     HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
                     Text="{x:Static fontAwesome:FontAwesomeIcons.ArrowLeft}"
                     TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
                                                 Light={StaticResource Primary}}"
-                    VerticalOptions="Center" />
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+
             </Frame>
             <Label
                 Margin="10,0"
                 FlexLayout.AlignSelf="Center"
                 FlexLayout.Grow="1"
+                FontFamily="Montserrat"
                 FontSize="18"
                 HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
@@ -936,39 +657,41 @@
             <Frame
                 Padding="0"
                 xct:TouchEffect.Command="{Binding AddToFavouritesCommand}"
-                BackgroundColor="Transparent"
-                CornerRadius="14"
+                xct:TouchEffect.NativeAnimation="True"
+                xct:TouchEffect.PressedAnimationDuration="340"
+                xct:TouchEffect.PressedAnimationEasing="SinInOut"
+                xct:TouchEffect.PressedOpacity="0.85"
+                BackgroundColor="{AppThemeBinding Dark=#a815181F,
+                                                  Light={StaticResource TransparentBackground}}"
+                CornerRadius="18"
+                FlexLayout.AlignSelf="Center"
                 FlexLayout.Shrink="0"
-                HeightRequest="28"
-                WidthRequest="28">
+                HeightRequest="36"
+                WidthRequest="36">
                 <Label
+                    Padding="0"
+                    xct:TouchEffect.Command="{Binding AddToFavouritesCommand}"
                     BackgroundColor="Transparent"
                     FontFamily="FASolid"
                     FontSize="20"
                     HorizontalOptions="Center"
-                    Text="{x:Static fontAwesome:FontAwesomeIcons.Star}"
-                    TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
-                                                Light={StaticResource Primary}}"
-                    VerticalOptions="Center" />
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource FavoriteLabel}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+                <!--<Label.Triggers>
+                        <DataTrigger TargetType="Label"
+                Binding="{Binding Source={x:Reference entry},
+                                       Path=Text}"
+                Value="İstanbul">
+                            <Setter Property="IsEnabled" Value="True" />
+                            <Setter Property="BackgroundColor" Value="Green" />
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>-->
             </Frame>
         </FlexLayout>
 
-        <!--  DEBUG INFO  -->
-        <!--
-        <StackLayout
-            HorizontalOptions="End"
-            VerticalOptions="Start"
-            BackgroundColor="Black">
-            <Label
-                FontSize="8"
-                TextColor="White"
-                Text="{Binding ScrollY, Source={x:Reference Scroll}, StringFormat='{0:F2}'}"/>
-            <Label
-                FontSize="8"
-                TextColor="White"
-                Text="{Binding PercentageScrollY, Source={x:Reference Scroll},  StringFormat='{0:F2}%'}"/>
-        </StackLayout>
-        -->
 
     </Grid>
 

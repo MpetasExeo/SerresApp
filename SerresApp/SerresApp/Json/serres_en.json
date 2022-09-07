@@ -1,19 +1,20 @@
 [
   {
-    "Category": "0",
+    "Id": "0",
+    "Title": "Strymon River",
+    "Content": "Strymon river belongs to the hydrographic basin of Eastern Macedonia and has a total length of 392 km, of which 274 are located in Bulgaria and 118 km in the prefecture of Serres. The Strymon valley is the only communication route between Bulgaria and Greece and the Thessaloniki-Sofia Road passes through it. The river originates from the Bulgarian mountain Vitosa and enters Greece west of Promachonas, through the Rupel straits, which it has opened between the mountain ranges of Kerkini (Belles) and Orvilos. It flows into the Strymonikos gulf (Orfanou), forming a small Delta.  Strymon river, has contributed greatly to the creation of the fertile plain of Serres and the development of the region, as it contributes to the irrigation of arable land, provides water for irrigation, enriches the aquifer of groundwater, and offers arable land with its alluvium and coastal area with nutrients. The main aquatic ecosystems of the Strymon basin in the Greek part are the Strymon river, the artificial lake Kerkini and the river Angitis. The Strymon - Kerkini complex is one of the most important wetland capitals of the country.",
     "ContactInfo": {
       "Address": "Kerkini, 620 55 Kato Poroia",
       "Tel": "+30 2327 028 004",
       "Email": "info@kerkini.gr"
 
     },
-    "Content": "Strymon river belongs to the hydrographic basin of Eastern Macedonia and has a total length of 392 km, of which 274 are located in Bulgaria and 118 km in the prefecture of Serres. The Strymon valley is the only communication route between Bulgaria and Greece and the Thessaloniki-Sofia Road passes through it. The river originates from the Bulgarian mountain Vitosa and enters Greece west of Promachonas, through the Rupel straits, which it has opened between the mountain ranges of Kerkini (Belles) and Orvilos. It flows into the Strymonikos gulf (Orfanou), forming a small Delta.  Strymon river, has contributed greatly to the creation of the fertile plain of Serres and the development of the region, as it contributes to the irrigation of arable land, provides water for irrigation, enriches the aquifer of groundwater, and offers arable land with its alluvium and coastal area with nutrients. The main aquatic ecosystems of the Strymon basin in the Greek part are the Strymon river, the artificial lake Kerkini and the river Angitis. The Strymon - Kerkini complex is one of the most important wetland capitals of the country.",
-    "Id": "0",
-    "ImageUrl": "img00.png",
+    "ImageUrl": "img0_0.png",
+    "CategoryId": "0",
     "Latitude": "40.8069",
     "Longitude": "23.8406",
-    "Title": "Strymon River",
     "Web": "https://kerkini.gr/"
+
   },
   {
     "Id": "1",
@@ -25,8 +26,8 @@
       "Email": "info@kerkini.gr"
 
     },
-    "ImageUrl": "img01.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_1.jpg",
+    "CategoryId": "0",
     "Latitude": "41.2117",
     "Longitude": "23.1305",
     "Web": "https://kerkini.gr/"
@@ -42,8 +43,8 @@
       "Email": ""
 
     },
-    "ImageUrl": "img02.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_2.jpg",
+    "CategoryId": "0",
     "Latitude": "41.0248",
     "Longitude": "24.0171",
     "Web": ""
@@ -55,8 +56,8 @@
     "Content": "Mountain Kerkini or Belles is an elongated mountain that forms a steep ridge along the borders of Greece with Bulgaria and North Macedonia. The southern part of the mountain belongs to Greece, the northeast to Bulgaria and the northwest to Skopje. The mountain with the name Kerkini has been known since antiquity, while the name Belles has Slavic origins and means white. The mountain is generally considered inaccessible because most slopes are steep. The absence of rock formations results in the forest cover of the mountain mainly in the middle and lower zone of plane trees, chestnuts and oaks. In the higher ones there are dense forests of pine, beech and birch. The mountain has a very important bird fauna with rare species of birds, while in the flora one observes particularly local endemic species, which are rarely found in Greece. For the above reasons, the mountain is an important habitat and has been proposed to be declared a National Park.",
     "ContactInfo": {
     },
-    "ImageUrl": "img03.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_3.jpg",
+    "CategoryId": "0",
     "Latitude": "41.3313",
     "Longitude": "22.9484",
     "Web": "https://kerkini.gr/"
@@ -72,8 +73,8 @@
       "Email": "info@lailias.com "
 
     },
-    "ImageUrl": "img04.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_4.jpg",
+    "CategoryId": "0",
     "Latitude": "41.2617",
     "Longitude": "23.6011",
     "Web": "https://www.lailias.com/ "
@@ -89,8 +90,8 @@
       "Email": "info@kerkini.gr"
 
     },
-    "ImageUrl": "img05.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_5.jpg",
+    "CategoryId": "0",
     "Latitude": "41.0563",
     "Longitude": "23.7562",
     "Web": "https://kerkini.gr/"
@@ -106,8 +107,8 @@
       "Email": "info@kerkini.gr"
 
     },
-    "ImageUrl": "img06.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_6.jpg",
+    "CategoryId": "0",
     "Latitude": "40.9226",
     "Longitude": "24.0821",
     "Web": "https://kerkini.gr/"
@@ -123,8 +124,8 @@
       "Email": ""
 
     },
-    "ImageUrl": "img07.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_7.jpg",
+    "CategoryId": "0",
     "Latitude": "41.0284",
     "Longitude": "24.0144",
     "Web": "http://www.alistraticave.gr/"
@@ -140,10 +141,10 @@
       "Email": "info@spa.gr"
 
     },
-    "ImageUrl": "img08.jpg",
-    "Category": "0",
-    "Latitude": " 41.2793",
-    "Longitude": " 23.3378",
+    "ImageUrl": "img0_8.jpg",
+    "CategoryId": "0",
+    "Latitude": "41.2793",
+    "Longitude": "23.3378",
     "Web": "https://www.spa.gr/"
 
   },
@@ -158,8 +159,8 @@
       "Email": "info@hamamagistro.gr "
 
     },
-    "ImageUrl": "img09.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_9.jpg",
+    "CategoryId": "0",
     "Latitude": "41.3669",
     "Longitude": "23.4288",
     "Web": "http://www.hamamagistro.gr/ "
@@ -176,8 +177,8 @@
       "Email": " dnp@pirin.bg"
 
     },
-    "ImageUrl": "img10.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_10.jpg",
+    "CategoryId": "0",
     "Latitude": "41.7265",
     "Longitude": "23.4189",
     "Web": "http://www.pirin.bg/"
@@ -194,8 +195,8 @@
       "Email": "dppbelasica@iag.bg"
 
     },
-    "ImageUrl": "img11.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_11.jpg",
+    "CategoryId": "0",
     "Latitude": "41.3468",
     "Longitude": "23.0569",
     "Web": "http://www.belasitsa.net/index.php/en/ "
@@ -211,8 +212,8 @@
       "Email": "rilanationalpark@gmail.com"
 
     },
-    "ImageUrl": "img12.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_12.jpg",
+    "CategoryId": "0",
     "Latitude": "42.1337",
     "Longitude": "23.5730",
     "Web": "https://rilanationalpark.bg/en/ "
@@ -228,8 +229,8 @@
       "Email": "tic.sandanski@gmail.com"
 
     },
-    "ImageUrl": "img13.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_13.jpg",
+    "CategoryId": "0",
     "Latitude": "41.3843",
     "Longitude": "23.5982",
     "Web": "https://bulgariatravel.org/ali-botush-reservation/ "
@@ -245,8 +246,8 @@
       "Email": ""
 
     },
-    "ImageUrl": "img14.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_14.jpg",
+    "CategoryId": "0",
     "Latitude": "41.2604",
     "Longitude": "24.4952",
     "Web": ""
@@ -262,8 +263,8 @@
       "Email": "tic.sandanski@gmail.com"
 
     },
-    "ImageUrl": "img15.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_15.jpg",
+    "CategoryId": "0",
     "Latitude": "41.5232",
     "Longitude": "23.3937",
     "Web": "http://visit.guide-bulgaria.com/a/608/melnik_sandstones_pyramids.htm "
@@ -280,7 +281,7 @@
 
     },
     "ImageUrl": "v16.jpg",
-    "Category": "0",
+    "CategoryId": "0",
     "Latitude": "41.5669",
     "Longitude": "23.2811",
     "Web": "https://sandanskicrossborder.com/en/spa/ "
@@ -296,8 +297,8 @@
       "Email": ""
 
     },
-    "ImageUrl": "img17.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_17.jpg",
+    "CategoryId": "0",
     "Latitude": "41.4379",
     "Longitude": "23.3137",
     "Web": "https://www.visitpetrich.com/petrich/ "
@@ -314,11 +315,647 @@
       "Email": ""
 
     },
-    "ImageUrl": "img18.jpg",
-    "Category": "0",
+    "ImageUrl": "img0_18.jpg",
+    "CategoryId": "0",
     "Latitude": "41.4585",
     "Longitude": "23.2622",
     "Web": "https://www.visitpetrich.com/petrich/"
+
+  },
+  {
+    "Id": "19",
+    "Title": "Archaeological Museum - Bezesteni",
+    "Content": "The Archaeological Museum of Serres has been housed since 1970 in Bezesteni, a closed covered market of the second half of the 15th century. located in the current city center. It was built according to the model of the Byzantine markets and its name means market of fabrics. Today in Greece only two Bezestenias survive, those of Thessaloniki and that of Serres. Finds from the Middle and Late Neolithic Age, Early and Late Bronze Age (pottery, clay figurines), from the 4th to the 6th -7th BC, Roman times, the Hellenistic and Byzantine eras are on display.",
+    "ContactInfo": {
+      "Address": "Leof. Merarchias 858, Serres 621 23, Greece",
+      "Tel": "+30 2321 022 257",
+      "Email": ""
+    },
+    "ImageUrl": "img1_19.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.0910",
+    "Longitude": "23.5493",
+    "Web": "https://serres.pkm.gov.gr/default.aspx?lang=el-GR&page=260"
+  },
+  {
+    "Id": "20",
+    "Title": "Zincirli Mosque",
+    "Content": "Zincirli Mosque is located in the southwestern part of the city of Serres and is a medium-sized mosque with a central quadrangular space that on three sides, east, north and west, is surrounded by a two-storey colonnaded gallery. From an architectural and morphological point of view, the Zincirli mosque is part of the group of buildings of the end of the 16th century that are preserved in Constantinople and are considered buildings of the Sinan School of the great architect of the classical period of Ottoman architecture.",
+    "ContactInfo": {
+      "Address": "Anatolikis Thrakis 12, Serres",
+      "Tel": "+30 2321 064 454",
+      "Email": ""
+    },
+    "ImageUrl": "img1_20.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.0882",
+    "Longitude": "23.5537",
+    "Web": "http://odysseus.culture.gr/h/2/gh251.jsp?obj_id=5902 "
+  },
+  {
+    "Id": "21",
+    "Title": "Ahmet Pasha Mosque",
+    "Content": "On the east side of the city near the stream of Agioi Anargyroi is the Ahmet Pasha Mosque built in 1492 by Mehmet Bey, who was the son of the Grand Vizier and famous Turkish general Ahmet Pasha Kedik, according to an inscription at the entrance of the main mosque. Due to its resemblance to Christian temples, the people of Serres call it \"Agia Sofia\". It is one of the most beautiful mosques in European Turkey that was maintained for 291 years by the income of the Turkish conquests in Crimea. This income stopped when the Russian general Potemkin recaptured Crimea in 1783, when its decline began. Near the Mosque are the \"Mausoleums\" of the victors (\"Conquerors\"), as well as the tomb of the Ismail Bey family (commander of Serres), built in 1814 by his son Ismail Yusuf Serreslis.",
+    "ContactInfo": {
+      "Address": "Archelaou 14, Serres",
+      "Tel": "",
+      "Email": ""
+    },
+    "ImageUrl": "img1_21.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.0915",
+    "Longitude": "23.5594",
+    "Web": "https://politismos.kedis.gr/%ce%bc%ce%bd%ce%b7%ce%bc%ce%b5%ce%af%ce%b1/ "
+  },
+  {
+    "Id": "22",
+    "Title": "Koca Mustafa Pasha Mosque",
+    "Content": "The Koca Mustafa Pasha Mosque was built around 1519 AD by the Vizier of Sultan Koca Mustafa. It was a large artistic mosque with imaretia, a seminary and was all covered with lead. Today, only the dome remains in the Koca Mustafa Pasha Mosque, and while a royal decree declared it a protected monument. The space is currently used as a carpentry shop.",
+    "ContactInfo": {
+      "Address": "Address: Kapetan Mitrousi 1, Serres",
+      "Tel": "",
+      "Email": ""
+    },
+    "ImageUrl": "img1_22.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.0863",
+    "Longitude": "23.5344",
+    "Web": "https://politismos.kedis.gr/%ce%bc%ce%bd%ce%b7%ce%bc%ce%b5%ce%af%ce%b1/ "
+  },
+  {
+    "Id": "23",
+    "Title": "Acropolis of Serres",
+    "Content": "The most important surviving building of the castle today is the tower that rises at the western end of the pine-covered hill and is known as the \"Tower of Orestes\". This very strong tower was built in an ancient fortress that defended the city in the 11th and 12th BC. century. The foundation of the Byzantine Acropolis dates back to the 9th AD. century, where sources state that the emperor Nikiforos Fokas built fortifications in the city of Serres. The citadel was surrounded by a strong wall with a spindle shape and inside it enclosed the residences of the respective governors and state officials. Majestic towers were part of the wall. The surviving tower of the castle, also known as the tower of Orestes, is a building of 1350 and a work, according to the most prevalent reading, of the king of Serbia, Stefan Dusan.",
+    "ContactInfo": {
+      "Address": "Euthalias Adam 20, Serres",
+      "Tel": "",
+      "Email": ""
+    },
+    "ImageUrl": "img1_23.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.0972",
+    "Longitude": "23.5510",
+    "Web": "https://politismos.kedis.gr/%ce%bc%ce%bd%ce%b7%ce%bc%ce%b5%ce%af%ce%b1/ "
+  },
+  {
+    "Id": "24",
+    "Title": "Archaeological Museum of the Municipality of Amphipolis - Kasta Tomb",
+    "Content": "The Museum is located in the archaeological site of the ancient city of Amphipolis, which ancient city was the most valuable in the area during the 5th century BC. century and from the time of Theseus. The Museum houses monuments of its history and culture of ancient and Christian times. In its exhibition spaces, the cultural history of Amphipolis from the prehistoric to the late Byzantine times is summarized. The site where the Museum now stands is probably associated with General Brasidas, who was buried outside the walls by the Amphipolites in 422 BC. Concerning the Kasta Tomb is the largest tomb in the world, with an area of 22 acres and the perimeter of the marble outdoor is 497 meters. It is the second largest burial monument in the world, after the pyramids of Egypt and is associated with King Alexander. It is also a monument made of about 3,000 cubic meters of white marble of Thassos for the precinct, the monument and the Lion with its outdoor space and the perfect construction is impressive, which for most of the precinct remains unchanged. It is also a place of worship that dates back to a very important era in world history, the transition from the Macedonian kingdom to the first Greek empire.",
+    "ContactInfo": {
+      "Address": "Amphipolis, Serres",
+      "Tel": "+30 2322 032 474",
+      "Email": ""
+    },
+    "ImageUrl": "img1_24.jpg",
+    "CategoryId": "1",
+    "Latitude": "40.8253",
+    "Longitude": "23.8487",
+    "Web": "https://serres.pkm.gov.gr/default.aspx?lang=el-GR&page=260 "
+  },
+  {
+    "Id": "25",
+    "Title": "Holy Monastery of Timios Prodromos",
+    "Content": "The Holy Monastery of Timios Prodromos was built in 1270 AD. and despite the successive destructions, today it is a monument of astonishing beauty and a Museum of Byzantine Art. The first owner of the monastery was Ioannikios who also served as bishop of Ezevon. The substantial expansion of the Temple was made around 1300 by Ioannikios's nephew, Joachim, Bishop of Zichon, who built the Catholic Church that is preserved to date. The church is a monument of byzantine hagiography, whose wall paintings are attributed to the macedonian hagiographer Panselinos. The iconostasis is wood-carved and dates back to 1804. Since 1986, a women's fraternity has been established, which in collaboration with the 12th ephorate of Byzantine Antiquities of Kavala has undertaken the work of maintenance and restoration.",
+    "ContactInfo": {
+      "Address": "10 Kyprou, 62122 Serres",
+      "Tel": "+30 2321 068 100",
+      "Email": "mitropoli@imsn.gr"
+    },
+    "ImageUrl": "img1_25.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.1365",
+    "Longitude": "23.6184",
+    "Web": "https://www.imsn.gr/ "
+  },
+  {
+    "Id": "26",
+    "Title": "Byzantine church of Agios Nikolaos",
+    "Content": "At the northeastern end of the castle of the Acropolis of Serres there is the Byzantine church of Agios Nikolaos, which was restored and renewed in 1937. The oldest information about the church can be found in documents from 1339-1342 AD. The church of Agios Nikolaos is classified among the usual three-aisled monocles with a dome. Until 1926, several relics of frescoes were kept inside the church. Remains of jewelry with the usual style and themes of the Palaeologan era can be seen in many parts of the temple. On the east side of the temple is the entrance to the crypt, which was the burial place of the soldiers of the castle guard, who were killed or died inside it due to illness or other cause, which was confirmed by the few remains of tombs and human bones found inside to it. According to the records from 1339-1342 AD, it is concluded that the Church of Agios Nikolaos was built before the Serbian occupation and specifically during the first half of the 14th century.",
+    "ContactInfo": {
+      "Address": "10 Kyprou, 62122 Serres",
+      "Tel": "+30 2321 068 100",
+      "Email": "mitropoli@imsn.gr"
+    },
+    "ImageUrl": "img1_26.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.0972",
+    "Longitude": "23.5565",
+    "Web": "https://www.imsn.gr/ "
+  },
+  {
+    "Id": "27",
+    "Title": "Byzantine Church of Saints Theodore of Serres",
+    "Content": "The Church of Agios Theodoros is located in the center of the city of Serres and was built in the name of the military saints Theodoros Tironos and Stratilatos. The church, there are reports that it was built in 1124 or even 1321, however there is a report that the original construction of the building dates back to early Christian times. Great mosaics adorned the interior of the Temple, many of which were destroyed after the fire of 1913. The rhythm of the temple is a large Rectangular Basilica and according to a tradition it is built on the ruins of another early Christian temple. Inside the sanctuary it presents all the elements of the Hellenistic Basilica. The temple underwent many repairs and renovations, from disasters which in many places changed its original form. The damage in many cases was enormous, especially with the fire of 1913. This historic Temple regained its old glory and form after long restoration and renovation work. In 1993 the church started operating again and is open to the faithful.",
+    "ContactInfo": {
+      "Address": "10 Kyprou, 62122 Serres",
+      "Tel": "+30 2321 068 100",
+      "Email": "mitropoli@imsn.gr"
+    },
+    "ImageUrl": "img1_27.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.09498",
+    "Longitude": "23.5547",
+    "Web": "https://www.imsn.gr/ "
+  },
+  {
+    "Id": "28",
+    "Title": "",
+    "Content": "The Monastery of Panagia Eikosifoinissa is a historic monastery of the Holy Metropolis of Drama and is built at an altitude of 753 meters, on the north side of the Pangaion Mountain. It is located in the Municipality of Amphipolis in the Region Unit of Serres, near the borders with the Region Unit of Kavala and Drama. The Monastery dates back to around 450 AD, where there is a reference about a Temple and a monastic settlement at Vigla, near the Monastery. This monastic settlement was abandoned over the years and the monastery was founded by Saint Germanos, in the 8th century. The main monastery in the center has the imposing church of the Assumption of the Virgin and includes the Abbot, the nuns’ cells, the Archontariki, the chapel of St. Barbara, the Museum, the Holy Table, the related facilities, while the whole complex is surrounded by a high wall. Outside and above the walls of the Monastery, to the East, are the old windmill and the \"stagion of the Virgin\" with a small shrine.",
+    "ContactInfo": {
+      "Address": "Monastery of Panagia Eikosifoinissa 62047, Serres ",
+      "Tel": "+30 2510516581",
+      "Email": ""
+    },
+    "ImageUrl": "img1_28.jpg",
+    "CategoryId": "1",
+    "Latitude": "40.9659",
+    "Longitude": "24.1055",
+    "Web": "http://www.imdramas.gr/ "
+  },
+  {
+    "Id": "29",
+    "Title": "Folklore Museum of Sarakatsani",
+    "Content": "One of the best folklore museums in Europe, the Sarakatsani Museum, is located in Serres. In 1987 the Prix du I 'Annee (European Award of the Museum of the Year) remained at the Sarakatsani Museum a special distinction appreciating all the elements that compose its identity. In the ground floor of the Museum is presented, semantically, the last phase of the nomadic life of the Sarakatsani, of the Greek population with the peculiar customs and the special art.",
+    "ContactInfo": {
+      "Address": "Konstantinoupoleos 62, 62122 Serres  ",
+      "Tel": " +30 2321 062 528",
+      "Email": "laografikosarak@ath.forthnet.gr "
+    },
+    "ImageUrl": "img1_29.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.0941",
+    "Longitude": "23.5548",
+    "Web": "http://www.sarakatsani-folk-museum.gr/"
+  },
+  {
+    "Id": "30",
+    "Title": "Natural History Museum",
+    "Content": "The Natural History Museum is located in a specially designed building owned by the Hunting Association of Serres located at the 1st kilometer of the road Serres - Holy Monastery of Timios Prodromos. The purpose of the Museum was to highlight the great diversity of ecosystems and species of fauna and flora of the Regional Unit of Serres. At the same time, the goal of its operation is to be a center for the study and research of habitats, agro-habitats and mineral wealth in the region.",
+    "ContactInfo": {
+      "Address": "1st km of Serres - Holy Monastery of Timios Prodromos, 62100 Serres   ",
+      "Tel": "+30 2321 099 395 ",
+      "Email": "mfi-ser@otenet.gr"
+    },
+    "ImageUrl": "img1_30.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.0998",
+    "Longitude": "23.5696",
+    "Web": "https://www.serres.gr/mouseio-fi/index.html "
+  },
+  {
+    "Id": "31",
+    "Title": "Roupel Fortress",
+    "Content": "Roupel Fortress is located at an altitude of 322 m., near the Greek village of Promachonas. The fortress is the largest of the 21 fort complexes built during Metaxa and recalls moments of glory and heroism in Greek history. It was one of the last strongholds they held when the Germans advanced during World War II. An important date is April 10, 1941, the day of its surrender, but it was accompanied by significant losses of the conquerors. Today it is considered unique in Europe. Although it is still an outpost, the legendary past has turned it into a tourist attraction.",
+    "ContactInfo": {
+      "Address": "Sidirokastro, 62300 Serres",
+      "Tel": "+30 2323 043 033  ",
+      "Email": "info@agkistroaction.gr    "
+    },
+    "ImageUrl": "img1_31.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.3458",
+    "Longitude": "23.3702",
+    "Web": "https://www.roupel.gr/ "
+  },
+  {
+    "Id": "32",
+    "Title": "The Old Town of Bansko",
+    "Content": "Bansko is located at the foot of North Pirin at an altitude of 927m. It is located 56 km from Blagoevgrad, 145 km from Plovdiv and 150 km from Sofia. The Glazne River flows through Bansko, while the Pirin National Park begins near the city. The first documented evidence of Bansko is in the records of cattle breeders of 1576, while until the 18th century, the inhabitants of Bansko were mainly cattle breeders and craftsmen. During the period of the National Renaissance, Bansko developed as an urban center of trade and crafts, with the commercial offices of the citizens of Bansko opening their doors in many European cities - Budapest, Vienna, Leipzig, Marcel, London. Many of the children of affluent families study abroad. Extensive contacts with the outside world make Bansko and the region one of the hotbeds of the Bulgarian National Renaissance. Economic prosperity also affects the characteristics of the national residential architecture of the 18th and 19th centuries. Made of stone, the rich houses also have excellent wood carving and mural decoration, which proves not only the material abilities, but also the high artistic culture of the citizens of Bansko. In the late 19th and early 20th centuries, Bansko was the largest settlement in the Razlog region. Today Bansko, due to the alpine nature of the Pirin Mountains, provides excellent conditions for professional and amateur skiing and the city is a popular winter resort.",
+    "ContactInfo": {
+      "Address": "4 Vazrazhdane Sq., Bansko",
+      "Tel": "+35 074 988 580",
+      "Email": " infocenter@bansko.bg"
+    },
+    "ImageUrl": "img1_32.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.8376",
+    "Longitude": "23.488",
+    "Web": "https://visit-bansko.bg/en/"
+  },
+  {
+    "Id": "33",
+    "Title": "Kovachevitsa Village",
+    "Content": "Kovachevitsa is a village in southwestern Bulgaria. It is located in the municipality of Garmen, Blagoevgrad district. Architectural reserve Kovachevitsa is the village with the most amazing and beautiful houses in Bulgaria. In Kovachevitsa every building is a monument of culture and is a manifestation of the genius ideas of local architects from 150-220 years ago. Because of their typical architecture, in 1977 the village was declared a historical and architectural reservation. Among the old houses time slows down and takes us back centuries ago, when the place was filled with life. The best builders, known throughout the country, came from Kovachevitsa. Its inhabitants were among the first to build a school - as early as 1820, and a church, whose steeple has no equal in height in the Rhodope.",
+    "ContactInfo": {
+      "Address": "Garmen village, 35 Parva Street",
+      "Tel": "+35 975 232 040",
+      "Email": "obs_garmen@bitex.bg"
+    },
+    "ImageUrl": "img1_33.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.6843",
+    "Longitude": "23.8264",
+    "Web": "https://bulgariatravel.org/kovachevitsa/ "
+  },
+  {
+    "Id": "34",
+    "Title": "Melnik Town",
+    "Content": "Melnik, is located in the south slopes of Pirin, among the Sandstones pyramids. It is situated in the Sandanski Municipality, Blagoevgrad region, only 30 km from the borderline with Greece. The first written pieces of evidence for the Melnik Fortress refer to the beginning of the 11th century. The first settlers on the territory of contemporary Melnik were the Thracians and a few centuries later, the Romans lived there. This proves the ancient Roman bridge, which is still preserved in the town of Melnik. In 1215 Melnik turned into a capital of an independent feudal principality, ruled by Despot Alexius Slav and in 1395 the town, fell under Ottoman Dominion for 5 centuries. During the 18th century, in the age of the Bulgarian Revival, Melnik turned into a blooming, significant in size and population town, with a large market. The local tradespeople were selling their goods in Budapest, Wien, Genoa, Venice. Melnik also became famous in entire Europe for its good wine, with which it is famous even nowadays. During the Ottoman Dominion, Melnik was a large administrative center, the architectural monuments of which testify the economic upsurge of the town at that time. Melnik is declared a natural and architectural reservation, and it attracts thousands of tourists annually.",
+    "ContactInfo": {
+      "Address": "28 Macedonia Str., Sandanski",
+      "Tel": "+35 9 882 011 039",
+      "Email": "tic.sandanski@gmail.com"
+    },
+    "ImageUrl": "img1_34.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.5247",
+    "Longitude": "23.3911",
+    "Web": "https://bulgariatravel.org/ali-botush-reservation/ "
+  },
+  {
+    "Id": "35",
+    "Title": "Dolen Village",
+    "Content": "Dolen Village is a typical alpine village, located in the southwestern part of the Dubrava part of the Western Rhodopes. Founded by settlers fleeing from forced conversion to Islam in the 16th century, it is mentioned in Turkish records as early as 1671. Over 70 houses have been preserved as architectural and historical monuments, which they were built similar to the Renaissance houses of the country. In 1977 the village was declared a cultural and historical reserve. The church “St. Nicholas”, built in 1837, the work of self-taught artists, is still preserved. Most interesting as typical Renaissance ensembles are the intersections \"Kavalite\", \"Nikolovska cheshma\" and \"Charshiyska  ulitsa (street)\".",
+    "ContactInfo": {
+      "Address": "28 Macedonia Str., Sandanski",
+      "Tel": "+35 9 882 011 039",
+      "Email": "tic.sandanski@gmail.com"
+    },
+    "ImageUrl": "img1_35.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.6235",
+    "Longitude": "23.9307",
+    "Web": "https://bulgariatravel.org/architectural-reservation-village-of-dolen/ "
+  },
+  {
+    "Id": "36",
+    "Title": "Leshten Village",
+    "Content": "Leshten is located in the western Rhodope Mountain, 8 kilometers from Garmen and about 15 kilometers from Gotse Delchev. The village has an authentic look and the old houses, preserved since the Bulgarian Revival (18th – 19th century). About 15 houses of the village that evoke the spirit and atmosphere of the past were reconstructed. Many of them offer accommodation. Near Leshten lies the villages of Kovachevitsa, Dolen and Ribnovo as well as the balneological resort of Ognyanovo. Leshten offers different attractions and activities such as mountain hiking, fishing, trips to nearby landmarks, herb and mushroom gathering.",
+    "ContactInfo": {
+      "Address": "35 Parva Str., Garmen Municipality ",
+      "Tel": "+35 975 232 040",
+      "Email": "obs_garmen@bitex.bg  "
+    },
+    "ImageUrl": "img1_35.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.6368",
+    "Longitude": "23.8285",
+    "Web": ""
+  },
+  {
+    "Id": "37",
+    "Title": "Delchevo Village",
+    "Content": "The village of Delchevo is situated 9 km above the town of Gotse Delchev and 110 km south-west from town of Blagoevgrad. Delchevo offers a panoramic view of Gotse Delchev valley and the Rhodopes. The village is architectural example of harmonically combined steep terrain, amphitheatrically set houses and narrow, cobblestone streets. Big part of the residential buildings was constructed by local masters in the end of the 19th and the beginning of the 20th centuries. The houses are in Bulgarian Revival style. About 26 of them are monuments of culture.",
+    "ContactInfo": {
+      "Address": "",
+      "Tel": "",
+      "Email": ""
+    },
+    "ImageUrl": "img1_37.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.5558",
+    "Longitude": "23.6962",
+    "Web": ""
+  },
+  {
+    "Id": "38",
+    "Title": "Renaissance complex \"Varosha\"-Blagoevgrad ",
+    "Content": "Varosha quarter was formed in Gorna Djumaya town in the Renaissance with a center place -\"Presentation of the Blessed Virgin Mary\" church. Varosha is the only Bulgarian quarter of the five quarters of the city during the first half of the 18th century. In its architectural form and structure Varosha is no different from the quarters of the same name in other Bulgarian cities. The buildings that were built in the early 19th century were often one storey buildings, with small windows to the courtyard, the trend to decorate the houses outside, with pictures, spreads. Varosha quarter was restored in the 80’s of the 20th century and has retained its spirit and style and has set up as a comfortable and attractive place for tourists. Here are the schools of the Arts Center, United Children Complex, the studios of Blagoevgrad artists, the Regional History Museum and the National Park \"Rila\" directorate. Varosha was declared a cultural monument.",
+    "ContactInfo": {
+      "Address": "“Mostova” pomeshtenie 7str., Lovech ",
+      "Tel": "+35 968 601 362",
+      "Email": "tic@lovech.bg    "
+    },
+    "ImageUrl": "img1_38.jpg",
+    "CategoryId": "1",
+    "Latitude": "43.1295",
+    "Longitude": "24.7162",
+    "Web": "https://www.lovech.bg "
+  },
+  {
+    "Id": "39",
+    "Title": "Presentation of the Blessed Virgin Mary",
+    "Content": " \"Presentation of the  Blessed Virgin  Mary\" church is a national cultural monument of Blagoevgrad. The construction of the church begins in 1840 and ends in 1844 with voluntary help from the Bulgarians from the city. The church is the work of master builders from the village Stoymirovo and voluntary work and contributions of all Bulgarians from the town and surrounding villages and the frescoes were painted by painters of the Bansko School of Art. The iconostasis also is an example of Bulgarian wood carving art of the Renaissance, making it a valuable example of the Bulgarian church carving. Some restoration works in terms of some architectural elements and icon painting were made in the 80’s of XX century.\"",
+    "ContactInfo": {
+      "Address": "",
+      "Tel": "",
+      "Email": ""
+    },
+    "ImageUrl": "img1_39.jpg",
+    "CategoryId": "1",
+    "Latitude": "42.0207",
+    "Longitude": "23.1046",
+    "Web": "https://www.bg-guide.org/en/show-places/view/presentation-of-the-blessed-virgin-church "
+  },
+  {
+    "Id": "40",
+    "Title": "Rozhen Monastery \"Nativity of,the Mother of God\"",
+    "Content": "The Rozhen Monastery of the “Nativity of the Mother of God” is the biggest monastery in the Pirin region. It was founded in 890, and gets its name from the nearby village of Rozhen. It is located about 5 km of Melnik in the lower part of Pirin. It offers an amazing view to the peaks of Pirin and Belasitsa, and the famous Melnik pyramids, located around the town pyramidal hills. It is famous for the miraculous icon of the Virgin Mary \"Portarnitsa\". The current building of the monastery is from the 19th century, the church itself is a remarkable monument. The oldest inscription is from 1597. It has an interesting iconostasis, frescoes and stained glass in the eastern part and in the monastery building there is an exhibition.",
+    "ContactInfo": {
+      "Address": "",
+      "Tel": "",
+      "Email": ""
+    },
+    "ImageUrl": "img1_40.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.5305",
+    "Longitude": "23.4266",
+    "Web": "http://visit.guide-bulgaria.com/a/871/rojen_monastery_nativity_of_the_mother_of_god.htm"
+  },
+  {
+    "Id": "41",
+    "Title": "Heraclea Sintica",
+    "Content": "The remains of the ancient city of Heraclea Sintica are located in South Bulgaria near the village of Rupite (Petrich municipality), on the southern slope of the volcanic hill Kozhuh. In ancient times the town was a center of the Sintica region, inhabited by Thracian tribes Sinti. The town is dead after a devastating earthquake in 388 years. Heraclea Sintica is one of the few ancient cities certain localized in the region around Struma. The city was localized in 2002 by Assoc. Prof. Georgi Mitrev, after an accidental discovery of a large Latin inscription. Archaeological studies indicate that the settlement was well developed for its time and there was a sewerage system. After excavations were revealed molds and a wide variety of glazed figures, which indicates the presence of crafts and workshops. There were found also coins, and two votive tablets - of Heracles and of Artemis - the goddess of the hunt.",
+    "ContactInfo": {
+      "Address": "24 Tsar Boris III Blvd./Str., Petrich  ",
+      "Tel": "+35 0879 119 840  ",
+      "Email": "tic@oapetrich.bg "
+    },
+    "ImageUrl": "img1_41.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.4494",
+    "Longitude": "23.2645",
+    "Web": "https://bulgariatravel.org/heraclea-sintica/"
+  },
+  {
+    "Id": "42",
+    "Title": "Samuilova Fortress",
+    "Content": "Samuilova fortress is the name of a medieval fortress, situated between the mountains Belasitsa and Ograzhden, on the right bank of Strumeshnitsa River, 5 kilometers from the village of Klyuch. It was probably built in the period 1009-1013, during the reign of king Samuil, on the foundations of a Thracian and an early-Slav settlement. The fortress was a part of one big defense fortification system, starting from the slopes of Belasitsa to the slopes of Ograzhden. The castle is associated with one of the tragic events in the Bulgarian history, the historical battle of Belasitsa in 1014 The national park-museum Samuilova Fortress includes the archaeological site Samuilova fortress with 13 canned dugouts and one so-called Big Dugout, as well as the ruins of the lookout tower of the Samuilova fortress. A panoramic site was built over the ruins with a memorial composition and an exhibition hall.  Samuilova fortress is included in the list of \"100 National Tourist Sights of Bulgaria\".",
+    "ContactInfo": {
+      "Address": "28 Macedonia Str., Sandanski",
+      "Tel": "+35 9 882 011 039",
+      "Email": "tic.sandanski@gmail.com"
+    },
+    "ImageUrl": "img1_42.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.1152",
+    "Longitude": "20.7908",
+    "Web": "https://bulgariatravel.org/samuils-fortress/"
+  },
+  {
+    "Id": "43",
+    "Title": "Nicopolis ad Nestum",
+    "Content": "Nicopolis ad Nestum translated as \"City of Victory at the Mesta River\" is a Roman city located in southwestern Bulgaria. The remains of Nikopolis are in the land of the village of Garmen, 7 km east of Gotse Delchev. Nicopolis ad Nestum was founded in 106 AD on the site of the Thracian settlement of Alexandroupolis by the Roman emperor Trajan, in honor of his victory over the Dacians. The city was an episcopal center in the period IV-XI century. At the end of the VI century (577) it was destroyed by Slavs and Avars and it was rebuilt during the reign of Justinian I. In the IX-X centuries the city was revived under the name of Nikopol and lasted until the XIII century, when it died during the Crusades. During the Late Middle Ages there was a Bulgarian settlement in part of the place, and in the southeastern part of the fortified town - a Turkish farm. During the Ottoman rule the town settled a few kilometers to the west with the name Gotse Delchev. Nicopolis ad Nestum is one of the few preserved ancient cities in Bulgaria and the only one in the Rhodopes from the period of Roman rule in the Balkans. It has been declared an archeological and architectural monument from antiquity and the Middle Ages.",
+    "ContactInfo": {
+      "Address": "2960 Garmen, Bulgaria",
+      "Tel": "+359 894 349 039",
+      "Email": ""
+    },
+    "ImageUrl": "img1_43.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.5961",
+    "Longitude": "23.7974",
+    "Web": "https://www.nikopolisadnestum.bgsait.com/en/index.html"
+  },
+  {
+    "Id": "44",
+    "Title": "Municipal History Museum – Gotse Delchev",
+    "Content": "The Municipal History Museum of Gotse Delchev opened to visitors in 1979 and is the only center for research, preservation of the cultural, historical and architectural heritage of the Gotse Delchev city and the municipality. The presented exhibitions present the moving authentic material evidence of human presence and activity, which have scientific and cultural value and are associated with the mythical and romantic Gotse Delchev region. Every year the museum presents exhibitions of archaeological finds related to the culture of the Thracians, Slavs and Proto-Bulgarians, discovered in the valley of the ancient Mesta River.",
+    "ContactInfo": {
+      "Address": "Hristo Botev Street 26, 2900 Center, Gotse Delchev",
+      "Tel": "+359 885 473 355 ",
+      "Email": "museum@gocenet.net"
+    },
+    "ImageUrl": "img1_44.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.5649",
+    "Longitude": "23.7199",
+    "Web": "https://gotsedelchevmuseum.bg/ "
+  },
+  {
+    "Id": "45",
+    "Title": "Holy Trinity Church",
+    "Content": "Holy Trinity Church is located in Bansko downtown and is one of the symbols of the resort. It is one of the biggest churches in Bulgaria, is a three-nave basilica and erected in 1835 by local masters. The church has been announced a monument of architecture and the whole complex is considered one of the most outstanding achievements of the Bulgarian culture from the National Revival period. Above its main entrance, one can see a Christian cross and a Turkish crescent which is a symbol of tolerance between the two religions. The church is painted by some of the most prominent masters from the Art School of Bansko and Debarsko, Velyan Ognev, who has created the unique carved iconostasis, the original wall paintings on the columns and the cupola, the bishop’s throne, the twelve columns symbolizing the twelve apostles. The bell tower in the yard of the church is erected in 1850, by Gligor Doyuv and It is considered a symbol of the city of Bansko. In 1866, a clock is installed on the tower.",
+    "ContactInfo": {
+      "Address": "2 Vazrazhdane Str., 2770 Bansko ",
+      "Tel": "+35 974 988 344",
+      "Email": ""
+    },
+    "ImageUrl": "img1_45.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.8365",
+    "Longitude": "23.4854",
+    "Web": "https://visit-bansko.bg/en/what-to-see/churches-and-monasteries/item/3958-st-trinity-church"
+  },
+  {
+    "Id": "46",
+    "Title": "Sveto Blagoveshtenie (St Annunciation) church",
+    "Content": "The 'Sveto Blagoveshtenie' church is located in the center of Razlog and it is one of the biggest churches in the Nevrocop diocese. The church was consecrated and open in 1939, it has 26 meters high and its bells have a total weight of 493 kg.  The murals on the church walls were decorated in the period 2000 - 2008 by a team of young artists - restorers.",
+    "ContactInfo": {
+      "Address": "9 Vazrazhdane Str., 2760 Tsentar, Razlog",
+      "Tel": "+359 892 234 600 ",
+      "Email": ""
+    },
+    "ImageUrl": "img1_46.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.8857",
+    "Longitude": "23.4628",
+    "Web": "http://www.destinationrazlog.com/index.php/en/zabelejitelnosti-3/hramove/item/203-sveto-blagoveshtenie-church "
+  },
+  {
+    "Id": "47",
+    "Title": "Historical Museum Petrich",
+    "Content": "The Town Historical Museum in Petrich was established as a public museum collection in 1966a and in 1998, it acquired the full status of a museum. It is currently housed in the building of the community center \"Bratya Miladinovi\" and has more than 18.000 museum exhibits in four departments: Archeology, Ethnography, Bulgarian lands 15th-19th century, New and recent history. There are also two branches, the department of Samuels Fortress and the department of the Baba Vanga House Museum. The museum has an active policy of attracting visitors - both citizens of the region and tourists from the country and abroad. In recent years, the Museum also has stepped up its activities in organizing educational programs and conducting archaeological research.",
+    "ContactInfo": {
+      "Address": "9 Aleksandar Stambolijski, 2850 Tsentar, Petrich",
+      "Tel": "+359 879 819 509",
+      "Email": "info@petrichhistorymuseum.bg "
+    },
+    "ImageUrl": "img1_47.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.3968",
+    "Longitude": "23.2003",
+    "Web": "https://petrichhistorymuseum.bg/en/ "
+  },
+  {
+    "Id": "48",
+    "Title": "Historical Museum Razlog",
+    "Content": "The museum officially opened in 1957 as Nikola Parapunov house-museum. Its main exposition shows the life of Colonel Nikola Parapunov and the led by him antifascist movement in the Pirin region. In 2000, with a decision of the City Council, the memorial museum was transformed into Historical Museum – Razlog. The museum holds more than 5000 exhibits from old weapons and books, traditional local clothing to works of local craftsmen. The rich photo gallery and documents from 19th and 20th centuries are the basis for scientific researches and many exhibitions concerning the life of local people. The temporary exhibitions today show the typical for the region “razlojko-chepiska” house with the values of the local people. Next to the museum is the monument of the citizens, killed in the Krustovdensko rebellion of Krapa neighborhood, as well as the marble fountain, made as a tribute for 1000 years Independence of the Bulgarian Orthodox Church.",
+    "ContactInfo": {
+      "Address": "15 September, 1903 Square 14, 2760 Razlog",
+      "Tel": "+35 974 780 546",
+      "Email": ""
+    },
+    "ImageUrl": "img1_48.jpg",
+    "CategoryId": "1",
+    "Latitude": "41.8862",
+    "Longitude": "23.4608",
+    "Web": "https://local-history-museum-34.business.site/ "
+  },
+  {
+    "Id": "49",
+    "Title": "Anastenaria",
+    "Content": "An ancient custom that is revived every year on May 21 during the celebration of Saints Constantine and Helen in the village of Agia Eleni, Serres. They are extremely interesting, as all the ancient religious rituals have been preserved intact and \"alive\" until today. The custom originates from the remote villages of Eastern Thrace. The celebration retains its pre-Christian elements, although over the years it is realized in honor of Saints Constantine and Helen. The ceremony begins on the eve (May 20) of the festival and culminates the next day (21/5), in which \"Anastenarides\", who are mostly descendants of refugees has the chance to walk over the fire with barefoot. The event attracts a lot of people, not only visitors, but also scientific researchers from all over the world.",
+    "ContactInfo": {
+      "Address": "Agia Eleni, 62100, Serres",
+      "Tel": "+30 2321 099 160",
+      "Email": ""
+
+    },
+    "ImageUrl": "img2_49.jpg",
+    "CategoryId": "2",
+    "Latitude": "41.0030",
+    "Longitude": "23.5592",
+    "Web": "https://serres.pkm.gov.gr/default.aspx?lang=el-GR&page=575 "
+
+  },
+  {
+    "Id": "50",
+    "Title": "Gynaikokratia (or Babo or Vrexoudia)",
+    "Content": "The feast of Gynaikokratia or Babo or Vrexoudia is an ancient custom. It was transferred to Greece by the inhabitants of Eastern Romulia, who settled in Thrace and Macedonia. In Monokklisia the custom was began in 1923 by refugees from Petra in Eastern Thrace. The events of this custom honor the birth of children and the woman who brings them into the world. Every year on January 8, the custom is revived in the Municipal Districts of Monokklisia, N. Petra, Kamila and recently in Haropo. From dawn, the women with voices and the accompaniment of a loudly orchestra announce the fact that the village is now under their control. Married women elect a woman president and the other members of the board, who are also exclusively women. Then they occupy the public buildings, ring the church bells, and raise money for the day's expenses as well as supplies for the evening feast. Men on this day are busy with household chores and are not allowed to be on the street. Wearing the housewife's apron, they wash clothes, iron and take care of the children. The punishment for offenders is splashing and undressing. The dawn of the next day will find the village in its usual pre-condition.",
+    "ContactInfo": {
+      "Address": "Monokklisia, 62100, Serres",
+      "Tel": "+30 2321 099 300",
+      "Email": ""
+
+    },
+    "ImageUrl": "img2_50.jpg",
+    "CategoryId": "2",
+    "Latitude": "41.0580",
+    "Longitude": "23.4005",
+    "Web": "https://serres.pkm.gov.gr/default.aspx?lang=el-GR&page=576"
+
+  },
+  {
+    "Id": "51",
+    "Title": "Astrovradia",
+    "Content": "Astrovradia is an event organized and implemented by the Municipality of Serres, Astropyli and the Cultural Association “Ano Vrontou”. This event has been implemented for the last 13 years and tends to become an important local event, as it attracts the interest of hundreds of visitors, fans of astrophysical phenomena. As part of Astrovradia, a series of lectures, presentations and artistic events are organized that start in the afternoon and continue after sunset with tours in the night sky and observation with telescopes. At the same time the event is accompanied by music, dance and food.",
+    "ContactInfo": {
+      "Address": "Ano Vrontou",
+      "Tel": "+30 2321 047 515",
+      "Email": ""
+
+    },
+    "ImageUrl": "img2_51.jpg",
+    "CategoryId": "2",
+    "Latitude": "41.2946",
+    "Longitude": "23.6867",
+    "Web": "http://www.astropyli.org/ "
+
+  },
+  {
+    "Id": "52",
+    "Title": "Eleutheria",
+    "Content": "Eleftheria is the central cultural event of the Municipality of Serres. The event take place in June, on the occasion of the anniversary of the liberation of the city (June 29, 1913). They include multiple events, organized in collaboration with local cultural associations and other city bodies. The events concern almost all fields of culture, ie visual arts, theater, cinema, music, tradition, sports, etc. and take place in many outdoor city spaces.",
+    "ContactInfo": {
+      "Address": "1 Konstantinou Karamanli, 62122 Serres",
+      "Tel": "+30 2321 083 600",
+      "Email": "dserron@serres.gr "
+
+    },
+    "ImageUrl": "img2_52.jpg",
+    "CategoryId": "2",
+    "Latitude": "41.0864",
+    "Longitude": "23.5483",
+    "Web": "https://www.serres.gr/ "
+
+  },
+  {
+    "Id": "53",
+    "Title": "Gerakinia",
+    "Content": "\"Gerakinia\" is an event that takes place in September in Nigrita of Serres and is a representation of the fall of \"Gerakina\" in the well, in the area of \"Tsakalades\". Gerakina was born by the Rokani family in 1854 in Nigrita, which was under the Turkish yoke. Growing up, Gerakina became known for her beauty and the kindness of her character. In 1870 she is already 16 years old and fall in love with the young Nigritan Triantafyllos Gostinos. One day in August 1870, Gerakina, going to the well of the district to fetch water, slips carelessly and falls inside. Unfortunately, despite the effort of her lover who came down with a rope to the bottom of the well, Gerakina had a tragic end. All of Nigrita cried for the unfortunate tragic girl and accompanied her to her last home, after first decorating her with coins and bracelets. After three days, her beloved Triantaphyllos also died from unbearable pain and grief.",
+    "ContactInfo": {
+      "Address": "Nigrita, 62200, Serres",
+      "Tel": "+30 2322 020 300",
+      "Email": ""
+
+    },
+    "ImageUrl": "img2_53.jpg",
+    "CategoryId": "2",
+    "Latitude": "40.9084",
+    "Longitude": "23.5004",
+    "Web": "https://serres.pkm.gov.gr/default.aspx?lang=el-GR&page=577 "
+
+  },
+  {
+    "Id": "54",
+    "Title": "Amphipolis Festival",
+    "Content": "The Amphipolis Festival was founded in 1999 and takes place in the Archaeological Park next to the river Strymon. The festival is realized every year during the summer months, mainly July and August and includes a variety of events such as workshops, theatrical performances, concerts, tributes, traditional nights. It is addressed mainly to the citizens of the region, but also to the inhabitants of the wider areas and the rest of Greece and gives them the opportunity to come closer to the history, culture and tradition of the wider area of Pangaion Mountain.",
+    "ContactInfo": {
+      "Address": "Amphipolis, 62052, Serres",
+      "Tel": "+30 2324 020 701",
+      "Email": "info@dimos-amfipolis.gr "
+
+    },
+    "ImageUrl": "img2_54.jpg",
+    "CategoryId": "2",
+    "Latitude": "40.8286",
+    "Longitude": "23.8443",
+    "Web": "https://dimos-amfipolis.gr/ "
+
+  },
+  {
+    "Id": "55",
+    "Title": "Revival of the Battle of Rupel Fortress",
+    "Content": "The Revival of the Battle of Rupel Fortress is an event that aims to preserve the historical memory, to promote peace and cooperation of peoples and states, so that humanity does not experience the horror of war again. Visitors, in the context of the event have the opportunity to experience the events of 1941 in Rupel, where the Greek ancestors raised their stature in front of the conqueror and defended their homeland to the end, refusing to surrender the forts. Through the masterful representation, the historical memories come to life and the younger generations are informed in the best way about the events that took place then. The event takes place in May at  Rupel Fortress.",
+    "ContactInfo": {
+      "Address": "Sidirokastro, 62300 Serres",
+      "Tel": "+30 2323 043 033 ",
+      "Email": "info@agkistroaction.gr"
+
+    },
+    "ImageUrl": "img2_55.jpg",
+    "CategoryId": "2",
+    "Latitude": "41.3458",
+    "Longitude": "23.3702",
+    "Web": "https://www.roupel.gr/ "
+  },
+  {
+    "Id": "56",
+    "Title": "International Festival  \"Pirin Folk\" ",
+    "Content": "The International Festival \"Pirin Folk\" of Sandanski is one of the most prestigious festivals in Bulgaria, which gathers participants from different countries every year in a meeting of traditions, cultures and languages in the name of song folklore. The Pirin Folk Festival - Sandanski was founded in 1993. This is the first in Bulgaria, the only one of its kind and the most popular Macedonian song festival in Bulgaria. The festival consists of two contests: Macedonian Song Contest and Contest for Performing Arts. The main purpose of the festival is to preserve and enrich the folklore tradition of the Pirin region and the cultural and historical heritage of the town of Sandanski and the region. It is realizing on the open-air theatre of Sandanski in the first days of September.",
+    "ContactInfo": {
+      "Address": "",
+      "Tel": "",
+      "Email": ""
+
+    },
+    "ImageUrl": "img2_56.jpg",
+    "CategoryId": "2",
+    "Latitude": "41.5678",
+    "Longitude": "23.2803",
+    "Web": "https://fest-bg.com/event/international-festival-pirinfolk/?lang=en "
+
+  },
+  {
+    "Id": "57",
+    "Title": "International Folklore Festival of Dance Clubs \"Sharena Stomna\" ",
+    "Content": "The International Folklore Festival of Dance Clubs \"Sharena Stomna\" is dedicated to dancing and many dance groups from Bulgaria, Macedonia, Greece, Serbia and other countries participate in the event. Everyone reveals the beauty, the charm and the uniqueness of their songs, dances and costumes. It is realized in the town of Dobrinishte on October.",
+    "ContactInfo": {
+      "Address": "",
+      "Tel": "",
+      "Email": ""
+
+    },
+    "ImageUrl": "img2_57.jpg",
+    "CategoryId": "2",
+    "Latitude": "41.8202",
+    "Longitude": "23.5592",
+    "Web": ""
+
+  },
+  {
+    "Id": "58",
+    "Title": "St John's Eve (Enyovden)",
+    "Content": "Enyovden or Saint John’s Eve is a Bulgarian holiday that is celebrated annually on 24th June. This holiday has pagan roots and, it was celebrated during the summer solstice, so it has a lot to do with the cult to the sun and its significance in people’s lives. A lot of Bulgarians celebrate their name day on Enyovden. The most famous names whose bearers celebrate their name days on this holiday are Joan, Joanna, Diana, as well as all names that mean a type of herb or spice. A very famous Bulgarian belief is that on Enyovden, the sun bathes in the water (rivers, seas, etc.), giving it some of its power. That is why, on Enyovden, there is a ritual that includes bathing in rivers and in the sea.  Enyovden is also known as the day on which herbs have the strongest healing powers, for this reason many herb gatherers pick different medical herbs this day. Finally, on Enyovden, there was also a ritual for all unmarried young women and girls to gather together and proclaim an Enyo’s bride. They used to dress the girl as a bride with a white shirt, a special red coat and a red veil. Then the dressed “bride” would be lifted up to a grown woman’s shoulders and they would both make a round of the village, together with the rest of the unmarried girls. This ritual was performed in seek of health and rich crops.",
+    "ContactInfo": {
+      "Address": "",
+      "Tel": "",
+      "Email": ""
+
+    },
+    "ImageUrl": "img2_58.jpg",
+    "CategoryId": "2",
+    "Latitude": "",
+    "Longitude": "",
+    "Web": ""
+
+  },
+  {
+    "Id": "59",
+    "Title": "International Folklore Festival \"Maleshevo sings and dances\" ",
+    "Content": "The international Folklore Festival \"Maleshevo sings and dances\" is a festival that conserves and promotes the folk heritage not only in Maleshevo and Bulgaria, but also in the Balkans, Europe and the world. Created with the aim to preserve the traditional culture and the Balkan nations foklor models, this festival expands its borders every year and meets more and more folklor ambassadors from different part of the world. The festival “Maleshevo sings and dances” was organized for the first time in 2004 and it has a competitive character, participating over 4000 singers from 12 countries. The festival is under the patronage of the Ministry of Culture, it is realizing in the last week of October on the stage of Mikrevo for three days.",
+    "ContactInfo": {
+      "Address": "Mikrevo",
+      "Tel": "",
+      "Email": ""
+
+    },
+    "ImageUrl": "img2_59.jpg",
+    "CategoryId": "2",
+    "Latitude": "43.8061",
+    "Longitude": "21.0579",
+    "Web": "https://fest-bg.com/event/international-folklore-fest-maleshevo-sings-and-dances-mikrevo/?lang=en"
 
   }
 

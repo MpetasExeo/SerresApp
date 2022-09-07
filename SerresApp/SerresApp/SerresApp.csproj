@@ -10,9 +10,12 @@
     <None Remove="Fonts\Dela.ttf" />
     <None Remove="Fonts\FontAwesomeFonts\FontAwesomeRegular400.otf" />
     <None Remove="Fonts\FontAwesomeFonts\FontAwesomeSolid900.otf" />
+    <None Remove="Fonts\FontAwesomeFonts\Montserrat.ttf" />
     <None Remove="Fonts\Inter.ttf" />
     <None Remove="Fonts\InterBold.ttf" />
+    <None Remove="Fonts\Lato.ttf" />
     <None Remove="Fonts\Merri.ttf" />
+    <None Remove="Fonts\Raleway.ttf" />
     <None Remove="Fonts\RobotoSlab.ttf" />
     <None Remove="Fonts\RobotoSlabBold.ttf" />
     <None Remove="greekcities.json" />
@@ -28,9 +31,12 @@
     <EmbeddedResource Include="Fonts\Dela.ttf" />
     <EmbeddedResource Include="Fonts\FontAwesomeFonts\FontAwesomeRegular400.otf" />
     <EmbeddedResource Include="Fonts\FontAwesomeFonts\FontAwesomeSolid900.otf" />
+    <EmbeddedResource Include="Fonts\Montserrat.ttf" />
     <EmbeddedResource Include="Fonts\Inter.ttf" />
     <EmbeddedResource Include="Fonts\InterBold.ttf" />
+    <EmbeddedResource Include="Fonts\Lato.ttf" />
     <EmbeddedResource Include="Fonts\Merri.ttf" />
+    <EmbeddedResource Include="Fonts\Raleway.ttf" />
     <EmbeddedResource Include="Fonts\RobotoSlab.ttf" />
     <EmbeddedResource Include="Fonts\RobotoSlabBold.ttf" />
     <EmbeddedResource Include="Json\darkstyle.json" />
@@ -41,7 +47,6 @@
     <EmbeddedResource Include="Json\serres_en.json" />
     <EmbeddedResource Include="Json\travelstyle.json" />
     <EmbeddedResource Include="Resources\SVGs\distancemarker.svg" />
-    <Page Include="greekcities.json" />
   </ItemGroup>
 
   <ItemGroup>

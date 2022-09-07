@@ -1,6 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView x:Class="SerresApp.LazyTabsViews.FavoritesView"
-              xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SerresApp.LazyTabsViews.FavoritesView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:UIElements="clr-namespace:SerresApp.UIControls"
     xmlns:customViews="clr-namespace:Sharpnado.TaskLoaderView;assembly=Sharpnado.TaskLoaderView"
@@ -161,9 +162,9 @@
                         Grid.RowSpan="2"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"
-                        ItemSize="240"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
                                                           Light={StaticResource Background}}"
+                        ItemSize="240"
                         ItemSpacing="2"
                         ItemsSource="{Binding FavouritesResult}">
 
@@ -191,133 +192,57 @@
                                                                                          Light=0.85}"
                                         POIDistance="{Binding DistanceFromUser}"
                                         POIImage="{Binding ImageUrl}"
-                                        POIShowDistance="{Binding ShowDistance}"
                                         POIName="{Binding Title}"
-                                        POIRegion="{Binding Category}" />
+                                        POIRegion="{Binding Category}"
+                                        POIShowDistance="{Binding ShowDistance}" />
                                 </Frame>
                             </DataTemplate>
                         </dxcv:DXCollectionView.ItemTemplate>
-
-                        <!--  Sort items.  -->
-                        <!--<dxcv:DXCollectionView.SortDescriptions>
-                            <dxcv:SortDescription FieldName="Distance" SortOrder="Ascending" />
-                        </dxcv:DXCollectionView.SortDescriptions>-->
                     </dxcv:DXCollectionView>
 
 
 
-                    <StackLayout Grid.Row="0"
+                    <StackLayout
+                        Grid.Row="0"
                         Grid.RowSpan="2"
                         Grid.Column="0"
-                                 VerticalOptions="Center"
-                                 HorizontalOptions="Center"
-                                     IsVisible="{Binding IsEmptyList}"
-                        Grid.ColumnSpan="3">
+                        Grid.ColumnSpan="3"
+                        HorizontalOptions="Center"
+                        IsVisible="{Binding IsEmptyList}"
+                        VerticalOptions="Center">
 
 
-                        <Frame     
-                            TranslationY="-60"
-                        HeightRequest="240"
-                            WidthRequest="240"
+                        <Frame
+                            BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
+                                                              Light={StaticResource TransparentBackground}}"
                             CornerRadius="240"
-                        BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},Light={StaticResource TransparentBackground}}"
-                        >
+                            HeightRequest="240"
+                            TranslationY="-60"
+                            WidthRequest="240">
 
                             <lottie:AnimationView
-
                                 x:Name="EmptyListLottie"
-                        Animation="empty.json"
-                        AutoPlay="True"
-                       AbsoluteLayout.LayoutBounds="0.5, 0.5, 148, 148"
-                AbsoluteLayout.LayoutFlags="PositionProportional"
-                        HorizontalOptions="FillAndExpand"
-                        RepeatMode="Infinite"
-                        VerticalOptions="Fill" />
+                                AbsoluteLayout.LayoutBounds="0.5, 0.5, 148, 148"
+                                AbsoluteLayout.LayoutFlags="PositionProportional"
+                                Animation="emptyfavourites.json"
+                                AutoPlay="True"
+                                HorizontalOptions="FillAndExpand"
+                                RepeatCount="2"
+                                RepeatMode="Restart"
+                                VerticalOptions="Fill" />
 
                         </Frame>
                         <Label
-                                      
-                                        FontAttributes="Bold"
-                                        FontSize="18"
-                                        HorizontalOptions="Fill"
-                                        HorizontalTextAlignment="Center"
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            HorizontalOptions="Fill"
+                            HorizontalTextAlignment="Center"
+                            Text="{helpers:Translate NoFavourites}"
                             TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
-                                                                                 Light={StaticResource Primary}}"
-                                        Text="No results matched your filter."
-                                        VerticalOptions="Start" />
+                                                        Light={StaticResource Primary}}"
+                            VerticalOptions="Start" />
 
                     </StackLayout>
-
-                    <!--<FlexLayout
-                        Grid.Column="0"
-                        AlignContent="Center"
-                        AlignItems="Center"
-                        Direction="Row"
-                        FlexLayout.AlignSelf="Start"
-                        JustifyContent="Center">
-                        <Frame
-                            Padding="0"
-                            xct:TouchEffect.Command="{Binding BackCommand}"
-                            xct:TouchEffect.NativeAnimation="True"
-                            xct:TouchEffect.PressedAnimationDuration="340"
-                            xct:TouchEffect.PressedAnimationEasing="SinInOut"
-                            xct:TouchEffect.PressedOpacity="0.85"
-                            BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
-                                                              Light={StaticResource TransparentBackground}}"
-                            CornerRadius="12"
-                            FlexLayout.AlignSelf="Center"
-                            FlexLayout.Shrink="0"
-                            HeightRequest="48"
-                            WidthRequest="48">
-                            <Label
-                                Padding="0"
-                                BackgroundColor="Transparent"
-                                FontFamily="FASolid"
-                                FontSize="20"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"
-                                Text="{x:Static fontAwesome:FontAwesomeIcons.ArrowLeft}"
-                                TextColor="#E2E2E2"
-                                VerticalOptions="Center"
-                                VerticalTextAlignment="Center" />
-                        </Frame>
-                    </FlexLayout>-->
-
-                    <!--<FlexLayout
-                        Grid.Column="2"
-                        AlignContent="Center"
-                        AlignItems="Center"
-                        Direction="Row"
-                        FlexLayout.AlignSelf="Start"
-                        JustifyContent="Center">
-                        <Frame
-                            Padding="0"
-                            xct:TouchEffect.Command="{Binding OpenDrawerCommand}"
-                            xct:TouchEffect.NativeAnimation="True"
-                            xct:TouchEffect.PressedAnimationDuration="340"
-                            xct:TouchEffect.PressedAnimationEasing="SinInOut"
-                            xct:TouchEffect.PressedOpacity="0.85"
-                            BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
-                                                              Light={StaticResource TransparentBackground}}"
-                            CornerRadius="12"
-                            FlexLayout.AlignSelf="Center"
-                            FlexLayout.Shrink="0"
-                            HeightRequest="48"
-                            WidthRequest="48">
-                            <Label
-                                Padding="0"
-                                BackgroundColor="Transparent"
-                                FontFamily="FASolid"
-                                FontSize="20"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"
-                                Text="{x:Static fontAwesome:FontAwesomeIcons.Filter}"
-                                TextColor="#E2E2E2"
-                                VerticalOptions="Center"
-                                VerticalTextAlignment="Center" />
-                        </Frame>
-                    </FlexLayout>-->
-
 
                 </Grid>
             </dxn:DrawerView.MainContent>

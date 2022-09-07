@@ -168,7 +168,8 @@ namespace SerresApp.ViewModels
                 await _userLocationService.GetUserLocationAsync(_ct).ConfigureAwait(false);
             }
 
-            Categories = new List<Category>(Models.Categories.CategoriesList);
+            var categories = new Categories();
+            Categories = new List<Category>(categories.CategoriesList);
             CanLoadMore = true;
                         
             POIS = await _greekCitiesService.GetGreekCities();
@@ -197,6 +198,9 @@ namespace SerresApp.ViewModels
         private Task ApplyFiltersChange()
         {
             CanLoadMore = true;
+
+            //var categories = new Categories();
+            //Categories = new List<Category>(categories.CategoriesList);
             SelectedCategories = Categories.Where(x => x.IsSelected).Select(x => x.Id).ToList();
             FilteredResults = new ObservableRangeCollection<POISlim>(POIS.Where(x=> SelectedCategories.Contains(x.CategoryId)));
             ItemsCount = FilteredResults.Count;
