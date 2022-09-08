@@ -26,19 +26,7 @@ namespace SerresApp.Droid
                         break;
                     case "2":
                         iconId = Resource.Drawable.c2;
-                        break;
-                    case "4":
-                        iconId = Resource.Drawable.beach;
-                        break;
-                    case "6":
-                        iconId = Resource.Drawable.c0;
-                        break;
-                    case "7":
-                        iconId = Resource.Drawable.gastronomy;
-                        break;
-                    case "8":
-                        iconId = Resource.Drawable.@event;
-                        break;
+                        break;                   
                     default:
                         iconId = Resource.Drawable.c0;
                         break;
