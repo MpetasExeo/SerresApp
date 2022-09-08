@@ -11,7 +11,6 @@ using SerresApp.Services;
 
 using Sharpnado.TaskLoaderView;
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -225,7 +224,7 @@ namespace SerresApp.ViewModels
                 {
                     Nature = POIS.Where(x => x.CategoryId == 0).ToObservableCollection();
                     Tangible = POIS.Where(x => x.CategoryId == 1).ToObservableCollection();
-                    Intangible = POIS.Where(x => x.CategoryId == 2).ToObservableCollection();                 
+                    Intangible = POIS.Where(x => x.CategoryId == 2).ToObservableCollection();
                 }
 
             }
@@ -269,7 +268,7 @@ namespace SerresApp.ViewModels
                 await _userLocationService.GetUserLocationAsync(_ct).ConfigureAwait(true);
             }
 
-            var categories = new Categories();
+            Categories categories = new Categories();
             Categories = new List<Category>(categories.CategoriesList);
 
             POIS = await _greekCitiesService.GetGreekCities();
@@ -278,7 +277,7 @@ namespace SerresApp.ViewModels
 
             IsLoaded = true;
         }
-             
+
         private async Task NavigateToDetails(POISlim poi)
         {
             await poi.NavigateToDetailsAsync();
@@ -296,7 +295,7 @@ namespace SerresApp.ViewModels
 
             _greekCitiesService = new GreekCitiesService();
             NavToDetailsCommand = new AsyncCommand<POISlim>(NavigateToDetails);
-        
+
             POIS = new ObservableRangeCollection<POISlim>();
 
             Nature = new ObservableRangeCollection<POISlim>();

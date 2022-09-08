@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SerresApp.Models
+﻿namespace SerresApp.Models
 {
     public class PagedList<T>
     {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SerresApp
+﻿namespace SerresApp
 {
     public class Extensions
     {

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SerresApp.Views.AboutPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fontAwesome="clr-namespace:SerresApp.Fonts"
+    xmlns:helpers="clr-namespace:SerresApp.Helpers"
+    Title="{helpers:Translate AboutTheApp}"
+    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
+                                      Light={StaticResource Background}}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="12,16,12,0">
+                <Label
+                    Margin="0,0,0,16"
+                    FontFamily="Inter"
+                    FontSize="16"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{helpers:Translate AboutApp}"
+                    TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                Light={StaticResource Primary}}"
+                    VerticalOptions="CenterAndExpand" />
+
+                <Image
+                    Margin="0,24,0,16"
+                    Aspect="AspectFit"
+                    HeightRequest="135"
+                    HorizontalOptions="Fill"
+                    Source="interreg.png" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

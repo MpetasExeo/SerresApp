@@ -1,8 +1,7 @@
-﻿using SerresApp.Models;
+﻿using MvvmHelpers;
 
-using MvvmHelpers;
+using SerresApp.Models;
 
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SerresApp.Interfaces

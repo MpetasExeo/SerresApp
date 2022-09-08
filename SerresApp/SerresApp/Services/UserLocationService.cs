@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace SerresApp.Services
 {

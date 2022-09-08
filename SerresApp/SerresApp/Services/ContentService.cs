@@ -21,13 +21,13 @@ namespace SerresApp.Services
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
 
-                System.Collections.Specialized.NameValueCollection query = HttpUtility.ParseQueryString(string.Empty);
+                var query = HttpUtility.ParseQueryString(string.Empty);
                 List<string> qs = new List<string>
                 {
                     $"asceding={System.Net.WebUtility.UrlEncode(ascending.ToString())}"
                 };
 
-                for (int i = 0; i < category.Length; i++)
+                for (var i = 0; i < category.Length; i++)
                 {
                     qs.Add($"category={category[i]}");
                 }
@@ -37,11 +37,11 @@ namespace SerresApp.Services
                     qs.Add($"page={page}");
                 }
 
-                string sqs = string.Join("&" , qs);
+                var sqs = string.Join("&" , qs);
 
-                string lang = Settings.TwoLetterLocaleCode[Settings.Language];
+                var lang = Settings.TwoLetterLocaleCode[Settings.Language];
 
-                HttpResponseMessage response = client.GetAsync(string.Format("api/Contents/paged/?{0}" , sqs)).Result;
+                var response = client.GetAsync(string.Format("api/Contents/paged/?{0}" , sqs)).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -62,9 +62,9 @@ namespace SerresApp.Services
                     client.DefaultRequestHeaders.Accept.Add(
                         new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    string lang = Settings.TwoLetterLocaleCode[Settings.Language];
+                    var lang = Settings.TwoLetterLocaleCode[Settings.Language];
 
-                    HttpResponseMessage response = client.GetAsync(string.Format("api/Contents/el/{0}" , id)).Result;
+                    var response = client.GetAsync(string.Format("api/Contents/el/{0}" , id)).Result;
 
                     if (response.IsSuccessStatusCode)
                     {

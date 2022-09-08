@@ -25,7 +25,7 @@ namespace SerresApp.Views
                 Navigation.PushModalAsync(new OnboardingPage());
             }
 
-           
+
         }
 
         protected override void OnAppearing()

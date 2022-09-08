@@ -12,7 +12,7 @@ namespace SerresApp.ViewModels
     {
         public PlaygroundPageViewModel()
         {
-            var categories = new Categories();
+            Categories categories = new Categories();
             Categories = new List<Category>(categories.CategoriesList);
             OpenDrawerCommand = new Command(OpenDrawer);
             SecondaryCategoriesSelectedCommand = new Command(SecondaryCategoriesEnable);

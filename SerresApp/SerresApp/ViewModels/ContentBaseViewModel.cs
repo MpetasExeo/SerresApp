@@ -1,9 +1,5 @@
 ﻿using SerresApp.Interfaces;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace SerresApp.ViewModels
 {
     public partial class ContentBaseViewModel : BaseViewModel

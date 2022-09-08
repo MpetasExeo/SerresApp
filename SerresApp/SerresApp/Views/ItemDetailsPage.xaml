@@ -186,6 +186,7 @@
                     <StackLayout Margin="{Binding Thickness}" Spacing="20">
                         <StackLayout Margin="0" Padding="0,0,0,-14">
                             <Frame
+                                x:Name="region"
                                 Padding="8"
                                 xct:TouchEffect.Command="{Binding NavigateCommand}"
                                 xct:TouchEffect.NativeAnimation="True"
@@ -219,7 +220,7 @@
 
                         <!--  THIRD SECTION  -->
                         <Frame
-                            x:Name="detailContainer"
+                            x:Name="infoFrame"
                             Padding="0"
                             BackgroundColor="{AppThemeBinding Dark={StaticResource DarkSecondary},
                                                               Light={StaticResource Secondary}}"
@@ -376,7 +377,7 @@
 
                         <!--  SECOND SECTION  -->
                         <Frame
-                            x:Name="descriptionContainer"
+                            x:Name="DetailsView"
                             Margin="0,0,0,4"
                             Padding="8,0,8,0"
                             d:IsVisible="false"
@@ -392,6 +393,7 @@
 
                             <StackLayout Padding="0,4">
                                 <StackLayout
+                                    x:Name="title"
                                     Margin="0,4"
                                     HorizontalOptions="FillAndExpand"
                                     Orientation="Horizontal"
@@ -415,6 +417,7 @@
                                                                       Light={StaticResource Accent}}"
                                     HeightRequest="0.75" />
                                 <Label
+                                    x:Name="details"
                                     FontFamily="Merri"
                                     FontSize="16"
                                     HorizontalOptions="FillAndExpand"
@@ -434,6 +437,7 @@
 
 
                         <Frame
+                            x:Name="contactInfo"
                             Margin="0,4,0,16"
                             Padding="8"
                             d:IsVisible="false"
@@ -446,13 +450,13 @@
                             BackgroundColor="{AppThemeBinding Dark={StaticResource DarkSecondary},
                                                               Light={StaticResource Secondary}}"
                             HorizontalOptions="Fill"
-                            IsVisible="{Binding SelectedPOI.ShowContactInfo}"
+                            IsVisible="{Binding ShowContactInfo}"
                             Visual="Material">
 
                             <StackLayout Padding="4,4,4,4" HorizontalOptions="Fill">
                                 <StackLayout
                                     HorizontalOptions="Fill"
-                                    IsVisible="{Binding SelectedPOI.HasAddress}"
+                                    IsVisible="{Binding HasAddress}"
                                     Orientation="Horizontal"
                                     Spacing="16">
                                     <Label
@@ -477,7 +481,7 @@
 
                                 <StackLayout
                                     HorizontalOptions="Start"
-                                    IsVisible="{Binding SelectedPOI.HasTelephone}"
+                                    IsVisible="{Binding HasTelephone}"
                                     Orientation="Horizontal"
                                     Spacing="16">
                                     <Label
@@ -502,7 +506,7 @@
 
                                 <StackLayout
                                     HorizontalOptions="Start"
-                                    IsVisible="{Binding SelectedPOI.HasEmail}"
+                                    IsVisible="{Binding HasEmail}"
                                     Orientation="Horizontal"
                                     Spacing="16">
                                     <Label

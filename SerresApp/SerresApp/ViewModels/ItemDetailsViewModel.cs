@@ -23,7 +23,6 @@ using System.Windows.Input;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace SerresApp.ViewModels
 {
@@ -78,7 +77,7 @@ namespace SerresApp.ViewModels
 
             }
         }
-        
+
 
         public Temperatures Temperatures
         {
@@ -98,6 +97,42 @@ namespace SerresApp.ViewModels
             get => _isFavorite;
             set => SetAndRaise(ref _isFavorite , value);
         }
+
+
+
+        public bool ShowContactInfo
+        {
+            get
+            {
+                return HasTelephone || HasEmail || HasAddress;
+            }
+        }
+
+        public bool HasEmail
+        {
+            get
+            {
+                return SelectedPOI.ContactInfo.Email != string.Empty;
+            }
+        }
+
+        public bool HasAddress
+        {
+            get
+            {
+                return SelectedPOI.ContactInfo.Address != string.Empty;
+            }
+        }
+
+        public bool HasTelephone
+        {
+            get
+            {
+                return SelectedPOI.ContactInfo.Tel != string.Empty;
+            }
+        }
+
+
         #endregion
 
         static readonly Stopwatch timer = new Stopwatch();
@@ -203,7 +238,7 @@ namespace SerresApp.ViewModels
 
             if (Settings.Position is null)
             {
-                var locationService = new UserLocationService();
+                UserLocationService locationService = new UserLocationService();
                 var userLocation = await locationService.GetUserLocationAsync(ct);
             }
 

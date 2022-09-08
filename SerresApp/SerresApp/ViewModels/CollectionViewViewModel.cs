@@ -1,15 +1,14 @@
 ﻿
+using MvvmHelpers;
+using MvvmHelpers.Commands;
+
 using SerresApp.Helpers;
 using SerresApp.Interfaces;
 using SerresApp.Models;
 using SerresApp.Services;
 
-using MvvmHelpers;
-using MvvmHelpers.Commands;
-
 using Sharpnado.TaskLoaderView;
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -162,16 +161,16 @@ namespace SerresApp.ViewModels
         }
 
         public async Task InitializationTask()
-        {            
+        {
             if (Settings.Position is null)
             {
                 await _userLocationService.GetUserLocationAsync(_ct).ConfigureAwait(false);
             }
 
-            var categories = new Categories();
+            Categories categories = new Categories();
             Categories = new List<Category>(categories.CategoriesList);
             CanLoadMore = true;
-                        
+
             POIS = await _greekCitiesService.GetGreekCities();
 
             var intermediary = FilteredResults;
@@ -194,7 +193,7 @@ namespace SerresApp.ViewModels
             IsLoaded = true;
         }
 
-       
+
         private Task ApplyFiltersChange()
         {
             CanLoadMore = true;
@@ -202,7 +201,7 @@ namespace SerresApp.ViewModels
             //var categories = new Categories();
             //Categories = new List<Category>(categories.CategoriesList);
             SelectedCategories = Categories.Where(x => x.IsSelected).Select(x => x.Id).ToList();
-            FilteredResults = new ObservableRangeCollection<POISlim>(POIS.Where(x=> SelectedCategories.Contains(x.CategoryId)));
+            FilteredResults = new ObservableRangeCollection<POISlim>(POIS.Where(x => SelectedCategories.Contains(x.CategoryId)));
             ItemsCount = FilteredResults.Count;
             Page = 1;
             return Task.FromResult(Categories);

@@ -18,14 +18,14 @@ namespace SerresApp.Droid
                 var iconId = 0;
                 switch (descriptor.Id)
                 {
+                    case "0":
+                        iconId = Resource.Drawable.c0;
+                        break;
                     case "1":
-                        iconId = Resource.Drawable.top;
+                        iconId = Resource.Drawable.c1;
                         break;
                     case "2":
-                        iconId = Resource.Drawable.monument;
-                        break;
-                    case "3":
-                        iconId = Resource.Drawable.museum;
+                        iconId = Resource.Drawable.c2;
                         break;
                     case "4":
                         iconId = Resource.Drawable.beach;

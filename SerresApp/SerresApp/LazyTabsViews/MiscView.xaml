@@ -1,21 +1,21 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentView
     x:Class="SerresApp.LazyTabsViews.MiscView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:UIElements="clr-namespace:SerresApp.UIControls"
     xmlns:customViews="clr-namespace:Sharpnado.TaskLoaderView;assembly=Sharpnado.TaskLoaderView"
     xmlns:dxcv="clr-namespace:DevExpress.XamarinForms.CollectionView;assembly=DevExpress.XamarinForms.CollectionView"
     xmlns:dxe="clr-namespace:DevExpress.XamarinForms.Editors;assembly=DevExpress.XamarinForms.Editors"
     xmlns:dxn="clr-namespace:DevExpress.XamarinForms.Navigation;assembly=DevExpress.XamarinForms.Navigation"
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:fontAwesome="clr-namespace:SerresApp.Fonts"
     xmlns:helpers="clr-namespace:SerresApp.Helpers"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:UIElements="clr-namespace:SerresApp.UIControls"
     xmlns:vm="clr-namespace:SerresApp.ViewModels"
     xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.Effects;assembly=Xamarin.CommunityToolkit"
-    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     x:DataType="vm:MiscViewModel">
 
     <ContentView.Resources>
@@ -26,9 +26,7 @@
             <Style x:Key="CoffeeCard" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource Background}}" />
                 <Setter Property="CornerRadius" Value="6" />
-                <Setter Property="HasShadow" Value="{OnPlatform Android=true,
-                                                                iOS=false,
-                                                                Default=true}" />
+                <Setter Property="HasShadow" Value="{OnPlatform Android=true, iOS=false, Default=true}" />
             </Style>
 
             <Color x:Key="LightRadioButtonColor">#BDC2C6</Color>
@@ -37,13 +35,16 @@
             <ControlTemplate x:Key="ThemeRadioTemplate">
                 <Frame
                     x:Name="Check"
-                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource Background}}"
-                    BorderColor="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource Background}}"
+                    Padding="0"
+                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
+                                                      Light={StaticResource Background}}"
+                    BorderColor="{AppThemeBinding Dark={StaticResource DarkBackground},
+                                                  Light={StaticResource Background}}"
                     CornerRadius="8"
-                    HasShadow="{OnPlatform iOS=false, Android=true}"
+                    HasShadow="{OnPlatform iOS=false,
+                                           Android=true}"
                     HeightRequest="96"
                     HorizontalOptions="Start"
-                    Padding="0"
                     VerticalOptions="Start"
                     WidthRequest="96">
                     <Grid Margin="4" WidthRequest="96">
@@ -63,16 +64,16 @@
 
                                     <Style.Triggers>
                                         <DataTrigger
-                                            Value="True"
                                             Binding="{Binding Path=IsChecked, Source={x:RelativeSource AncestorType={x:Type RadioButton}}}"
-                                            TargetType="Label">
+                                            TargetType="Label"
+                                            Value="True">
                                             <Setter Property="FontAttributes" Value="Bold" />
                                             <Setter Property="TextColor" Value="White" />
                                         </DataTrigger>
                                         <DataTrigger
-                                            Value="False"
                                             Binding="{Binding Path=IsChecked, Source={x:RelativeSource AncestorType={x:Type RadioButton}}}"
-                                            TargetType="Label">
+                                            TargetType="Label"
+                                            Value="False">
                                             <Setter Property="FontAttributes" Value="None" />
                                             <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}" />
                                         </DataTrigger>
@@ -136,7 +137,8 @@
         </customViews:TaskLoaderView.LoadingView>
 
         <dxn:DrawerView
-            DrawerBackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource Background}}"
+            DrawerBackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
+                                                    Light={StaticResource Background}}"
             DrawerContentMinHeight="226"
             DrawerFooterHeight="0"
             DrawerMinHeight="300"
@@ -144,7 +146,8 @@
             IsDrawerOpened="{Binding IsDrawerOpen, Mode=TwoWay}"
             IsDrawerShadowVisible="True"
             IsScrimEnabled="True"
-            ScrimColor="{AppThemeBinding Dark={StaticResource PrimaryOpacityDark}, Light={StaticResource PrimaryOpacity}}">
+            ScrimColor="{AppThemeBinding Dark={StaticResource PrimaryOpacityDark},
+                                         Light={StaticResource PrimaryOpacity}}">
 
             <dxn:DrawerView.DrawerHeaderContent>
                 <Grid
@@ -156,13 +159,14 @@
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         Margin="0,8"
-                        BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark}, Light={StaticResource TransparentBackground}}"
+                        xct:CornerRadiusEffect.CornerRadius="4"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
+                                                          Light={StaticResource TransparentBackground}}"
                         FlexLayout.Grow="0"
                         HeightRequest="6"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
-                        WidthRequest="48"
-                        xct:CornerRadiusEffect.CornerRadius="4" />
+                        WidthRequest="48" />
 
                 </Grid>
 
@@ -170,31 +174,37 @@
 
             <dxn:DrawerView.DrawerContent>
                 <Grid
-                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground}, Light={StaticResource Background}}"
-                    ColumnSpacing="8"
                     Padding="8"
+                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
+                                                      Light={StaticResource Background}}"
+                    ColumnSpacing="8"
                     RowDefinitions="*"
                     RowSpacing="0"
                     VerticalOptions="Fill">
 
-                    <StackLayout IsVisible="{Binding ThemeClicked}" Margin="0" HorizontalOptions="Fill">
+                    <StackLayout
+                        Margin="0"
+                        HorizontalOptions="Fill"
+                        IsVisible="{Binding ThemeClicked}">
                         <Label
                             Margin="0,0,0,0"
                             FontAttributes="Bold"
                             FontFamily="InterBold"
                             FontSize="22"
                             Text="{helpers:Translate Theme}"
-                            TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}" />
+                            TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                        Light={StaticResource Primary}}" />
 
                         <Frame
-                            HasShadow="True"
-                            Style="{DynamicResource CoffeeCard}"
-                            xct:ShadowEffect.Color="{AppThemeBinding Dark=Black, Light={StaticResource DarkBackground}}"
+                            xct:ShadowEffect.Color="{AppThemeBinding Dark=Black,
+                                                                     Light={StaticResource DarkBackground}}"
                             xct:ShadowEffect.OffsetX="0"
                             xct:ShadowEffect.OffsetY="0"
                             xct:ShadowEffect.Opacity="0.95"
-                            VerticalOptions="Center"
-                            xct:ShadowEffect.Radius="1">
+                            xct:ShadowEffect.Radius="1"
+                            HasShadow="True"
+                            Style="{DynamicResource CoffeeCard}"
+                            VerticalOptions="Center">
                             <Grid
                                 ColumnDefinitions="*,Auto,Auto,Auto,*"
                                 ColumnSpacing="10"
@@ -204,8 +214,8 @@
                                 <RadioButton
                                     x:Name="RadioButtonSystem"
                                     Grid.Column="1"
-                                    Value="System"
-                                    CheckedChanged="RadioButtonSystem_CheckedChanged">
+                                    CheckedChanged="RadioButtonSystem_CheckedChanged"
+                                    Value="System">
                                     <RadioButton.Content>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                             <Label FontFamily="FASolid" Text="{x:Static fontAwesome:FontAwesomeIcons.UserCog}" />
@@ -215,7 +225,8 @@
                                                 HorizontalOptions="Center"
                                                 HorizontalTextAlignment="Center"
                                                 Text="{helpers:Translate SystemDefaultMode}"
-                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}"
+                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                            Light={StaticResource Primary}}"
                                                 VerticalOptions="Start"
                                                 VerticalTextAlignment="Start" />
                                         </StackLayout>
@@ -224,8 +235,8 @@
                                 <RadioButton
                                     x:Name="RadioButtonLight"
                                     Grid.Column="2"
-                                    Value="Light"
-                                    CheckedChanged="RadioButtonSystem_CheckedChanged">
+                                    CheckedChanged="RadioButtonSystem_CheckedChanged"
+                                    Value="Light">
                                     <RadioButton.Content>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                             <Label FontFamily="FASolid" Text="{x:Static fontAwesome:FontAwesomeIcons.Sun}" />
@@ -234,7 +245,8 @@
                                                 HorizontalOptions="Center"
                                                 HorizontalTextAlignment="Center"
                                                 Text="{helpers:Translate Light}"
-                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}"
+                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                            Light={StaticResource Primary}}"
                                                 VerticalOptions="Start"
                                                 VerticalTextAlignment="Start" />
                                         </StackLayout>
@@ -243,8 +255,8 @@
                                 <RadioButton
                                     x:Name="RadioButtonDark"
                                     Grid.Column="3"
-                                    Value="Dark"
-                                    CheckedChanged="RadioButtonSystem_CheckedChanged">
+                                    CheckedChanged="RadioButtonSystem_CheckedChanged"
+                                    Value="Dark">
                                     <RadioButton.Content>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                             <Label FontFamily="FASolid" Text="{x:Static fontAwesome:FontAwesomeIcons.Moon}" />
@@ -255,22 +267,28 @@
                             </Grid>
                         </Frame>
                     </StackLayout>
-                    <StackLayout  IsVisible="{Binding LanguageClicked}" VerticalOptions="FillAndExpand"  Margin="0" HorizontalOptions="Fill">
+                    <StackLayout
+                        Margin="0"
+                        HorizontalOptions="Fill"
+                        IsVisible="{Binding LanguageClicked}"
+                        VerticalOptions="FillAndExpand">
                         <Label
                             FontAttributes="Bold"
                             FontFamily="InterBold"
                             FontSize="22"
                             Text="{helpers:Translate Language}"
-                            TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}" />
+                            TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                        Light={StaticResource Primary}}" />
 
                         <Frame
-                            Style="{DynamicResource CoffeeCard}"
-                            xct:ShadowEffect.Color="{AppThemeBinding Dark=Black, Light={StaticResource DarkBackground}}"
+                            xct:ShadowEffect.Color="{AppThemeBinding Dark=Black,
+                                                                     Light={StaticResource DarkBackground}}"
                             xct:ShadowEffect.OffsetX="0"
                             xct:ShadowEffect.OffsetY="0"
                             xct:ShadowEffect.Opacity="0.9"
-                            VerticalOptions="Center"
-                            xct:ShadowEffect.Radius="1">
+                            xct:ShadowEffect.Radius="1"
+                            Style="{DynamicResource CoffeeCard}"
+                            VerticalOptions="Center">
                             <Grid
                                 ColumnDefinitions="*,Auto,Auto,Auto,*"
                                 ColumnSpacing="10"
@@ -280,8 +298,8 @@
                                 <RadioButton
                                     x:Name="RadioButtonGreek"
                                     Grid.Column="1"
-                                    Value="Greek"
-                                    CheckedChanged="RadioButtonGreek_CheckedChanged">
+                                    CheckedChanged="RadioButtonGreek_CheckedChanged"
+                                    Value="Greek">
                                     <RadioButton.Content>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                             <Label
@@ -289,7 +307,8 @@
                                                 HorizontalOptions="Center"
                                                 HorizontalTextAlignment="Center"
                                                 Text="{helpers:Translate Greek}"
-                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}"
+                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                            Light={StaticResource Primary}}"
                                                 VerticalOptions="Center"
                                                 VerticalTextAlignment="Center" />
                                         </StackLayout>
@@ -298,8 +317,8 @@
                                 <RadioButton
                                     x:Name="RadioButtonEnglish"
                                     Grid.Column="2"
-                                    Value="English"
-                                    CheckedChanged="RadioButtonGreek_CheckedChanged">
+                                    CheckedChanged="RadioButtonGreek_CheckedChanged"
+                                    Value="English">
                                     <RadioButton.Content>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                             <Label
@@ -307,7 +326,8 @@
                                                 HorizontalOptions="Center"
                                                 HorizontalTextAlignment="Center"
                                                 Text="{helpers:Translate English}"
-                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}"
+                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                            Light={StaticResource Primary}}"
                                                 VerticalOptions="Center"
                                                 VerticalTextAlignment="Center" />
                                         </StackLayout>
@@ -344,41 +364,38 @@
                     <Grid
                         ColumnDefinitions="*"
                         HorizontalOptions="Fill"
-                        RowDefinitions="60,240,60,60,60,60,60,60,60"
+                        RowDefinitions="40,240,60,60,60,60,60,60,60"
                         RowSpacing="4"
                         VerticalOptions="Fill">
 
                         <Grid
                             Grid.Row="0"
-                            BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},Light={StaticResource Primary}}"
-                            ColumnDefinitions="1*,4*"
+                            BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
+                                                              Light={StaticResource Background}}"
+                            ColumnDefinitions="0,4*"
                             HorizontalOptions="FillAndExpand"
+                            RowDefinitions="39,1"
                             RowSpacing="0"
-                            RowDefinitions="59,1"
                             VerticalOptions="Fill">
 
-                            <ff:CachedImage
-                                                        Margin="8,0,0,0"
-                                Aspect="AspectFit"
-                                HorizontalOptions="Start"
-                                Source="logo.png"
-                                VerticalOptions="Fill" />
-
-
-                            <ff:CachedImage
+                            <Label
                                 Grid.Column="1"
-                                Aspect="AspectFit"
-                                HorizontalOptions="Start"
-                                Source="logotext.png" />
+                                FontAttributes="Bold"
+                                FontFamily="RobotoBold"
+                                HorizontalOptions="Center"
+                                Text="Αναπτυξιακή Εταιρεία Σερρών"
+                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                            Light={StaticResource Primary}}"
+                                VerticalOptions="Center" />
 
                             <BoxView
-                            Grid.Row="1"
-                            Margin="0"
+                                Grid.Row="1"
                                 Grid.ColumnSpan="2"
-                            BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
-                                                              Light={StaticResource TransparentBackground}}"
-                            HeightRequest="1"
-                            VerticalOptions="End" />
+                                Margin="0"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
+                                                                  Light={StaticResource TransparentBackground}}"
+                                HeightRequest="1"
+                                VerticalOptions="End" />
 
                         </Grid>
 
@@ -388,13 +405,13 @@
                             Grid.Row="2"
                             Grid.Column="0"
                             Margin="16,0"
-                            ColumnDefinitions="32,*,32"
-                            RowDefinitions="Auto,1"
-                            RowSpacing="4"
                             xct:TouchEffect.Command="{Binding OpenLanguageDrawerCommand}"
                             xct:TouchEffect.PressedAnimationDuration="75"
                             xct:TouchEffect.PressedAnimationEasing="Linear"
-                            xct:TouchEffect.PressedOpacity="0.675">
+                            xct:TouchEffect.PressedOpacity="0.675"
+                            ColumnDefinitions="32,*,32"
+                            RowDefinitions="Auto,1"
+                            RowSpacing="4">
                             <Label
                                 Grid.Column="0"
                                 Margin="4,4,12,4"
@@ -403,7 +420,8 @@
                                 HorizontalOptions="Center"
                                 HorizontalTextAlignment="Center"
                                 Text="{x:Static fontAwesome:FontAwesomeIcons.GlobeEurope}"
-                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}"
+                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                            Light={StaticResource Primary}}"
                                 VerticalOptions="Center" />
                             <Label
                                 Grid.Column="1"
@@ -412,7 +430,8 @@
                                 FontSize="14"
                                 HorizontalOptions="StartAndExpand"
                                 Text="{helpers:Translate Language}"
-                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}" />
+                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                            Light={StaticResource Primary}}" />
                             <Label
                                 Grid.Column="2"
                                 Margin="8,0"
@@ -421,7 +440,8 @@
                                 HorizontalOptions="End"
                                 HorizontalTextAlignment="Center"
                                 Text="{x:Static fontAwesome:FontAwesomeIcons.ChevronRight}"
-                                TextColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark}, Light={StaticResource TransparentBackground}}"
+                                TextColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
+                                                            Light={StaticResource TransparentBackground}}"
                                 VerticalOptions="Center" />
 
                             <BoxView
@@ -429,21 +449,22 @@
                                 Grid.Column="0"
                                 Grid.ColumnSpan="3"
                                 Margin="4,0"
-                                BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark}, Light=#11004080}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
+                                                                  Light=#11004080}"
                                 HeightRequest=".2" />
                         </Grid>
 
                         <Grid
                             Grid.Row="3"
                             Grid.Column="0"
-                            RowSpacing="4"
                             Margin="16,0"
-                            ColumnDefinitions="32,*,32"
-                            RowDefinitions="Auto,1"
                             xct:TouchEffect.Command="{Binding OpenThemeDrawerCommand}"
                             xct:TouchEffect.PressedAnimationDuration="75"
                             xct:TouchEffect.PressedAnimationEasing="Linear"
-                            xct:TouchEffect.PressedOpacity="0.675">
+                            xct:TouchEffect.PressedOpacity="0.675"
+                            ColumnDefinitions="32,*,32"
+                            RowDefinitions="Auto,1"
+                            RowSpacing="4">
                             <Label
                                 Grid.Column="0"
                                 Margin="4,4,12,4"
@@ -452,7 +473,8 @@
                                 HorizontalOptions="Center"
                                 HorizontalTextAlignment="Center"
                                 Text="{x:Static fontAwesome:FontAwesomeIcons.Adjust}"
-                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}"
+                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                            Light={StaticResource Primary}}"
                                 VerticalOptions="Center" />
                             <Label
                                 Grid.Column="1"
@@ -461,7 +483,8 @@
                                 FontSize="14"
                                 HorizontalOptions="StartAndExpand"
                                 Text="{helpers:Translate Theme}"
-                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}" />
+                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                            Light={StaticResource Primary}}" />
                             <Label
                                 Grid.Column="2"
                                 Margin="8,0"
@@ -470,7 +493,8 @@
                                 HorizontalOptions="End"
                                 HorizontalTextAlignment="Center"
                                 Text="{x:Static fontAwesome:FontAwesomeIcons.ChevronRight}"
-                                TextColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark}, Light={StaticResource TransparentBackground}}"
+                                TextColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
+                                                            Light={StaticResource TransparentBackground}}"
                                 VerticalOptions="Center" />
 
                             <BoxView
@@ -478,7 +502,8 @@
                                 Grid.Column="0"
                                 Grid.ColumnSpan="3"
                                 Margin="4,0"
-                                BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark}, Light=#11004080}"
+                                BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
+                                                                  Light=#11004080}"
                                 HeightRequest=".2" />
                         </Grid>
 
@@ -486,12 +511,13 @@
                             Grid.Row="4"
                             Grid.Column="0"
                             Margin="4,32,0,0"
-                            ColumnDefinitions="32,*,32"
-                            Opacity="0.6"
-                            RowDefinitions="Auto,1"
+                            xct:TouchEffect.Command="{Binding AboutAppCommand}"
                             xct:TouchEffect.PressedAnimationDuration="75"
                             xct:TouchEffect.PressedAnimationEasing="Linear"
-                            xct:TouchEffect.PressedOpacity="0.675">
+                            xct:TouchEffect.PressedOpacity="0.675"
+                            ColumnDefinitions="32,*,32"
+                            Opacity="0.6"
+                            RowDefinitions="Auto,1">
 
                             <Label
                                 Grid.Column="0"
@@ -500,8 +526,9 @@
                                 FontFamily="Inter"
                                 FontSize="12"
                                 HorizontalOptions="StartAndExpand"
-                                Text="About the app"
-                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}" />
+                                Text="{helpers:Translate AboutTheApp}"
+                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                            Light={StaticResource Primary}}" />
                         </Grid>
 
                         <Grid
@@ -520,7 +547,8 @@
                                 FontSize="12"
                                 HorizontalOptions="StartAndExpand"
                                 Text="Privacy Policy"
-                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}" />
+                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                            Light={StaticResource Primary}}" />
                         </Grid>
 
                     </Grid>

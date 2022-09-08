@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SerresApp.Interfaces
+﻿namespace SerresApp.Interfaces
 {
     /// <summary>
     /// Interface for checking if an image exists

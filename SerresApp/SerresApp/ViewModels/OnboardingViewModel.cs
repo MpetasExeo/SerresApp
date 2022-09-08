@@ -1,6 +1,5 @@
 ﻿using SerresApp.Models;
 
-using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -89,7 +88,9 @@ namespace SerresApp.ViewModels
             var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
 
             if (status == PermissionStatus.Granted)
+            {
                 return status;
+            }
 
             if (status == PermissionStatus.Denied && DeviceInfo.Platform == DevicePlatform.iOS)
             {

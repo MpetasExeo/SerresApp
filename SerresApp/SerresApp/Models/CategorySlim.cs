@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SerresApp.Models
+﻿namespace SerresApp.Models
 {
     public class CategorySlim
     {

@@ -1,5 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView x:Class="SerresApp.LazyTabsViews.CollectionView" xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SerresApp.LazyTabsViews.CollectionView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:UIElements="clr-namespace:SerresApp.UIControls"
     xmlns:customViews="clr-namespace:Sharpnado.TaskLoaderView;assembly=Sharpnado.TaskLoaderView"
@@ -183,8 +185,6 @@
                                 <dxcv:DXCollectionView
                                     Margin="4,0"
                                     HorizontalOptions="Start"
-                                    
-
                                     ItemSpacing="4"
                                     ItemsSource="{Binding Categories}"
                                     SelectionMode="None"
@@ -382,18 +382,17 @@
                     <dxcv:DXCollectionView
                         Grid.Row="1"
                         Grid.RowSpan="2"
-                       
-                        
                         Grid.Column="0"
-                        IsRefreshing="{Binding IsRefreshing,Mode=TwoWay}"
-                        IsLoadMoreEnabled="{Binding CanLoadMore}"
-                        LoadMoreCommand="{Binding LoadMoreCommand}"
                         Grid.ColumnSpan="3"
-                        ItemSize="240"
+                        Margin="0,0,0,56"
                         BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
                                                           Light={StaticResource Background}}"
+                        IsLoadMoreEnabled="{Binding CanLoadMore}"
+                        IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                        ItemSize="240"
                         ItemSpacing="2"
-                        ItemsSource="{Binding FilteredResults}">
+                        ItemsSource="{Binding FilteredResults}"
+                        LoadMoreCommand="{Binding LoadMoreCommand}">
 
                         <dxcv:DXCollectionView.ItemTemplate>
                             <DataTemplate x:DataType="models:POISlim">
@@ -419,9 +418,9 @@
                                                                                          Light=0.85}"
                                         POIDistance="{Binding DistanceFromUser}"
                                         POIImage="{Binding ImageUrl}"
-                                        POIShowDistance="{Binding ShowDistance}"
-                                        POIName="{Binding Title}"                                        
-                                        POIRegion="{Binding Category}" />
+                                        POIName="{Binding Title}"
+                                        POIRegion="{Binding Category}"
+                                        POIShowDistance="{Binding ShowDistance}" />
                                 </Frame>
                             </DataTemplate>
                         </dxcv:DXCollectionView.ItemTemplate>
@@ -434,45 +433,44 @@
 
 
 
-                    <StackLayout Grid.Row="1"
+                    <StackLayout
+                        Grid.Row="1"
                         Grid.RowSpan="2"
                         Grid.Column="0"
-                                 VerticalOptions="Center"
-                                 HorizontalOptions="Center"
-                                     IsVisible="{Binding IsEmptyList}"
-                        Grid.ColumnSpan="3">
+                        Grid.ColumnSpan="3"
+                        HorizontalOptions="Center"
+                        IsVisible="{Binding IsEmptyList}"
+                        VerticalOptions="Center">
 
 
-                        <Frame     
-                            TranslationY="-60"
-                        HeightRequest="240"
-                            WidthRequest="240"
+                        <Frame
+                            BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},
+                                                              Light={StaticResource TransparentBackground}}"
                             CornerRadius="240"
-                        BackgroundColor="{AppThemeBinding Dark={StaticResource TransparentBackgroundDark},Light={StaticResource TransparentBackground}}"
-                        >
+                            HeightRequest="240"
+                            TranslationY="-60"
+                            WidthRequest="240">
 
                             <lottie:AnimationView
-
                                 x:Name="EmptyListLottie"
-                        Animation="empty.json"
-                        AutoPlay="True"
-                       AbsoluteLayout.LayoutBounds="0.5, 0.5, 148, 148"
-                AbsoluteLayout.LayoutFlags="PositionProportional"
-                        HorizontalOptions="FillAndExpand"
-                        RepeatMode="Infinite"
-                        VerticalOptions="Fill" />
+                                AbsoluteLayout.LayoutBounds="0.5, 0.5, 148, 148"
+                                AbsoluteLayout.LayoutFlags="PositionProportional"
+                                Animation="empty.json"
+                                AutoPlay="True"
+                                HorizontalOptions="FillAndExpand"
+                                RepeatMode="Infinite"
+                                VerticalOptions="Fill" />
 
                         </Frame>
                         <Label
-                                      
-                                        FontAttributes="Bold"
-                                        FontSize="18"
-                                        HorizontalOptions="Fill"
-                                        HorizontalTextAlignment="Center"
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            HorizontalOptions="Fill"
+                            HorizontalTextAlignment="Center"
+                            Text="No results matched your filter."
                             TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
-                                                                                 Light={StaticResource Primary}}"
-                                        Text="No results matched your filter."
-                                        VerticalOptions="Start" />
+                                                        Light={StaticResource Primary}}"
+                            VerticalOptions="Start" />
 
                     </StackLayout>
 

@@ -1,13 +1,8 @@
 ﻿using SerresApp.Helpers;
 using SerresApp.Interfaces;
 using SerresApp.Models;
-using SerresApp.Services;
 using SerresApp.Views;
 
-using System.Threading;
-using System.Threading.Tasks;
-
-using Xamarin.CommunityToolkit.Helpers;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -36,7 +31,7 @@ namespace SerresApp
                 MainPage = new AppShell();
             }
 
-            
+
 
             LocationUpdateService.LocationChanged += LocationUpdateService_LocationChanged;
         }

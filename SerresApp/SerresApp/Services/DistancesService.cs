@@ -1,8 +1,8 @@
-﻿using SerresApp.Interfaces;
+﻿using Newtonsoft.Json;
+
+using SerresApp.Interfaces;
 using SerresApp.Models;
 using SerresApp.Resources;
-
-using Newtonsoft.Json;
 
 using System;
 using System.Globalization;
@@ -99,7 +99,7 @@ namespace SerresApp.Services
             // formatting distance αν βρέθηκε απόσταση
             if (distance > -1)
             {
-                distances.Distance = $"{distance.ToString()}{AppResources.KilometersShort}";
+                distances.Distance = $"{distance}{AppResources.KilometersShort}";
                 return;
             }
 

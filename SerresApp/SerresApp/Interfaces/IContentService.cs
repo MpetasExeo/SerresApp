@@ -1,9 +1,5 @@
 ﻿using SerresApp.Models;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace SerresApp.Interfaces
 {
     public interface IContentService

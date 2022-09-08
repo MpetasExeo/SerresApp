@@ -7,7 +7,7 @@ namespace SerresApp
     {
         public static readonly string GoogleApiKey = "AIzaSyAbe9MnGMU3M9DP3BHmSYqkKpW8qRSNePU";
 
-        public static readonly string APIConnectionBaseAddress= "https://esa.exeo.site/";
+        public static readonly string APIConnectionBaseAddress = "https://esa.exeo.site/";
 
 
         // {AssemblyName}.Json.{FileName}.json
@@ -17,8 +17,8 @@ namespace SerresApp
         public static readonly string GoogleMapsBaseAddress = "https://maps.googleapis.com";
         public static readonly string WeatherApiBaseAddress = "https://api.openweathermap.org";
 
-        public static readonly string JsonFolder= "Json";
-        public static readonly string JsonTitle= "serres";
+        public static readonly string JsonFolder = "Json";
+        public static readonly string JsonTitle = "serres";
 
         public const string DB_Name = "esapoisdb3.db3";
 

@@ -1,15 +1,13 @@
-﻿using SerresApp.Interfaces;
-using SerresApp.Models;
-
-using MvvmHelpers.Commands;
+﻿using SerresApp.Views;
 
 using Sharpnado.TaskLoaderView;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+
+using Xamarin.Forms;
+
+using Command = MvvmHelpers.Commands.Command;
 
 namespace SerresApp.ViewModels
 {
@@ -18,26 +16,14 @@ namespace SerresApp.ViewModels
         public MiscViewModel()
         {
             PropertiesInit();
-
         }
 
         #region Properties
         public ICommand OpenLanguageDrawerCommand { get; set; }
+        public ICommand AboutAppCommand { get; set; }
         public ICommand OpenThemeDrawerCommand { get; set; }
 
         public TaskLoaderNotifier LoaderNotifier { get; set; } = new TaskLoaderNotifier();
-
-        #endregion
-        private async Task InitializationTask()
-        {
-            await Task.Delay(0);
-        }
-
-        public override void Load()
-        {
-            LoaderNotifier.Load(_ => InitializationTask());
-        }
-
 
         bool _themeClicked;
         public bool ThemeClicked
@@ -81,17 +67,32 @@ namespace SerresApp.ViewModels
         }
 
 
-        public void OpenLanguageDrawer() { LanguageClicked = true; }
-        public void OpenThemeDrawer() { ThemeClicked = true; }
+        #endregion
+
+        public override void Load()
+        {
+            LoaderNotifier.Load(_ => InitializationTask());
+        }
+
+        private async Task InitializationTask()
+        {
+            await Task.Delay(0);
+        }
+
         void PropertiesInit()
         {
             OpenThemeDrawerCommand = new Command(OpenThemeDrawer);
             OpenLanguageDrawerCommand = new Command(OpenLanguageDrawer);
+            AboutAppCommand = new Command(GoToAboutApp);
         }
-        
 
-
-
+        public void OpenLanguageDrawer() { LanguageClicked = true; }
+        public void OpenThemeDrawer() { ThemeClicked = true; }
+        public async void GoToAboutApp()
+        {
+            AboutPage aboutPage = new AboutPage();
+            await Shell.Current.Navigation.PushAsync(aboutPage , true).ConfigureAwait(false);
+        }
 
     }
 }

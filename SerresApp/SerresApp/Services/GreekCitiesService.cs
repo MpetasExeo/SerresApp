@@ -10,7 +10,6 @@ using SerresApp.Models;
 
 using SerresApp.Views;
 
-using System;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;

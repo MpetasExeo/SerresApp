@@ -229,8 +229,7 @@
     <value>Cancel</value>
   </data>
   <data name="SeeDetails" xml:space="preserve">
-    <value>See
-details</value>
+    <value>See details</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
@@ -299,9 +298,46 @@ details</value>
     <value>Tangible Cultural Heritage</value>
   </data>
   <data name="IntangibleCulturalHeritage" xml:space="preserve">
-    <value>Inangible Cultural Heritage</value>
+    <value>Intangible Cultural Heritage</value>
   </data>
   <data name="NoFavourites" xml:space="preserve">
     <value>You have not added anything to your favourites yet.</value>
+  </data>
+  <data name="AboutApp" xml:space="preserve">
+    <value>The River Plus project area is characterized by rich cultural and natural heritage. The municipalities of Simitli and Strumyani in Bulgaria as well as the municipalities of Irakleia, Sidiki and Emmanouil Pappa in Greece, crossed by the river Struma or Strymonas, have large areas with rich natural environment or protected areas. In addition, they belong to rural and remote areas with low development and have favorable conditions for the development of eco-tourism, thematic tourism and possibilities for the development of cross-border cooperation. 
+
+Similarities in the natural and social environment of the partners are reflected in common problems, issues, challenges and opportunities focused on the protection, management and exploitation of natural and cultural resources and local traditional activities. 
+
+General objective of the project: Strengthening the tourist attractiveness of the region through cross-border cooperation, for the protection and promotion of the local natural and cultural heritage and natural resources. 
+
+The approach of the project focuses mainly on three issues: 
+
+• The first concerns the need to create infrastructure to improve the status of conservation and promotion of cultural and natural resources and activities in the region. The project includes the implementation of projects in recreational areas, projects to increase the hospitality of themed tourists, activities in sports facilities, information centers and a museum of local traditional activities. 
+
+• The second, consists in the fact that it addresses new approaches and tools with a cross-border character for the region and highlights the cross-border approach, it refers to the strengthening of a common tourist identity through studies, seminars for public officials, professionals and residents, as well as thematic workshops for innovative approaches. 
+
+• The third part of the project consists of the development of a network for the professionals and stakeholders of the region through the exchange of know-how and exchange of best practices and joint tourism campaigns. 
+
+The expected results of River PLUS: 
+
+They include a better conservation regime and increased attractiveness of the region's natural and cultural heritage for local and international visitors, increased tourist traffic and improved capacity of local authorities and agencies to sustainably use the region's natural and cultural resources through improved infrastructure, the staff and the exchange of know-how and best practices. The above results will contribute to the improvement, in the long term, of living standards and environmental conditions through better use of natural resources and improved employment opportunities in environmental and tourism services. The corporate structure of the project consists of: 
+
+Lead partner (LB1): Simitli Municipality 
+
+PB2: Strumyani Municipality 
+
+PB3: Municipality of Irakleia 
+
+PB4: Municipality of Sidiki 
+
+PB5: Municipality of Emmanouil Pappa 
+
+PB6: Serres Development Agency - S.A.</value>
+  </data>
+  <data name="AboutTheApp" xml:space="preserve">
+    <value>About the app</value>
+  </data>
+  <data name="Directions" xml:space="preserve">
+    <value>Directions</value>
   </data>
 </root>

@@ -1,13 +1,14 @@
 ﻿
+using MvvmHelpers;
+using MvvmHelpers.Commands;
+
 using SerresApp.Interfaces;
 using SerresApp.Models;
 using SerresApp.Services;
 
-using MvvmHelpers;
-using MvvmHelpers.Commands;
-
 using Sharpnado.TaskLoaderView;
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -35,6 +36,8 @@ namespace SerresApp.ViewModels
         public Map GoogleMap { get; set; } = new Map();
         public ObservableRangeCollection<Pin> Pins { get; set; } = new ObservableRangeCollection<Pin>();
         public ICommand NavToDetailsCommand { get; set; }
+        public ICommand NavigateToPlaceCommand { get; set; }
+
 
         private bool mapLoaded;
         public bool MapLoaded
@@ -207,7 +210,23 @@ namespace SerresApp.ViewModels
         {
             GoogleMap.PinClicked += GoogleMap_PinClicked;
             NavToDetailsCommand = new AsyncCommand<POISlim>(NavigateToDetails);
+            NavigateToPlaceCommand = new AsyncCommand(NavigateToPlace);
             OpenFiltersDrawerCommand = new Command(OpenFiltersDrawer);
+        }
+        private async Task NavigateToPlace()
+        {
+            if (SelectedPlace.Latitude is null || SelectedPlace.Longitude is null)
+            {
+                return;
+            }
+
+            Location loc = new Location((double)SelectedPlace.Latitude, (double)SelectedPlace.Latitude);
+            // ανοίγω directions
+            await Xamarin.Essentials.Map.OpenAsync(loc , new MapLaunchOptions
+            {
+                Name = SelectedPlace.Title ,
+                NavigationMode = NavigationMode.Driving
+            }).ConfigureAwait(true);
         }
 
 
@@ -237,7 +256,7 @@ namespace SerresApp.ViewModels
         {
             GreekCitiesService = new GreekCitiesService();
             WeatherService = new WeatherService();
-            var categories = new Categories();
+            Categories categories = new Categories();
             Categories = new List<Category>(categories.CategoriesList);
         }
 
@@ -352,7 +371,7 @@ namespace SerresApp.ViewModels
                         Position = new Position((double)lat , (double)lng) ,
                         Label = poi.Title ,
                         Type = PinType.Place ,
-                        Icon = BitmapDescriptorFactory.FromBundle("c0.png")
+                        Icon = BitmapDescriptorFactory.FromBundle(poi.CategoryId.ToString())
                     };
                     Pins.Add(pin);
 

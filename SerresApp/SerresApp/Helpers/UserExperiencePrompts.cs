@@ -1,5 +1,6 @@
 ﻿using SerresApp.Interfaces;
 using SerresApp.Models;
+using SerresApp.Resources;
 
 namespace SerresApp.Helpers
 {
@@ -8,31 +9,31 @@ namespace SerresApp.Helpers
         public static void NoInternetConnectionPrompt()
         {
             IToastMessage toastMessage = new Toaster();
-            toastMessage.MakeToastAsync(StandardToastMessages.No_Internet);
+            toastMessage.MakeToastAsync(AppResources.NoInternetConnectionFound);
         }
 
         public static void AddedToFavorites()
         {
             IToastMessage toastMessage = new Toaster();
-            toastMessage.MakeToastAsync(StandardToastMessages.Added_To_Favourites);
+            toastMessage.MakeToastAsync(AppResources.Favourited);
         }
 
         public static void RemovedFromFavorites()
         {
             IToastMessage toastMessage = new Toaster();
-            toastMessage.MakeToastAsync(StandardToastMessages.Removed_From_Favourites);
+            toastMessage.MakeToastAsync(AppResources.RemovedFromFavourites);
         }
 
         public static void NoGPSPrompt()
         {
             IToastMessage toastMessage = new Toaster();
-            toastMessage.MakeToastAsync(StandardToastMessages.No_GPS_Enabled);
+            toastMessage.MakeToastAsync(AppResources.DeviceLocationNA);
         }
 
         public static void ApplicationCannotStartPrompt()
         {
             IToastMessage toastMessage = new Toaster();
-            toastMessage.MakeToastAsync(StandardToastMessages.Application_Cannot_Start);
+            toastMessage.MakeToastAsync(AppResources.ApplicationCannotStart);
         }
 
     }

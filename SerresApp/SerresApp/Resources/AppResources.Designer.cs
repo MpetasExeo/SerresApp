@@ -61,6 +61,24 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The River Plus project area is characterized by rich cultural and natural heritage. The municipalities of Simitli and Strumyani in Bulgaria as well as the municipalities of Irakleia, Sidiki and Emmanouil Pappa in Greece, crossed by the river Struma or Strymonas, have large areas with rich natural environment or protected areas. In addition, they belong to rural and remote areas with low development and have favorable conditions for the development of eco-tourism, thematic tourism and possibilities for the d [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AboutApp {
+            get {
+                return ResourceManager.GetString("AboutApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About the app.
+        /// </summary>
+        internal static string AboutTheApp {
+            get {
+                return ResourceManager.GetString("AboutTheApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Internet connection is required in order to continue.
         /// </summary>
         internal static string ApplicationCannotStart {
@@ -147,6 +165,15 @@ namespace SerresApp.Resources {
         internal static string DeviceLocationNA {
             get {
                 return ResourceManager.GetString("DeviceLocationNA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Directions.
+        /// </summary>
+        internal static string Directions {
+            get {
+                return ResourceManager.GetString("Directions", resourceCulture);
             }
         }
         
@@ -250,7 +277,7 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inangible Cultural Heritage.
+        ///   Looks up a localized string similar to Intangible Cultural Heritage.
         /// </summary>
         internal static string IntangibleCulturalHeritage {
             get {
@@ -520,8 +547,7 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to See
-        ///details.
+        ///   Looks up a localized string similar to See details.
         /// </summary>
         internal static string SeeDetails {
             get {

@@ -1,16 +1,17 @@
-﻿using SerresApp.Database;
+﻿using MvvmHelpers;
+using MvvmHelpers.Commands;
+using MvvmHelpers.Interfaces;
+
+using SerresApp.Database;
 using SerresApp.Helpers;
 using SerresApp.Interfaces;
 using SerresApp.Models;
 using SerresApp.Services;
 
-using MvvmHelpers;
-using MvvmHelpers.Commands;
-using MvvmHelpers.Interfaces;
-
 using Sharpnado.TaskLoaderView;
 
 using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -27,7 +28,7 @@ namespace SerresApp.ViewModels
         #region Properties
 
         private IUserLocationService _userLocationService;
-
+        private IGreekCitiesService _greekCitiesService { get; set; }
         //private IWeatherService WeatherService { get; set; }
         private ObservableRangeCollection<POIDatabaseItem> _favourites;
         public ObservableRangeCollection<POIDatabaseItem> Favourites { get => _favourites; set { SetAndRaise(ref _favourites , value); } }
@@ -46,6 +47,7 @@ namespace SerresApp.ViewModels
             FavouritesResult.Clear();// = new ObservableRangeCollection<POIDatabaseItem>();
             Favourites = new ObservableRangeCollection<POIDatabaseItem>(await Database.GetFavoritesAsync());
             ItemsCount = Favourites.Count;
+            POIS = await _greekCitiesService.GetGreekCities();
 
             foreach (var item in Favourites)
             {
@@ -53,7 +55,8 @@ namespace SerresApp.ViewModels
                 {
                     //if (Favourites.Where(i=>i.Id == item.Id).FirstOrDefault() is null)
                     //{
-                        FavouritesResult.Add(item.Clone<POIDatabaseItem , POI>());
+                    var poi = POIS.Where(x => x.Id == item.Id).FirstOrDefault();
+                    FavouritesResult.Add(poi.Clone<POISlim , POI>());
                     //}
                 }
                 catch (Exception)
@@ -88,6 +91,7 @@ namespace SerresApp.ViewModels
 
         private void PropertiesInit()
         {
+            _greekCitiesService = new GreekCitiesService();
             FavouritesResult = new ObservableRangeCollection<POI>();
             Database = new POIRepository();
             OpenDrawerCommand = new Command(OpenDrawer);
@@ -121,6 +125,9 @@ namespace SerresApp.ViewModels
                 }
             }
         }
+
+        ObservableCollection<POISlim> _pOIS;
+        public ObservableCollection<POISlim> POIS { get => _pOIS; set => _pOIS = value; }
 
     }
 }
