@@ -27,27 +27,27 @@ namespace SerresApp.ViewModels
 
         private void InitializeOnBoarding()
         {
-            Items = new ObservableCollection<OnboardingModel>
-            {
-                new OnboardingModel
-                {
-                    Title = "Welcome to Tourist Guide",
-                    Content = "Tourist Guide helps you find out about the best places in Place.",
-                    ImageUrl = "welcome.svg"
-                },
-                new OnboardingModel
-                {
-                    Title = "Discover the best places",
-                    Content = "If you would like to find the best places around you, please allow Tourist Guide to access your location while using the app.",
-                    ImageUrl = "location.svg"
-                },
-                new OnboardingModel
-                {
-                    Title = "Track your progress",
-                    Content = "Charts help you visualize your efforts over time.",
-                    ImageUrl = "info.svg"
-                }
-            };
+            Items = Constants.Items;  //new ObservableCollection<OnboardingModel>
+            //{
+            //    new OnboardingModel
+            //    {
+            //        Title = "Welcome to Tourist Guide",
+            //        Content = "Tourist Guide helps you find out about the best places in Place.",
+            //        ImageUrl = "welcome.png"
+            //    },
+            //    new OnboardingModel
+            //    {
+            //        Title = "Discover the best places",
+            //        Content = "If you would like to find the best places around you, please allow Tourist Guide to access your location while using the app.",
+            //        ImageUrl = "maps.png"
+            //    },
+            //    new OnboardingModel
+            //    {
+            //        Title = "Track your progress",
+            //        Content = "Charts help you visualize your efforts over time.",
+            //        ImageUrl = "info.svg"
+            //    }
+            //};
         }
 
         private void InitializeSkipCommand()

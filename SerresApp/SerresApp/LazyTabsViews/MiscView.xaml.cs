@@ -88,8 +88,8 @@ namespace SerresApp.LazyTabsViews
                 case "Greek":
                     Settings.Language = 1;
                     break;
-                case "Deutsch":
-                    Settings.Language = 2;
+                case "Bulgarian":
+                    Settings.Language = 0;
                     break;
             }
 

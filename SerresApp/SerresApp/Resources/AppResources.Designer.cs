@@ -160,6 +160,15 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to destinations.
+        /// </summary>
+        internal static string Destinations {
+            get {
+                return ResourceManager.GetString("Destinations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to For full access to the features of the application, activate the location of the device..
         /// </summary>
         internal static string DeviceLocationNA {
@@ -174,6 +183,15 @@ namespace SerresApp.Resources {
         internal static string Directions {
             get {
                 return ResourceManager.GetString("Directions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discover.
+        /// </summary>
+        internal static string Discover {
+            get {
+                return ResourceManager.GetString("Discover", resourceCulture);
             }
         }
         

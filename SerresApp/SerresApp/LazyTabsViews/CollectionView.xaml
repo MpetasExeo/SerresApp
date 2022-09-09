@@ -352,12 +352,12 @@
                         Grid.Column="1"
                         HorizontalOptions="Center"
                         Orientation="Horizontal"
-                        Spacing="2"
+                        Spacing="12"
                         VerticalOptions="Center">
 
                         <Label
                             FontFamily="RobotoBold"
-                            Text="Ανακαλύψτε "
+                            Text="{helpers:Translate Discover}"
                             TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
                                                         Light={StaticResource Primary}}" />
 
@@ -372,7 +372,7 @@
                         <Label
                             Grid.Column="1"
                             FontFamily="RobotoBold"
-                            Text=" προορισμούς"
+                            Text="{helpers:Translate Destinations}"
                             TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
                                                         Light={StaticResource Primary}}" />
                     </StackLayout>
@@ -425,10 +425,10 @@
                             </DataTemplate>
                         </dxcv:DXCollectionView.ItemTemplate>
 
-                        <!--  Sort items.  -->
-                        <!--<dxcv:DXCollectionView.SortDescriptions>
+
+                        <dxcv:DXCollectionView.SortDescriptions>
                             <dxcv:SortDescription FieldName="Distance" SortOrder="Ascending" />
-                        </dxcv:DXCollectionView.SortDescriptions>-->
+                        </dxcv:DXCollectionView.SortDescriptions>
                     </dxcv:DXCollectionView>
 
 

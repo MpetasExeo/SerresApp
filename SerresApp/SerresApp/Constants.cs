@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SerresApp.Models;
+
+using System;
+using System.Collections.ObjectModel;
 using System.IO;
 
 namespace SerresApp
@@ -29,6 +32,28 @@ namespace SerresApp
             SQLite.SQLiteOpenFlags.Create |
             // enable multi-threaded database access
             SQLite.SQLiteOpenFlags.SharedCache;
+
+        public static readonly ObservableCollection<OnboardingModel> Items = new ObservableCollection<OnboardingModel>
+            {
+                new OnboardingModel
+                {
+                    Title = "Welcome to Tourist Guide",
+                    Content = "Tourist Guide helps you find out about the best places in Place.",
+                    ImageUrl = "welcome.png"
+                },
+                new OnboardingModel
+                {
+                    Title = "Discover the best places",
+                    Content = "If you would like to find the best places around you, please allow Tourist Guide to access your location while using the app.",
+                    ImageUrl = "maps.png"
+                },
+                new OnboardingModel
+                {
+                    Title = "Places" ,
+                    Content = "Find out everything about the best places." ,
+                    ImageUrl = "data.png"
+                }
+            };
 
         public static string DatabasePath
         {

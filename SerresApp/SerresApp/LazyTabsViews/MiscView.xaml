@@ -333,24 +333,25 @@
                                         </StackLayout>
                                     </RadioButton.Content>
                                 </RadioButton>
-                                <!--<RadioButton
+                                <RadioButton
                                     x:Name="RadioButtonDeutsch"
                                     Grid.Column="3"
-                                    Value="Deutsch"
-                                    CheckedChanged="RadioButtonGreek_CheckedChanged">
+                                    CheckedChanged="RadioButtonGreek_CheckedChanged"
+                                    Value="Bulgarian">
                                     <RadioButton.Content>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                             <Label
                                                 FontSize="Small"
                                                 HorizontalOptions="Center"
                                                 HorizontalTextAlignment="Center"
-                                                Text="{helpers:Translate Deutsch}"
-                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary}, Light={StaticResource Primary}}"
+                                                Text="български"
+                                                TextColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
+                                                                            Light={StaticResource Primary}}"
                                                 VerticalOptions="Center"
                                                 VerticalTextAlignment="Center" />
                                         </StackLayout>
                                     </RadioButton.Content>
-                                </RadioButton>-->
+                                </RadioButton>
                             </Grid>
                         </Frame>
                     </StackLayout>

@@ -170,11 +170,17 @@ PB6: Αναπτυξιακή Εταιρεία Σερρών A.A.E. O.T.A.</value>
   <data name="Days" xml:space="preserve">
     <value>μ</value>
   </data>
+  <data name="Destinations" xml:space="preserve">
+    <value>προορισμούς</value>
+  </data>
   <data name="DeviceLocationNA" xml:space="preserve">
     <value>Για πλήρη πρόσβαση στις  δυνατότητες της εφαρμογής, ενεργοποιήστε την τοποθεσία της συσκευής.</value>
   </data>
   <data name="Directions" xml:space="preserve">
     <value>Οδηγίες</value>
+  </data>
+  <data name="Discover" xml:space="preserve">
+    <value>Ανακαλύψτε</value>
   </data>
   <data name="Distance" xml:space="preserve">
     <value>Απόσταση</value>

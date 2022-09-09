@@ -33,11 +33,11 @@
             <CarouselView
                 x:Name="onBoardingCarousel"
                 Grid.Row="0"
-                IsScrollAnimated="True"
-                IsSwipeEnabled="False"
                 Grid.ColumnSpan="3"
                 BackgroundColor="Transparent"
                 IndicatorView="IndicatorView"
+                IsScrollAnimated="True"
+                IsSwipeEnabled="False"
                 ItemsSource="{Binding Items}"
                 Position="{Binding Position}">
                 <CarouselView.ItemTemplate>
@@ -53,32 +53,40 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Frame Padding="0" HasShadow="True" Margin="0" Grid.Row="1" WidthRequest="300" HeightRequest="300" VerticalOptions="Center" HorizontalOptions="Center" CornerRadius="150" BackgroundColor="{StaticResource DarkAccent}">
-                                    <ffimageloadingsvg:SvgCachedImage
+                                <Frame
+                                    Grid.Row="1"
+                                    Margin="0"
+                                    Padding="0"
+                                    BackgroundColor="{StaticResource DarkAccent}"
+                                    CornerRadius="150"
+                                    HasShadow="True"
+                                    HeightRequest="300"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="300">
+                                    <Image
                                         Aspect="AspectFit"
-                                        CacheType="Memory"
-                                        WidthRequest="185.41"
                                         HorizontalOptions="Center"
                                         Source="{Binding ImageUrl}"
-                                         />
+                                        WidthRequest="220" />
                                 </Frame>
 
                                 <Label
                                     Grid.Row="0"
                                     FontAttributes="Bold"
                                     FontSize="Title"
-                                    TextColor="{StaticResource Primary}"
                                     HorizontalOptions="Center"
                                     Text="{Binding Title}"
+                                    TextColor="{StaticResource Primary}"
                                     VerticalOptions="Center" />
 
                                 <Label
                                     Grid.Row="2"
                                     Margin="20,0"
-                                    TextColor="{StaticResource Accent}"
                                     FontSize="Body"
                                     HorizontalOptions="Center"
-                                    Text="{Binding Content}" />
+                                    Text="{Binding Content}"
+                                    TextColor="{StaticResource Accent}" />
                             </Grid>
                         </ContentView>
                     </DataTemplate>
