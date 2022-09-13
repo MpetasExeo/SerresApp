@@ -68,10 +68,6 @@
         </ResourceDictionary>
     </ContentView.Resources>
 
-    <!--<ContentView.BindingContext>
-        <vm:CollectionViewViewModel />
-    </ContentView.BindingContext>-->
-
     <customViews:TaskLoaderView
         x:Name="RelativeParent"
         HorizontalOptions="FillAndExpand"
@@ -230,110 +226,6 @@
                             </Grid>
                         </dxn:TabViewItem.Content>
                     </dxn:TabViewItem>
-                    <!--<dxn:TabViewItem HeaderText="Αξιοθέατα">
-                        <dxn:TabViewItem.Content>
-                            <Grid
-                                Margin="12"
-                                Padding="4"
-                                BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
-                                                                  Light={StaticResource Background}}">
-                                <dxcv:DXCollectionView
-                                    IsEnabled="True"
-                                    IsVisible="true "
-                                    ItemSpacing="4"
-                                    ItemsSource="{Binding Categories}"
-                                    SelectionMode="None"
-                                    VerticalOptions="Start">
-                                    <dxcv:DXCollectionView.ItemTemplate>
-                                        <DataTemplate x:DataType="models:Category">
-                                            <StackLayout
-                                                HorizontalOptions="Start"
-                                                Orientation="Horizontal"
-                                                VerticalOptions="Center">
-                                                <BoxView
-                                                    BackgroundColor="{Binding Color}"
-                                                    CornerRadius="24"
-                                                    HeightRequest="10"
-                                                    HorizontalOptions="Center"
-                                                    TranslationX="46"
-                                                    VerticalOptions="Center"
-                                                    WidthRequest="10" />
-                                                <dxe:CheckEdit
-                                                    Margin="0,0,0,0"
-                                                    CheckBoxColor="{AppThemeBinding Dark={StaticResource Primary},
-                                                                                    Light={StaticResource DarkPrimary}}"
-                                                    CheckBoxIndent="24"
-                                                    CheckedCheckBoxColor="{AppThemeBinding Dark={StaticResource Primary},
-                                                                                           Light={StaticResource DarkPrimary}}"
-                                                    HorizontalOptions="Center"
-                                                    IsChecked="True"
-                                                    Label="{Binding Text}"
-                                                    LabelColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
-                                                                                 Light={StaticResource Primary}}"
-                                                    LabelFontAttributes="Bold"
-                                                    LabelFontFamily="RobotoBold"
-                                                    LabelFontSize="16"
-                                                    LabelHorizontalAlignment="Start"
-                                                    VerticalOptions="Center" />
-                                            </StackLayout>
-                                        </DataTemplate>
-                                    </dxcv:DXCollectionView.ItemTemplate>
-                                </dxcv:DXCollectionView>
-                            </Grid>
-                        </dxn:TabViewItem.Content>
-                    </dxn:TabViewItem>
-                    <dxn:TabViewItem HeaderText="Απόσταση">
-                        <dxn:TabViewItem.Content>
-                            <Grid
-                                Margin="12"
-                                Padding="4"
-                                BackgroundColor="{AppThemeBinding Dark={StaticResource DarkBackground},
-                                                                  Light={StaticResource Background}}">
-                                <dxcv:DXCollectionView
-                                    IsEnabled="True"
-                                    IsVisible="true "
-                                    ItemSpacing="4"
-                                    ItemsSource="{Binding Categories}"
-                                    SelectionMode="None"
-                                    VerticalOptions="Start">
-                                    <dxcv:DXCollectionView.ItemTemplate>
-                                        <DataTemplate x:DataType="models:Category">
-                                            <StackLayout
-                                                HorizontalOptions="Start"
-                                                Orientation="Horizontal"
-                                                VerticalOptions="Center">
-                                                <BoxView
-                                                    BackgroundColor="{Binding Color}"
-                                                    CornerRadius="24"
-                                                    HeightRequest="10"
-                                                    HorizontalOptions="Center"
-                                                    TranslationX="46"
-                                                    VerticalOptions="Center"
-                                                    WidthRequest="10" />
-                                                <dxe:CheckEdit
-                                                    Margin="0,0,0,0"
-                                                    CheckBoxColor="{AppThemeBinding Dark={StaticResource Primary},
-                                                                                    Light={StaticResource DarkPrimary}}"
-                                                    CheckBoxIndent="24"
-                                                    CheckedCheckBoxColor="{AppThemeBinding Dark={StaticResource Primary},
-                                                                                           Light={StaticResource DarkPrimary}}"
-                                                    HorizontalOptions="Center"
-                                                    IsChecked="True"
-                                                    Label="{Binding Text}"
-                                                    LabelColor="{AppThemeBinding Dark={StaticResource DarkPrimary},
-                                                                                 Light={StaticResource Primary}}"
-                                                    LabelFontAttributes="Bold"
-                                                    LabelFontFamily="RobotoBold"
-                                                    LabelFontSize="16"
-                                                    LabelHorizontalAlignment="Start"
-                                                    VerticalOptions="Center" />
-                                            </StackLayout>
-                                        </DataTemplate>
-                                    </dxcv:DXCollectionView.ItemTemplate>
-                                </dxcv:DXCollectionView>
-                            </Grid>
-                        </dxn:TabViewItem.Content>
-                    </dxn:TabViewItem>-->
 
                 </dxn:TabView>
             </dxn:DrawerView.DrawerContent>

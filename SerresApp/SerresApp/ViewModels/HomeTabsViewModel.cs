@@ -56,7 +56,6 @@ namespace SerresApp.ViewModels
         private async Task InitializationTask()
         {
             await Task.Delay(50);
-            //HomeViewViewModel.Load();
         }
 
         public FavoritesViewModel FavoritesViewModel { get; }

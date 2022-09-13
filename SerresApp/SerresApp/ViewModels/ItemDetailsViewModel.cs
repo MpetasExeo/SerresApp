@@ -135,8 +135,6 @@ namespace SerresApp.ViewModels
 
         #endregion
 
-        static readonly Stopwatch timer = new Stopwatch();
-
         public ItemDetailsViewModel(POI poi)
         {
             //LoadImages();
@@ -166,15 +164,11 @@ namespace SerresApp.ViewModels
         }
         private void PropertiesInit()
         {
-            //UserLocationService = new UserLocationService();
-            timer.Start();
             Database = new POIRepository();
             NavigateCommand = new AsyncCommand(Navigate);
             WeatherService = new WeatherService();
             DistancesService = new DistancesService();
             AddToFavouritesCommand = new AsyncCommand(AddToFavourites);
-            timer.Stop();
-            var time = timer.Elapsed;
         }
 
         private async Task AddToFavourites()
@@ -229,7 +223,6 @@ namespace SerresApp.ViewModels
             var d = StripHTML(SelectedPOI.Content);
             SelectedPOI.Content = d;
             RaisePropertyChanged(nameof(SelectedPOI));
-            //Poi.Id = await Database.GetItemIdAsync(Poi);
             IsFavorite = await Database.GetItemIdAsync(Poi) != -1;
 
             MainState = LayoutState.Loading;

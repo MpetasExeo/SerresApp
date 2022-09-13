@@ -187,7 +187,6 @@ namespace SerresApp.ViewModels
             set
             {
                 SetAndRaise(ref _intangible , value);
-                //RaisePropertyChanged(nameof(IsEmptyList));
             }
         }
 
@@ -198,7 +197,6 @@ namespace SerresApp.ViewModels
             set
             {
                 SetAndRaise(ref _tangible , value);
-                //RaisePropertyChanged(nameof(IsEmptyList));
             }
         }
 
@@ -209,7 +207,6 @@ namespace SerresApp.ViewModels
             set
             {
                 SetAndRaise(ref _nature , value);
-                //RaisePropertyChanged(nameof(IsEmptyList));
             }
         }
 
@@ -226,7 +223,6 @@ namespace SerresApp.ViewModels
                     Tangible = POIS.Where(x => x.CategoryId == 1).ToObservableCollection();
                     Intangible = POIS.Where(x => x.CategoryId == 2).ToObservableCollection();
                 }
-
             }
         }
 
@@ -237,7 +233,6 @@ namespace SerresApp.ViewModels
 
         #endregion
 
-        //private IWeatherService WeatherService { get; set; }
         private CancellationToken _ct = new CancellationToken();
         public TaskLoaderNotifier LoaderNotifier { get; set; } = new TaskLoaderNotifier();
 

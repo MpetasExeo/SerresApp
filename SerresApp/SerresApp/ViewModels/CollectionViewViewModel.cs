@@ -198,8 +198,6 @@ namespace SerresApp.ViewModels
         {
             CanLoadMore = true;
 
-            //var categories = new Categories();
-            //Categories = new List<Category>(categories.CategoriesList);
             SelectedCategories = Categories.Where(x => x.IsSelected).Select(x => x.Id).ToList();
             FilteredResults = new ObservableRangeCollection<POISlim>(POIS.Where(x => SelectedCategories.Contains(x.CategoryId)));
             ItemsCount = FilteredResults.Count;

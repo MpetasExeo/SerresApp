@@ -103,15 +103,7 @@ namespace SerresApp.ViewModels
                 SetAndRaise(ref selectedPlace , value);
             }
         }
-        //public Temperatures SelectedPlaceTemperature
-        //{
-        //    get => selectedPlaceTemperature;
-        //    set
-        //    {
-        //        SelectedPlace.Temperatures = value;
-        //        RaisePropertyChanged(nameof(SelectedPlace));
-        //    }
-        //}
+
         public ObservableRangeCollection<POISlim> POIS { get; set; }
         private LayoutState _temperaturesState;
         public LayoutState TemperaturesState
@@ -136,27 +128,16 @@ namespace SerresApp.ViewModels
 
         private async Task InitializationTask()
         {
-            //if (MapLoaded)
-            //{
-            //    POIS = await GreekCitiesService.GetGreekCities();
             DefineMapStyle();
-            //    return;
-            //}
 
             List<Task> tasks = new List<Task>
             {
 
-                // task => Init map 
-                MapInitialization()
+                 MapInitialization()
             };
-
-            //περιμένω να Init map 
             await Task.WhenAll(tasks).ConfigureAwait(true);
 
 
-            //await Task.Delay(2000);
-
-            //ο χάρτης φόρτωσε
             MapLoaded = true;
         }
 
@@ -220,7 +201,7 @@ namespace SerresApp.ViewModels
                 return;
             }
 
-            Location loc = new Location((double)SelectedPlace.Latitude, (double)SelectedPlace.Latitude);
+            Location loc = new Location((double)SelectedPlace.Latitude , (double)SelectedPlace.Latitude);
             // ανοίγω directions
             await Xamarin.Essentials.Map.OpenAsync(loc , new MapLaunchOptions
             {
@@ -230,7 +211,7 @@ namespace SerresApp.ViewModels
         }
 
 
-        public List<Category> Categories { get; set; } = new List<Category>();/*= Models.Categories.CategoriesList;*/
+        public List<Category> Categories { get; set; } = new List<Category>();
 
         private bool isDrawerOpen;
 
@@ -289,9 +270,7 @@ namespace SerresApp.ViewModels
         {
             Location pos = new Location(lat , lon);
             CancellationToken ct = new CancellationToken();
-
-            //SelectedPlaceTemperature = await WeatherService.GetCurrentWeatherAsync(pos , ct);
-
+                      
             IsBusy = false;
             TemperaturesState = LayoutState.None;
         }

@@ -44,7 +44,7 @@ namespace SerresApp.ViewModels
         private async Task InitializationTask()
         {
             Database = new POIRepository();
-            FavouritesResult.Clear();// = new ObservableRangeCollection<POIDatabaseItem>();
+            FavouritesResult.Clear();
             Favourites = new ObservableRangeCollection<POIDatabaseItem>(await Database.GetFavoritesAsync());
             ItemsCount = Favourites.Count;
             POIS = await _greekCitiesService.GetGreekCities();
@@ -53,11 +53,9 @@ namespace SerresApp.ViewModels
             {
                 try
                 {
-                    //if (Favourites.Where(i=>i.Id == item.Id).FirstOrDefault() is null)
-                    //{
                     var poi = POIS.Where(x => x.Id == item.Id).FirstOrDefault();
                     FavouritesResult.Add(poi.Clone<POISlim , POI>());
-                    //}
+
                 }
                 catch (Exception)
                 {

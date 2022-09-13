@@ -68,10 +68,6 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <!--<ContentPage.BindingContext>
-        <vm:CollectionViewViewModel />
-    </ContentPage.BindingContext>-->
-
     <customViews:TaskLoaderView
         x:Name="RelativeParent"
         HorizontalOptions="FillAndExpand"

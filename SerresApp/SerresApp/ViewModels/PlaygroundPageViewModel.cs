@@ -22,7 +22,7 @@ namespace SerresApp.ViewModels
         }
 
 
-        public List<Category> Categories { get; set; } /*= Models.Categories.CategoriesList;*/
+        public List<Category> Categories { get; set; }
 
         private bool isDrawerOpen;
 
@@ -31,9 +31,7 @@ namespace SerresApp.ViewModels
             get { return isDrawerOpen; }
             set
             {
-                //isDrawerOpen = value;
                 SetAndRaise(ref isDrawerOpen , value);
-                //RaisePropertyChanged();
             }
         }
 
