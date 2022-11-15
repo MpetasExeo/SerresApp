@@ -139,14 +139,12 @@ namespace SerresApp.ViewModels
         {
             //LoadImages();
             PropertiesInit();
-            timer.Restart();
+            //timer.Restart();
             SelectedPOI = poi;
             if (SelectedPOI.Latitude != null && SelectedPOI.Longitude != null)
             {
                 CityPosition = new Location((double)poi.Latitude , (double)poi.Longitude);
             }
-            timer.Stop();
-            var time = timer.Elapsed;
         }
 
         private async Task Navigate()

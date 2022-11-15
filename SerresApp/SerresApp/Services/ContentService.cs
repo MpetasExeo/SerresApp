@@ -10,7 +10,7 @@ using System.Web;
 
 namespace SerresApp.Services
 {
-    public class ContentService : IContentService
+    public class ContentService //: IContentService
     {
         public PagedList<POISlim> GetPagedListItem(int tabId , int[] category , int? page , int pageSize = 10 , int window = 5 , bool ascending = true)
         {

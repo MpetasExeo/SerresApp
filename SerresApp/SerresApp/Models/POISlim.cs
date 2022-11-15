@@ -101,6 +101,11 @@ namespace SerresApp.Models
                 1);
         }
 
+
+        /// <summary>
+        /// Χρησιμοποιώντας όλα τα δεδομένα του instance της κλάσης POISlim από την οποία καλείται, δημιουργεί την σελίδα με τις λεπτομέρεις για το POI.
+        /// </summary>
+        /// <returns></returns>
         public async Task NavigateToDetailsAsync()
         {
             ItemDetailsPage detailsPage = new ItemDetailsPage();

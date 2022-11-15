@@ -21,6 +21,7 @@
     <None Remove="greekcities.json" />
     <None Remove="Json\darkstyle.json" />
     <None Remove="Json\greekcities.json" />
+    <None Remove="Json\serres_bg.json" />
     <None Remove="Json\serres_el.json" />
     <None Remove="Json\serres_en.json" />
     <None Remove="Json\travelstyle.json" />
@@ -43,6 +44,7 @@
     <EmbeddedResource Include="Json\greekcities.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Json\serres_bg.json" />
     <EmbeddedResource Include="Json\serres_el.json" />
     <EmbeddedResource Include="Json\serres_en.json" />
     <EmbeddedResource Include="Json\travelstyle.json" />

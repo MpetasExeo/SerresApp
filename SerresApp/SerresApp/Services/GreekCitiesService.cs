@@ -10,6 +10,7 @@ using SerresApp.Models;
 
 using SerresApp.Views;
 
+using System.ComponentModel;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace SerresApp.Services
         {
             ObservableRangeCollection<POISlim> greekCities = new ObservableRangeCollection<POISlim>();
 
-
+            //`+++ **Important** : πρέπει να έχω θέσει το Build Action από τα Properties του αρχείου json σε Embedder Resource.
 
             var assembly = typeof(GoogleMapsPage).GetTypeInfo().Assembly;
             var stream = assembly.GetManifestResourceStream($"{assembly.GetName().Name}.{Constants.JsonFolder}.{Constants.JsonTitle}_{Settings.TwoLetterLocaleCode[Settings.Language]}.json");

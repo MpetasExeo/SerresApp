@@ -268,7 +268,7 @@ namespace SerresApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Greek.
+        ///   Looks up a localized string similar to Ελληνικά.
         /// </summary>
         internal static string Greek {
             get {

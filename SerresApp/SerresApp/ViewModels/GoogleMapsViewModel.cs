@@ -30,7 +30,7 @@ namespace SerresApp.ViewModels
     {
         #region Properties
         public IGreekCitiesService GreekCitiesService { get; set; }
-        public IContentService _contentService { get; set; }
+        //public IContentService _contentService { get; set; }
         public IWeatherService WeatherService { get; set; }
         public ICommand GetCitiesCommand { get; set; }
         public Map GoogleMap { get; set; } = new Map();
@@ -40,6 +40,9 @@ namespace SerresApp.ViewModels
 
 
         private bool mapLoaded;
+        /// <summary>
+        /// Αν έχει φορτώσει ήδη ο χάρτης. π.χ. για να μην κάνω κάθε φορά τα Pins από την αρχή
+        /// </summary>
         public bool MapLoaded
         {
             get => mapLoaded;
@@ -51,6 +54,9 @@ namespace SerresApp.ViewModels
         }
 
         private bool constructorFinished;
+        /// <summary>
+        /// Λόγω LazyLoading ο constructor τρέχει μόνο την πρώτη φορά. Στο τέλος του θέτω ConstructorFinished = true.
+        /// </summary>
         public bool ConstructorFinished
         {
             get => constructorFinished;
@@ -63,6 +69,9 @@ namespace SerresApp.ViewModels
 
         private bool filtersClicked;
 
+        /// <summary>
+        /// Η μεταβλητή που ελέγχει αν είναι ανοιχτό το πλαίσιο με τα φίλτρα. Αν ανοίξει, θέτω HasSelectedPlace = false.
+        /// </summary>
         public bool FiltersClicked
         {
             get => filtersClicked;
@@ -80,6 +89,9 @@ namespace SerresApp.ViewModels
 
         private bool hasSelectedPlace;
 
+        /// <summary>
+        /// Η μεταβλητή που ελέγχει αν είναι έχω επιλέξει (κλικάρει) πάνω σε κάποιο Pin του χάρτη. Αν ανοίξει, θέτω FiltersClicked = false.
+        /// </summary>
         public bool HasSelectedPlace
         {
             get => hasSelectedPlace;
@@ -95,6 +107,10 @@ namespace SerresApp.ViewModels
         }
 
         private POISlim selectedPlace;
+
+        /// <summary>
+        /// Το object στο οποίο αποθηκεύω τις τιμές από το αντικείμενο που επιλέγω στον χάρτη.
+        /// </summary>
         public POISlim SelectedPlace
         {
             get => selectedPlace;
@@ -104,6 +120,9 @@ namespace SerresApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Η λίστα στην οποία αποθηκεύω όλα τα σημεία ενδιαφέροντος ώστε να τα διαχειριστώ με όποιον τρόπο θέλω.
+        /// </summary>
         public ObservableRangeCollection<POISlim> POIS { get; set; }
         private LayoutState _temperaturesState;
         public LayoutState TemperaturesState
@@ -121,11 +140,22 @@ namespace SerresApp.ViewModels
             ConstructorFinished = true;
         }
 
+
+        /// <summary>
+        /// Η εντολή που τρέχει όταν επιλέξω "Λεπτομέρειες" στον drawer που ανοίγει όταν επιλέξω ένα POI στον χάρτη.
+        /// </summary>
+        /// <param name="poi"></param>
+        /// <returns></returns>
         private async Task NavigateToDetails(POISlim poi)
         {
             await poi.NavigateToDetailsAsync();
         }
 
+
+        /// <summary>
+        /// Η διαδικασία που τρέχει όταν επιλέγεται το συγκεκριμένο Viewmodel από το tabs menu. 
+        /// </summary>
+        /// <returns></returns>
         private async Task InitializationTask()
         {
             DefineMapStyle();
@@ -141,6 +171,10 @@ namespace SerresApp.ViewModels
             MapLoaded = true;
         }
 
+
+        /// <summary>
+        /// Θέτω το style του χάρτη ( Dark || Light ) από το αντίστοιχο Json.
+        /// </summary>
         private void DefineMapStyle()
         {
             var assembly = typeof(GoogleMapsViewModel).GetTypeInfo().Assembly;
@@ -170,6 +204,11 @@ namespace SerresApp.ViewModels
             GoogleMap.MapStyle = MapStyle.FromJson(styleFile);
         }
 
+
+        /// <summary>
+        /// Αφού έχω κάνει create τον χάρτη τρέχω τις εντολές που αναθέτουν τις λειτουργίες του χάρτη.
+        /// </summary>
+        /// <returns></returns>
         private async Task AfterInitializationTask()
         {
             List<Task> tasks = new List<Task>
@@ -187,6 +226,9 @@ namespace SerresApp.ViewModels
             LoaderNotifier.Load(_ => InitializationTask());
         }
 
+        /// <summary>
+        /// Εδώ ορίζω τις λειτουργίες του χάρτη.
+        /// </summary>
         private void UICommandsInit()
         {
             GoogleMap.PinClicked += GoogleMap_PinClicked;
@@ -194,6 +236,13 @@ namespace SerresApp.ViewModels
             NavigateToPlaceCommand = new AsyncCommand(NavigateToPlace);
             OpenFiltersDrawerCommand = new Command(OpenFiltersDrawer);
         }
+
+
+
+        /// <summary>
+        /// Η εντολή που τρέχει όταν επιλέξω "Οδηγίες" στον drawer που ανοίγει όταν επιλέξω ένα POI στον χάρτη.
+        /// </summary>
+        /// <returns></returns>
         private async Task NavigateToPlace()
         {
             if (SelectedPlace.Latitude is null || SelectedPlace.Longitude is null)
@@ -241,6 +290,11 @@ namespace SerresApp.ViewModels
             Categories = new List<Category>(categories.CategoriesList);
         }
 
+
+        /// <summary>
+        /// Ορίζω την συμπεριφορά του χάρτη. πχ αρχική τοποθεσία
+        /// </summary>
+        /// <returns></returns>
         private async Task MapInitialization()
         {
             await Task.Run(() =>
@@ -260,20 +314,6 @@ namespace SerresApp.ViewModels
         #region Pin Clicked 
 
         private void GoogleMap_PinClicked(object sender , PinClickedEventArgs e) => PinSelected(e);
-
-        private void GetSelectedPlaceTemperature(double lat , double lon)
-        {
-            ThreadPool.QueueUserWorkItem(o => GetTemperatureAsync(lat , lon));
-        }
-
-        private async void GetTemperatureAsync(double lat , double lon)
-        {
-            Location pos = new Location(lat , lon);
-            CancellationToken ct = new CancellationToken();
-                      
-            IsBusy = false;
-            TemperaturesState = LayoutState.None;
-        }
 
         private void PinSelected(PinClickedEventArgs e)
         {
@@ -303,6 +343,12 @@ namespace SerresApp.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Ανατρέχω στην λίστα των POIs ώστε να βρω το στοιχείο με το συγκεκριμένο lat, lon που παίρνει απο το tap στον χάρτη.
+        /// </summary>
+        /// <param name="lat"></param>
+        /// <param name="lon"></param>
         private void FindSelectedPlace(double lat , double lon)
         {
             TemperaturesState = LayoutState.Loading;

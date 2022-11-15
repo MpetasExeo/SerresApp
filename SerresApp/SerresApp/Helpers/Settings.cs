@@ -8,7 +8,7 @@ namespace SerresApp.Helpers
     public static class Settings
     {
 
-        // 0 = Αγγλικά, 1 = Ελληνικά, 2 = Γερμανικά
+        // 0 = Αγγλικά, 1 = Ελληνικά, 2 = Βουλγάρικα
         private const int language = 0;
 
         // 0 = Προεπιλογή, 1 = Φωτεινή, 2 = Σκοτεινή
@@ -18,7 +18,7 @@ namespace SerresApp.Helpers
         {
             [0] = "en" , //Αγγλικά
             [1] = "el" , //Ελληνικά
-            [2] = "en"  //Γερμανικά μη διαθέσιμα ==> TwoLetterLocaleCode[2] = "en"
+            [2] = "bg"  //Γερμανικά μη διαθέσιμα ==> TwoLetterLocaleCode[2] = "en"
         };
 
         //Settings.TwoLetterLocaleCode[Settings.Language] ==> δίνει τον κωδικό ISO για την UI γλώσσα
@@ -26,7 +26,7 @@ namespace SerresApp.Helpers
         {
             [0] = "en" , //Αγγλικά
             [1] = "el" , //Ελληνικά
-            [2] = "en"  //Γερμανικά μη διαθέσιμα ==> TwoLetterLocaleCode[2] = "en"
+            [2] = "bg"  //Γερμανικά μη διαθέσιμα ==> TwoLetterLocaleCode[2] = "en"
         };
 
         public static int Language

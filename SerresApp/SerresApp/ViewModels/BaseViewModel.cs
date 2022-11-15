@@ -45,17 +45,6 @@ namespace SerresApp.ViewModels
         public ICommand BackCommand { get; set; }
 
 
-        protected IContentService ContentService { get; }
-
-        public BaseViewModel(IContentService contentService)
-        {
-            ContentService = contentService;
-            BackCommand = new Command((x) =>
-            {
-                Shell.Current.SendBackButtonPressed();
-            });
-        }
-
         public BaseViewModel()
         {
             BackCommand = new Command((x) =>

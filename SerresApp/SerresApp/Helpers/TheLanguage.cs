@@ -19,7 +19,7 @@ namespace SerresApp.Helpers
                     break;
                 //dark
                 case 2:
-                    LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("de-DE"));
+                    LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("bg-BG"));
                     break;
             }
         }
