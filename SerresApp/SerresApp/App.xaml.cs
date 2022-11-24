@@ -22,14 +22,14 @@ namespace SerresApp
             DevExpress.XamarinForms.Editors.Initializer.Init();
             DevExpress.XamarinForms.Navigation.Initializer.Init();
 
-            if (!RequiredChecks.HasInternetConnection())
-            {
-                MainPage = new LandingPage();
-            }
-            else
-            {
+            //if (!RequiredChecks.HasInternetConnection())
+            //{
+            //    MainPage = new LandingPage();
+            //}
+            //else
+            //{
                 MainPage = new AppShell();
-            }
+            //}
 
 
 

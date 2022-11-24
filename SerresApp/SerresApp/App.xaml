@@ -12,7 +12,7 @@
             <Color x:Key="Background">#ffffff</Color>
             <Color x:Key="DarkBackground">#15181f</Color>
 
-            <Color x:Key="Primary">#305e54</Color>
+            <Color x:Key="Primary">#023537</Color>
             <Color x:Key="DarkPrimary">#FFC4C4C4</Color>
 
             <Color x:Key="BackgroundDark">#01342b</Color>
